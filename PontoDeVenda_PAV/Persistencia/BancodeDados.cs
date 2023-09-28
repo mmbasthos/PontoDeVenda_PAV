@@ -10,6 +10,8 @@ namespace PontoDeVenda_PAV.Persistencia
     public class BancodeDados
     {
 
+        // coemntair
+
         private int porta = 3306;
         private string servidor = "localhost";
         private string nomeBancoDados = "bancopdv_icg";
