@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZVvkEhn7+qXprUB/FfO6s48ZcwaAy0rcrSixyjr5UJnsFQ/A9ejiOpyrAY96URSa7y100m1/YdM6MmXH8i5q7w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lexvi\\OneDrive\\Área de Trabalho\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\PontoDeVenda_PAV.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lexvi\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.0\\system.diagnostics.diagnosticsource.7.0.0.nupkg.sha512",
+    "C:\\Users\\lexvi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

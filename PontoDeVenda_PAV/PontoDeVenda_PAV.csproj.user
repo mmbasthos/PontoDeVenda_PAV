@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Interface\ConsultaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\ConsultaFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\ConsultaTipoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\MenuClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\MenuEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\MenuFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\TelaAtualizacaoClassificacaoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\TelaAtualizacaoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\TelaAtualizacaoFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\TelaAtualizacaoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\TelaCadastroClassificacaoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\TelaCadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\TelaCadastroFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\TelaCadastroProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
