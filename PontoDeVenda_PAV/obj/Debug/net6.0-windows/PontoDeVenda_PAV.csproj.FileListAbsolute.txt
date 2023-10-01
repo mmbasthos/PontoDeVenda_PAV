@@ -58,3 +58,13 @@ C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoD
 C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.dll
 C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\refint\PontoDeVenda_PAV.dll
 C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.pdb
+C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.exe
+C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.deps.json
+C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.runtimeconfig.json
+C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.dll
+C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.pdb
+C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\MySql.Data.dll
+C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.CopyComplete
+C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.genruntimeconfig.cache
+C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\ref\PontoDeVenda_PAV.dll

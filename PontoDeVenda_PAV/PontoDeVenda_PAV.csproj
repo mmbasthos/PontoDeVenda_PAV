@@ -18,13 +18,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\source\repos\ListadeComandos\ListadeComandos\bin\MySql.Data.dll</HintPath>
-    </Reference>
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="7.0.0" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\source\repos\ListadeComandos\ListadeComandos\bin\MySql.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
