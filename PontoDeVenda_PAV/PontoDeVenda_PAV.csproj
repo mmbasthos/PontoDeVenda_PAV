@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Entidades\Venda.cs" />
+    <Compile Remove="Entidades\Venda.Designer.cs" />
     <Compile Remove="Form1.cs" />
     <Compile Remove="Form1.Designer.cs" />
   </ItemGroup>

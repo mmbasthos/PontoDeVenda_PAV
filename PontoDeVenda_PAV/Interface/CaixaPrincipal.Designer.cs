@@ -55,11 +55,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1262, 673);
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "CaixaPrincipal";
             Text = "CaixaPrincipal";
+            WindowState = FormWindowState.Maximized;
+            Load += CaixaPrincipal_Load;
             ResumeLayout(false);
         }
 

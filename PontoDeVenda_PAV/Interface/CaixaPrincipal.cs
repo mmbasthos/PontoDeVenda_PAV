@@ -25,11 +25,16 @@ namespace PontoDeVenda_PAV.Interface
         {
             BancodeDados.obterInstancia().conectar();
             ControladorCaixa controladorCaixa = new ControladorCaixa();
-            int idCaixa = 4;
+            int idCaixa = controladorCaixa.caixaAtual();
 
             decimal valorAumento = 100.00m;
 
             controladorCaixa.aumentarSaldoCaixa(idCaixa, valorAumento);
+            BancodeDados.obterInstancia().desconectar();
+        }
+
+        private void CaixaPrincipal_Load(object sender, EventArgs e)
+        {
 
         }
     }
