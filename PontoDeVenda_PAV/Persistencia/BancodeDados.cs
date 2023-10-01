@@ -10,7 +10,7 @@ namespace PontoDeVenda_PAV.Persistencia
     public class BancodeDados
     {
 
-        // coemntair
+        // teste git
 
         private int porta = 3306;
         private string servidor = "localhost";

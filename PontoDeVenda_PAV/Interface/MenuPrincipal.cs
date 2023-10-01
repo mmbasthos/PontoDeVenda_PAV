@@ -48,5 +48,11 @@ namespace PontoDeVenda_PAV.Interface
             MenuEstoque menuEstoque = new MenuEstoque();
             menuEstoque.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            TelaAberturaCaixa telaAberturaCaixa = new TelaAberturaCaixa();
+            telaAberturaCaixa.ShowDialog();
+        }
     }
 }

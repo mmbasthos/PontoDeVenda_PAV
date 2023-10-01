@@ -104,11 +104,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lexvi\\OneDrive\\Área de Trabalho\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\PontoDeVenda_PAV.csproj",
+      "projectUniqueName": "C:\\Users\\lexvi\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\PontoDeVenda_PAV.csproj",
       "projectName": "PontoDeVenda_PAV",
-      "projectPath": "C:\\Users\\lexvi\\OneDrive\\Área de Trabalho\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\PontoDeVenda_PAV.csproj",
+      "projectPath": "C:\\Users\\lexvi\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\PontoDeVenda_PAV.csproj",
       "packagesPath": "C:\\Users\\lexvi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lexvi\\OneDrive\\Área de Trabalho\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\obj\\",
+      "outputPath": "C:\\Users\\lexvi\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lexvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
