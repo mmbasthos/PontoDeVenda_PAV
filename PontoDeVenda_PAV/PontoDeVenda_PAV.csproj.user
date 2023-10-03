@@ -25,6 +25,9 @@
     <Compile Update="Interface\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Interface\SideMenuBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Interface\TelaAberturaCaixa.cs">
       <SubType>Form</SubType>
     </Compile>

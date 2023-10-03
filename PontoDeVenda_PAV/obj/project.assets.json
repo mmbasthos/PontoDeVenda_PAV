@@ -99,19 +99,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lexvi\\.nuget\\packages\\": {}
+    "C:\\Users\\matheus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lexvi\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\PontoDeVenda_PAV.csproj",
+      "projectUniqueName": "C:\\Users\\matheus\\Desktop\\visualStudio\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\PontoDeVenda_PAV.csproj",
       "projectName": "PontoDeVenda_PAV",
-      "projectPath": "C:\\Users\\lexvi\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\PontoDeVenda_PAV.csproj",
-      "packagesPath": "C:\\Users\\lexvi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lexvi\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\obj\\",
+      "projectPath": "C:\\Users\\matheus\\Desktop\\visualStudio\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\PontoDeVenda_PAV.csproj",
+      "packagesPath": "C:\\Users\\matheus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\matheus\\Desktop\\visualStudio\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lexvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\matheus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -161,7 +161,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
