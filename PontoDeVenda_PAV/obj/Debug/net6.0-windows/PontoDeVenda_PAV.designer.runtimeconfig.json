@@ -12,7 +12,7 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\matheus\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\lexvi\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\matheus\\.nuget\\packages"
     ],
     "configProperties": {
