@@ -45,6 +45,48 @@ namespace PontoDeVenda_PAV.Controladores
         {
             return "DELETE FROM cliente WHERE id_cliente = @id_cliente";
         }
+
+        public string ObterNomeClientePorCPF(string cpf)
+        {
+            BancodeDados.obterInstancia().conectar();
+
+            using (MySqlCommand comando = new MySqlCommand("SELECT nome_cliente FROM cliente WHERE cpf_cnpj_cliente = @cpf", BancodeDados.obterInstancia().obterConexao()))
+            {
+                comando.Parameters.AddWithValue("@cpf", cpf);
+
+                string nomeCliente = comando.ExecuteScalar() as string;
+                return nomeCliente;
+            }
+
+            BancodeDados.obterInstancia().desconectar();
+        }
+
+        public int ObterIdClientePorCPF(string cpf)
+        {
+            int idCliente = -1; // Inicializamos com -1 para indicar que não foi encontrado
+
+            using (MySqlCommand comando = new MySqlCommand("SELECT id_cliente FROM cliente WHERE cpf_cnpj_cliente = @cpf;", BancodeDados.obterInstancia().obterConexao()))
+            {
+                comando.Parameters.AddWithValue("@cpf", cpf);
+
+                using (MySqlDataReader reader = comando.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        idCliente = Convert.ToInt32(reader["id_cliente"]);
+                    }
+                }
+            }
+
+            // Adiciona esta linha para imprimir o valor no console
+            Console.WriteLine("O id_cliente retornado é: " + idCliente);
+
+            return idCliente;
+        }
+
+
+
+
         protected override void criarParametros(MySqlCommand comando)
         {
             comando.Parameters.Add(new MySqlParameter(Cliente.ATRIBUTO_ID_CLIENTE, MySqlDbType.Int32));

@@ -27,7 +27,7 @@ namespace PontoDeVenda_PAV.Entidades
         public override void transferirDados(MySqlCommand comando)
         {
             comando.Parameters[ATRIBUTO_ID_VENDA].Value = id_venda;
-            comando.Parameters[ATRIBUTO_ID_CLIENTE_VENDA].Value = id_venda;
+            comando.Parameters[ATRIBUTO_ID_CLIENTE_VENDA].Value = id_cliente_venda;
             comando.Parameters[ATRIBUTO_DATA_VENDA].Value = data_venda;
             comando.Parameters[ATRIBUTO_HORA_VENDA].Value = hora_venda;
             comando.Parameters[ATRIBUTO_TOTAL_VENDA].Value = total_venda;

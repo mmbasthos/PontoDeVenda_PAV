@@ -52,5 +52,11 @@
     <Compile Update="Interface\TelaCadastroProduto.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Interface\TelaIdentificarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\TelaInserirCodigoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

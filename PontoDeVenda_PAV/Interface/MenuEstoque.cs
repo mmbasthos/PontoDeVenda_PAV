@@ -316,5 +316,10 @@ namespace PontoDeVenda_PAV.Interface
                 BancodeDados.obterInstancia().desconectar();
             }
         }
+
+        private void campoPesqID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -34,7 +34,46 @@ using PontoDeVenda_PAV.Persistencia;
             {
                 return "DELETE FROM produto WHERE id_produto = @id_produto";
             }
-            protected override void criarParametros(MySqlCommand comando)
+        public decimal ObterValorProdutoPorId(int id)
+        {
+            decimal valorProduto = -1; // Inicializamos com -1 para indicar que não foi encontrado
+
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+
+                string comandoSql = "SELECT valor_produto FROM produto WHERE id_produto = @id_produto";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@id_produto", id);
+
+                    object resultado = comando.ExecuteScalar();
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        valorProduto = Convert.ToDecimal(resultado);
+                    }
+                    else
+                    {
+                        // Trate o caso em que a consulta não retorna nenhum valor.
+                        // Por exemplo, você pode retornar um valor padrão ou lançar uma exceção.
+                        // throw new Exception("Nenhum valor de produto encontrado para o ID fornecido.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Trate a exceção conforme necessário (por exemplo, registre-a ou a lance novamente).
+                // throw new Exception("Erro ao obter valor do produto: " + ex.Message);
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+            }
+
+            return valorProduto;
+        }
+        protected override void criarParametros(MySqlCommand comando)
             {
                 comando.Parameters.Add(Produtos.ATRIBUTO_ID_PRODUTO, MySqlDbType.Int32);
                 comando.Parameters.Add(Produtos.ATRIBUTO_ID_FORNECEDOR, MySqlDbType.Int32);;

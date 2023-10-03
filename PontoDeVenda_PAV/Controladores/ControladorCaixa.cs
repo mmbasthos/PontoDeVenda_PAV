@@ -79,6 +79,26 @@ namespace PontoDeVenda_PAV.Controladores
                 throw new Exception("Erro ao aumentar saldo do caixa: " + ex.Message);
             }
         }
+        public string ObterNomeCaixa(int idCaixa)
+        {
+            BancodeDados.obterInstancia().conectar();
+            string comandoSql = "SELECT nome_caixa FROM caixa WHERE id_caixa = @idCaixa";
+            MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao());
+            comando.Parameters.AddWithValue("@idCaixa", idCaixa);
+
+            try
+            {
+                string nomeCaixa = comando.ExecuteScalar() as string;
+                return nomeCaixa;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao obter o nome do caixa: " + ex.Message);
+            }
+        }
+
+
+
 
         public void diminuirSaldoCaixa(int idCaixa, decimal valor)
         {
