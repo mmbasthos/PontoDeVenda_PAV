@@ -12,12 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-<<<<<<< HEAD
       "C:\\Users\\lexvi\\.dotnet\\store\\|arch|\\|tfm|",
-=======
-      "C:\\Users\\matheus\\.dotnet\\store\\|arch|\\|tfm|",
->>>>>>> 6d778ab70b061d4d581715c26619c267ab7af5ff
-      "C:\\Users\\matheus\\.nuget\\packages"
+      "C:\\Users\\lexvi\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

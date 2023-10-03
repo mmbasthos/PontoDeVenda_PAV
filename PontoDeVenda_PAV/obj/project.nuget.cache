@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "8AePb2nQ3O5j7Qs50lpTQbfasp3v/ORqc30FHkmGpUJJ82Iut9B2gLWHlwFMzM4BI49/7+MENZcLGcEW+GUESg==",
+  "dgSpecHash": "gi4Y/f6UlHktC5vmqrt9PJJjggbRwKCPrqObkEg3Kj8vurCYVc1KhMVxob0Xi+2FwCMV76A5yJ9LI4ogcK/g6w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\matheus\\Desktop\\visualStudio\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\PontoDeVenda_PAV.csproj",
+  "projectFilePath": "C:\\Users\\lexvi\\PontoDeVenda_PAV\\PontoDeVenda_PAV\\PontoDeVenda_PAV.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\matheus\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.0\\system.diagnostics.diagnosticsource.7.0.0.nupkg.sha512",
-    "C:\\Users\\matheus\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\lexvi\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.0\\system.diagnostics.diagnosticsource.7.0.0.nupkg.sha512",
+    "C:\\Users\\lexvi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
