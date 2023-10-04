@@ -53,6 +53,8 @@
             button3 = new Button();
             campoAddNum = new TextBox();
             button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -292,11 +294,33 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // button5
+            // 
+            button5.Location = new Point(330, 683);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 29);
+            button5.TabIndex = 19;
+            button5.Text = "Excluir";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(333, 423);
+            button6.Name = "button6";
+            button6.Size = new Size(94, 29);
+            button6.TabIndex = 20;
+            button6.Text = "button6";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
             // CaixaPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1541, 845);
+            Controls.Add(button6);
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(campoAddNum);
             Controls.Add(button3);
@@ -352,5 +376,7 @@
         private ToolStripMenuItem inserirProdutoToolStripMenuItem;
         private TextBox campoAddNum;
         private Button button4;
+        private Button button5;
+        private Button button6;
     }
 }

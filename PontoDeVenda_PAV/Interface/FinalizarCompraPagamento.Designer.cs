@@ -98,6 +98,7 @@
             Controls.Add(campoTotal);
             Controls.Add(campoDinRecebido);
             Name = "FinalizarCompraPagamento";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FinalizarCompraPagamento";
             Load += FinalizarCompraPagamento_Load;
             ResumeLayout(false);

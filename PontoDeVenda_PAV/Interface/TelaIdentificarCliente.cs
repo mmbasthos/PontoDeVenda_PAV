@@ -130,6 +130,7 @@ namespace PontoDeVenda_PAV.Interface
 
 
             controladorVendas.incluir(venda);
+            caixaPrincipal.novoTotal = 0m;
             BancodeDados.obterInstancia().desconectar();
             Close();
         }

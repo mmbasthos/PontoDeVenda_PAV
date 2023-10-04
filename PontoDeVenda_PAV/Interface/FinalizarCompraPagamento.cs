@@ -92,33 +92,60 @@ namespace PontoDeVenda_PAV.Interface
 
         public string GerarRelatorio(int idVenda)
         {
-            BancodeDados.obterInstancia().conectar();
-            string relatorio = "";
-
-            // Obter nome do cliente
-            string nomeCliente = ObterNomeCliente(idVenda);
-
-            // Obter lista de itens da venda
-            List<ItemVenda> itens = ObterItensVenda(idVenda);
-
-            relatorio += $"Venda {idVenda:D3} Data: {DateTime.Now.ToShortDateString()} Hora: {DateTime.Now.ToShortTimeString()}\n";
-            relatorio += nomeCliente != null ? $"Cliente: {nomeCliente}\n" : "Cliente não identificado\n";
-            relatorio += "Item Descrição Qtd Preço Total\n";
-
-            foreach (var item in itens)
+            try
             {
-                ControladorCadastroProdutos controladorCadastroProdutos = new ControladorCadastroProdutos();
-                string nomeProduto = controladorCadastroProdutos.ObterNomeProdutoPorId(item.id_produto);
-                relatorio += $"{item.id_produto:D4} {nomeProduto} {item.quantidade_item} {item.valor_unitario_item:C} {item.total_item:C}\n";
+                BancodeDados.obterInstancia().conectar();
+                StringBuilder relatorio = new StringBuilder();
+
+                // Obter nome do cliente
+                string nomeCliente = ObterNomeCliente(idVenda);
+
+                // Obter lista de itens da venda
+                List<ItemVenda> itens = ObterItensVenda(idVenda);
+
+                relatorio.AppendLine($"-----------------------------");
+                relatorio.AppendLine($"        Relatório de Venda       ");
+                relatorio.AppendLine($"-----------------------------");
+                relatorio.AppendLine($"Venda: {idVenda:D3}");
+                relatorio.AppendLine($"Data: {DateTime.Now.ToShortDateString()}");
+                relatorio.AppendLine($"Hora: {DateTime.Now.ToShortTimeString()}");
+                relatorio.AppendLine($"-----------------------------");
+
+                if (!string.IsNullOrEmpty(nomeCliente))
+                {
+                    relatorio.AppendLine($"Cliente: {nomeCliente}");
+                    relatorio.AppendLine($"-----------------------------");
+                }
+
+                relatorio.AppendLine($"Item   Descrição           Qtd   Preço   Total");
+                relatorio.AppendLine($"-----------------------------");
+
+                foreach (var item in itens)
+                {
+                    ControladorCadastroProdutos controladorCadastroProdutos = new ControladorCadastroProdutos();
+                    string nomeProduto = controladorCadastroProdutos.ObterNomeProdutoPorId(item.id_produto);
+                    relatorio.AppendLine($"{item.id_produto:D4}   {nomeProduto}     {item.quantidade_item}   {item.valor_unitario_item:C}   {item.total_item:C}");
+                }
+
+                relatorio.AppendLine($"-----------------------------");
+
+                // Calcular total
+                decimal total = itens.Sum(item => item.total_item);
+                relatorio.AppendLine($"Total: {total:C}");
+
+                return relatorio.ToString();
             }
-
-            // Calcular total
-            decimal total = itens.Sum(item => item.total_item);
-            relatorio += $"Total: {total:C}";
-
-            return relatorio;
-            BancodeDados.obterInstancia().desconectar();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao gerar relatório: " + ex.Message);
+                return "";
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+            }
         }
+
 
 
 
@@ -159,11 +186,6 @@ namespace PontoDeVenda_PAV.Interface
                 // Exibe o relatório em uma MessageBox
                 MessageBox.Show(relatorio, "Relatório da Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-
-
-
-                MessageBox.Show("Venda Finalizada!.");
             }
             catch (Exception ex)
             {
@@ -173,6 +195,7 @@ namespace PontoDeVenda_PAV.Interface
             {
                 BancodeDados.obterInstancia().desconectar();
             }
+            Close();
 
         }
 

@@ -88,6 +88,26 @@ using PontoDeVenda_PAV.Persistencia;
             }
         }
 
+        public void AumentarEstoque(int idProduto, int quantidade)
+        {
+            try
+            {
+                string comandoSql = "UPDATE produto SET quantidade_produto = quantidade_produto + @quantidade WHERE id_produto = @id_produto";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@quantidade", quantidade);
+                    comando.Parameters.AddWithValue("@id_produto", idProduto);
+
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao atualizar estoque do produto: " + ex.Message);
+            }
+        }
+
         public string ObterNomeProdutoPorId(int id)
         {
             BancodeDados.obterInstancia().conectar();

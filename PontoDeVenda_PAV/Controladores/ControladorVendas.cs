@@ -61,7 +61,7 @@ namespace PontoDeVenda_PAV.Controladores
         
 
         public void AtualizarTotalVenda(int idVenda, decimal novoTotal)
-        {
+        { 
             try
             {
                 string comandoSql = "UPDATE venda SET total_venda = @novoTotal WHERE id_venda = @idVenda";
@@ -81,6 +81,8 @@ namespace PontoDeVenda_PAV.Controladores
         }
         public decimal ObterTotalVenda(int idVenda)
         {
+            BancodeDados.obterInstancia().conectar();
+            
             try
             {
                 string comandoSql = "SELECT total_venda FROM venda WHERE id_venda = @idVenda";
@@ -99,6 +101,7 @@ namespace PontoDeVenda_PAV.Controladores
                         // Trate o caso em que a consulta não retorna nenhum valor.
                         return 0; // Ou outro valor padrão apropriado.
                     }
+                    
                 }
             }
             catch (Exception ex)
@@ -106,6 +109,8 @@ namespace PontoDeVenda_PAV.Controladores
                 // Trate a exceção conforme necessário (por exemplo, registre-a ou a lance novamente).
                 throw new Exception("Erro ao obter o total da venda: " + ex.Message);
             }
+
+            BancodeDados.obterInstancia().desconectar();
         }
 
 
