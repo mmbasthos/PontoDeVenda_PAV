@@ -126,6 +126,8 @@ namespace PontoDeVenda_PAV.Interface
         private void CadastroCliente_Click(object sender, EventArgs e)
         {
             //chamar uma nova forma
+            TelaCadastroCliente telaCadastroCliente = new TelaCadastroCliente();
+            telaCadastroCliente.ShowDialog();
 
             EsconderSubMenu();
         }
@@ -134,6 +136,8 @@ namespace PontoDeVenda_PAV.Interface
         private void button1_Click_1(object sender, EventArgs e)
         {
             //abre uma nova janela 
+            TelaCadastroFornecedor telaCadastroFornecedor = new TelaCadastroFornecedor();
+            telaCadastroFornecedor.ShowDialog();
 
             EsconderSubMenu();
         }
@@ -151,13 +155,15 @@ namespace PontoDeVenda_PAV.Interface
         private void ConsultaCliente_Click(object sender, EventArgs e)
         {
             //Codificar para mostrar as outras formas
-
+            ConsultaClientes consultaClientes = new ConsultaClientes();
+            consultaClientes.ShowDialog();
             EsconderSubMenu();
         }
         private void ConsultaFornecedor_Click(object sender, EventArgs e)
         {
             //Codificar algo aqui 
-
+            ConsultaFornecedor consultaFornecedor = new ConsultaFornecedor();
+            consultaFornecedor.ShowDialog();
             EsconderSubMenu();
         }
 
@@ -171,6 +177,8 @@ namespace PontoDeVenda_PAV.Interface
         private void BtEstoque_Click(object sender, EventArgs e)
         {
             MostrarSubMenu(EstoquePanel);
+            MenuEstoque menuEstoque = new MenuEstoque();        
+            menuEstoque.Show();
         }
         private void CadastrarProduto_Click(object sender, EventArgs e)
         {

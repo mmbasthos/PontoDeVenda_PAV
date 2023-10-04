@@ -28,5 +28,10 @@ namespace PontoDeVenda_PAV.Interface
             ConsultaFornecedor consultaFornecedor = new ConsultaFornecedor();
             consultaFornecedor.ShowDialog();
         }
+
+        private void MenuFornecedores_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -62,6 +62,7 @@
             Name = "MenuFornecedores";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Fornecedores";
+            Load += MenuFornecedores_Load;
             ResumeLayout(false);
         }
 

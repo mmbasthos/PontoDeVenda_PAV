@@ -28,5 +28,10 @@ namespace PontoDeVenda_PAV.Interface
             ConsultaClientes consultaClientes = new ConsultaClientes();
             consultaClientes.ShowDialog();
         }
+
+        private void MenuClientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

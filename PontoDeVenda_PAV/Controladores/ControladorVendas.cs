@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PontoDeVenda_PAV.Controladores
 {
@@ -34,8 +35,6 @@ namespace PontoDeVenda_PAV.Controladores
         {
             try
             {
-                BancodeDados.obterInstancia().conectar();
-
                 string comandoSql = "SELECT id_venda FROM venda ORDER BY id_venda DESC LIMIT 1";
 
                 using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
@@ -47,9 +46,8 @@ namespace PontoDeVenda_PAV.Controladores
                     }
                     else
                     {
-                        // Trate o caso em que a consulta não retorna nenhum valor.
-                        // Por exemplo, você pode retornar um valor padrão ou lançar uma exceção.
-                        throw new Exception("Nenhuma venda encontrada.");
+                        // Retorne um valor indicando que nenhuma venda foi encontrada.
+                        return -1; // Por exemplo, -1 pode indicar que nenhuma venda foi encontrada.
                     }
                 }
             }
@@ -58,11 +56,63 @@ namespace PontoDeVenda_PAV.Controladores
                 // Trate a exceção conforme necessário (por exemplo, registre-a ou a lance novamente).
                 throw new Exception("Erro ao obter venda atual: " + ex.Message);
             }
-            finally
+        }
+
+        
+
+        public void AtualizarTotalVenda(int idVenda, decimal novoTotal)
+        {
+            try
             {
-                BancodeDados.obterInstancia().desconectar();
+                string comandoSql = "UPDATE venda SET total_venda = @novoTotal WHERE id_venda = @idVenda";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@novoTotal", novoTotal);
+                    comando.Parameters.AddWithValue("@idVenda", idVenda);
+
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao atualizar o total da venda: " + ex.Message);
             }
         }
+        public decimal ObterTotalVenda(int idVenda)
+        {
+            try
+            {
+                string comandoSql = "SELECT total_venda FROM venda WHERE id_venda = @idVenda";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@idVenda", idVenda);
+
+                    object resultado = comando.ExecuteScalar();
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        return Convert.ToDecimal(resultado);
+                    }
+                    else
+                    {
+                        // Trate o caso em que a consulta não retorna nenhum valor.
+                        return 0; // Ou outro valor padrão apropriado.
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Trate a exceção conforme necessário (por exemplo, registre-a ou a lance novamente).
+                throw new Exception("Erro ao obter o total da venda: " + ex.Message);
+            }
+        }
+
+
+
+
+
+
 
 
         protected override void criarParametros(MySqlCommand comando)

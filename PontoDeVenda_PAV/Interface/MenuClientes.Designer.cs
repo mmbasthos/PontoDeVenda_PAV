@@ -62,6 +62,7 @@
             Name = "MenuClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MenuClientes";
+            Load += MenuClientes_Load;
             ResumeLayout(false);
         }
 

@@ -40,9 +40,8 @@ using PontoDeVenda_PAV.Persistencia;
 
             try
             {
-                BancodeDados.obterInstancia().conectar();
 
-                string comandoSql = "SELECT valor_produto FROM produto WHERE id_produto = @id_produto";
+                string comandoSql = "SELECT preco_produto FROM produto WHERE id_produto = @id_produto";
 
                 using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
                 {
@@ -66,12 +65,57 @@ using PontoDeVenda_PAV.Persistencia;
                 // Trate a exceção conforme necessário (por exemplo, registre-a ou a lance novamente).
                 // throw new Exception("Erro ao obter valor do produto: " + ex.Message);
             }
-            finally
-            {
-                BancodeDados.obterInstancia().desconectar();
-            }
-
             return valorProduto;
+        }
+
+        public void AtualizarEstoque(int idProduto, int quantidade)
+        {
+            try
+            {
+                string comandoSql = "UPDATE produto SET quantidade_produto = quantidade_produto - @quantidade WHERE id_produto = @id_produto";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@quantidade", quantidade);
+                    comando.Parameters.AddWithValue("@id_produto", idProduto);
+
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao atualizar estoque do produto: " + ex.Message);
+            }
+        }
+
+        public string ObterNomeProdutoPorId(int id)
+        {
+            BancodeDados.obterInstancia().conectar();
+            try
+            {
+
+                string comandoSql = "SELECT nome_produto FROM produto WHERE id_produto = @id_produto";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@id_produto", id);
+
+                    object resultado = comando.ExecuteScalar();
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        return Convert.ToString(resultado);
+                    }
+                    else
+                    {
+                        throw new Exception("Nenhum produto encontrado para o ID fornecido.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao obter nome do produto: " + ex.Message);
+            }
+            BancodeDados.obterInstancia().desconectar();
         }
         protected override void criarParametros(MySqlCommand comando)
             {

@@ -36,6 +36,7 @@ namespace PontoDeVenda_PAV.Entidades
         public override void transferirDadosIdentificador(MySqlCommand comando)
         {
             comando.Parameters[ATRIBUTO_ID_ITEM_VENDA].Value = id_item_venda;
+            comando.Parameters[ATRIBUTO_ID_VENDA].Value = id_venda;
         }
 
         public override void lerDados(MySqlDataReader leitorDados)

@@ -44,7 +44,7 @@ namespace PontoDeVenda_PAV.Controladores
         protected override void criarParametrosChavePrimaria(MySqlCommand comando)
         {
             comando.Parameters.Add(new MySqlParameter(ItemVenda.ATRIBUTO_ID_VENDA, MySqlDbType.Int32));
-            comando.Parameters.Add(ItemVenda.ATRIBUTO_ID_ITEM_VENDA, MySqlDbType.Int32);
+            comando.Parameters.Add(new MySqlParameter(ItemVenda.ATRIBUTO_ID_ITEM_VENDA, MySqlDbType.Int32));
         }
     }
 }

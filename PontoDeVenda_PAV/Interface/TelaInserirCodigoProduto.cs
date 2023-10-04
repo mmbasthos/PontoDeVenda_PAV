@@ -18,15 +18,15 @@ namespace PontoDeVenda_PAV.Interface
         public TelaInserirCodigoProduto()
         {
             InitializeComponent();
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             try
             {
                 BancodeDados.obterInstancia().conectar();
+                BancodeDados.obterInstancia().iniciarTransacao();
 
                 ControladorItemVenda controladorItemVenda = new ControladorItemVenda();
                 ControladorVendas controladorVendas = new ControladorVendas();
@@ -41,8 +41,6 @@ namespace PontoDeVenda_PAV.Interface
                     produto.id_produto = id;
                     decimal valorProduto = controladorCadastroProdutos.ObterValorProdutoPorId(id);
 
-                    // Não precisamos chamar controladorCadastroProdutos.selecionar(produto); já que não usamos 'produto' diretamente.
-
                     itemVenda.id_produto = id;
                     itemVenda.id_venda = controladorVendas.vendaAtual();
                     itemVenda.valor_unitario_item = valorProduto;
@@ -55,20 +53,31 @@ namespace PontoDeVenda_PAV.Interface
                 {
                     MessageBox.Show("O texto não é um ID de produto válido.");
                 }
+
+                BancodeDados.obterInstancia().confirmarTransacao();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocorreu um erro: " + ex.Message);
+
+                // Se ocorrer um erro, você pode querer cancelar a transação
+                BancodeDados.obterInstancia().cancelarTransacao();
             }
             finally
             {
                 BancodeDados.obterInstancia().desconectar();
             }
+
         }
 
         private void TelaInserirCodigoProduto_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BancodeDados.obterInstancia().conectar();
         }
     }
 }

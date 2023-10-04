@@ -58,7 +58,7 @@ namespace PontoDeVenda_PAV.Controladores
                 BancodeDados.obterInstancia().desconectar();
             }
         }
-
+        /*
         public void aumentarSaldoCaixa(int idCaixa, decimal valor)
         {
             BancodeDados.obterInstancia().conectar();
@@ -78,7 +78,7 @@ namespace PontoDeVenda_PAV.Controladores
                 BancodeDados.obterInstancia().cancelarTransacao();
                 throw new Exception("Erro ao aumentar saldo do caixa: " + ex.Message);
             }
-        }
+        }*/
         public string ObterNomeCaixa(int idCaixa)
         {
             BancodeDados.obterInstancia().conectar();
@@ -95,11 +95,35 @@ namespace PontoDeVenda_PAV.Controladores
             {
                 throw new Exception("Erro ao obter o nome do caixa: " + ex.Message);
             }
+            BancodeDados.obterInstancia().desconectar();
+        }
+
+        public void AtualizarSaldoCaixa(int idCaixa, decimal valor)
+        {
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+                string comandoSql = "UPDATE caixa SET saldo_caixa = saldo_caixa + @valor WHERE id_caixa = @idCaixa";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@valor", valor);
+                    comando.Parameters.AddWithValue("@idCaixa", idCaixa);
+
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao atualizar o saldo do caixa: " + ex.Message);
+            }
+            BancodeDados.obterInstancia().desconectar();
         }
 
 
 
 
+        /*
         public void diminuirSaldoCaixa(int idCaixa, decimal valor)
         {
             string comandoSql = "UPDATE caixa SET saldo_caixa = saldo_caixa - @valor WHERE id_caixa = @idCaixa";
@@ -119,7 +143,7 @@ namespace PontoDeVenda_PAV.Controladores
                 throw new Exception("Erro ao diminuir saldo do caixa: " + ex.Message);
             }
         }
-
+        */
         protected override string criarComandoExclusao()
         {
             return "0";
