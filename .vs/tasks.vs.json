@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tarefa-PontoDeVenda_PAV",
+      "appliesTo": "/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "tarefa-PontoDeVenda_PAV",
+      "appliesTo": "PontoDeVenda_PAV/PontoDeVenda_PAV.csproj",
+      "type": "msbuild"
+    }
+  ]
+}
