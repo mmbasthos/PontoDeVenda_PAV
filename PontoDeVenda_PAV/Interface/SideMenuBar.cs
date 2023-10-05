@@ -177,7 +177,7 @@ namespace PontoDeVenda_PAV.Interface
         private void BtEstoque_Click(object sender, EventArgs e)
         {
             MostrarSubMenu(EstoquePanel);
-            MenuEstoque menuEstoque = new MenuEstoque();        
+            MenuEstoque menuEstoque = new MenuEstoque();
             menuEstoque.Show();
         }
         private void CadastrarProduto_Click(object sender, EventArgs e)

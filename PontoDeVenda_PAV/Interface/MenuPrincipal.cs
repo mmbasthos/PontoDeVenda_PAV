@@ -54,5 +54,17 @@ namespace PontoDeVenda_PAV.Interface
             TelaAberturaCaixa telaAberturaCaixa = new TelaAberturaCaixa();
             telaAberturaCaixa.ShowDialog();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SideMenuBar side = new SideMenuBar();
+            side.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ImprimirRelatorioVendas imprimirRelatorioVendas = new ImprimirRelatorioVendas();
+            imprimirRelatorioVendas.Show();
+        }
     }
 }

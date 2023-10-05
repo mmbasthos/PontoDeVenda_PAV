@@ -35,6 +35,8 @@ namespace PontoDeVenda_PAV.Controladores
         {
             try
             {
+                BancodeDados.obterInstancia().conectar();
+
                 string comandoSql = "SELECT id_venda FROM venda ORDER BY id_venda DESC LIMIT 1";
 
                 using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
@@ -56,12 +58,15 @@ namespace PontoDeVenda_PAV.Controladores
                 // Trate a exceção conforme necessário (por exemplo, registre-a ou a lance novamente).
                 throw new Exception("Erro ao obter venda atual: " + ex.Message);
             }
+            BancodeDados.obterInstancia().desconectar();
+
         }
 
-        
+
 
         public void AtualizarTotalVenda(int idVenda, decimal novoTotal)
-        { 
+        {
+            BancodeDados.obterInstancia().conectar();
             try
             {
                 string comandoSql = "UPDATE venda SET total_venda = @novoTotal WHERE id_venda = @idVenda";
@@ -78,7 +83,35 @@ namespace PontoDeVenda_PAV.Controladores
             {
                 throw new Exception("Erro ao atualizar o total da venda: " + ex.Message);
             }
+            BancodeDados.obterInstancia().desconectar();
         }
+
+        public void AtualizarSituacaoVenda(int idVenda, string situacao)
+        {
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+
+                string comandoSql = "UPDATE venda SET situacao_venda = @situacao WHERE id_venda = @id_venda";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@situacao", situacao);
+                    comando.Parameters.AddWithValue("@id_venda", idVenda);
+
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao atualizar situação da venda: " + ex.Message);
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+            }
+        }
+
         public decimal ObterTotalVenda(int idVenda)
         {
             BancodeDados.obterInstancia().conectar();

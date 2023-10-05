@@ -256,8 +256,17 @@ namespace PontoDeVenda_PAV.Interface
 
                     campoTroco.Text = "Troco: " + troco.ToString("C");
                 }
+                else
+                {
+                    campoTroco.Text = "Pag. Insuficiente";
+                }
             }
             BancodeDados.obterInstancia().desconectar();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

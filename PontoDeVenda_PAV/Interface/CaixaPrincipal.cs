@@ -18,8 +18,8 @@ namespace PontoDeVenda_PAV.Interface
     public partial class CaixaPrincipal : Form
     {
         int qtdprod = 1;
-       public decimal novoTotal;
-       
+        public decimal novoTotal;
+
         public CaixaPrincipal()
         {
             InitializeComponent();
@@ -62,6 +62,7 @@ namespace PontoDeVenda_PAV.Interface
             campoTotalProd.Text = "";
             campoTotalVenda.Text = "Total: 0,00";
             label2.Text = "0,00";
+
         }
 
         public void LimparTabelaProdutos()
@@ -116,7 +117,7 @@ namespace PontoDeVenda_PAV.Interface
         {
             try
             {
-                
+
                 BancodeDados.obterInstancia().conectar();
 
 
@@ -177,29 +178,6 @@ namespace PontoDeVenda_PAV.Interface
             }
 
 
-        }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                int rowIndex = e.RowIndex;
-                if (rowIndex >= 0)
-                {
-                    DataGridViewRow selectedRow = dataGridView1.Rows[rowIndex];
-
-                    // Obtendo o ID do produto
-                    int idProduto = Convert.ToInt32(selectedRow.Cells["id_produto"].Value);
-
-                    // Obtendo a quantidade
-                    int quantidade = Convert.ToInt32(selectedRow.Cells["quantidade_item"].Value);
-
-                    // Agora você tem o ID do produto e a quantidade para usar como precisar
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao obter dados da linha selecionada: " + ex.Message);
-            }
         }
 
 
@@ -356,11 +334,15 @@ namespace PontoDeVenda_PAV.Interface
 
         private void button5_Click(object sender, EventArgs e)
         {
-            BancodeDados.obterInstancia().conectar();
             try
             {
+                BancodeDados.obterInstancia().conectar();
+
+                ControladorItemVenda controladorItemVenda = new ControladorItemVenda();
+                ControladorCadastroProdutos controladorCadastroProdutos = new ControladorCadastroProdutos();
                 ControladorVendas controladorVendas = new ControladorVendas();
-                int idVendaAtual = controladorVendas.vendaAtual();
+                int idVenda = controladorVendas.vendaAtual();
+
                 int rowIndex = dataGridView1.CurrentCell.RowIndex;
                 if (rowIndex >= 0)
                 {
@@ -368,12 +350,22 @@ namespace PontoDeVenda_PAV.Interface
 
                     int idProduto = Convert.ToInt32(selectedRow.Cells["id_produto"].Value);
                     int quantidade = Convert.ToInt32(selectedRow.Cells["quantidade_item"].Value);
-                    decimal totalDelete = controladorVendas.ObterTotalVenda(idVendaAtual);
-                    DeletarItemVenda(idProduto, quantidade);
+
+                    // Deleta o item da venda
+                    controladorItemVenda.Deletar(idProduto, idVenda);
 
                     // Atualiza o label com o novo total
-                    novoTotal = ObterTotalVendaAtual()
+                    decimal valorUnitario = Convert.ToDecimal(selectedRow.Cells["valor_unitario_item"].Value);
+                    decimal totalDelete = valorUnitario * quantidade;
+                    novoTotal -= totalDelete; // Subtrai o total excluído
                     label2.Text = novoTotal.ToString();
+
+                    // Atualiza o estoque
+                    controladorCadastroProdutos.AumentarEstoque(idProduto, quantidade);
+
+                    controladorVendas.AtualizarTotalVenda(idVenda, novoTotal);
+
+                    AtualizarTabela();
                 }
             }
             catch (Exception ex)
@@ -388,6 +380,75 @@ namespace PontoDeVenda_PAV.Interface
 
 
 
+
+
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+
+                int idProduto = Convert.ToInt32(selectedRow.Cells["id_produto"].Value);
+                int quantidade = Convert.ToInt32(selectedRow.Cells["quantidade_item"].Value);
+
+                DeletarItemVenda(idProduto, quantidade);
+            }
+        }
+
+        private void CancelarVenda(int idVenda)
+        {
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+
+                ControladorVendas controladorVendas = new ControladorVendas();
+                ControladorItemVenda controladorItemVenda = new ControladorItemVenda();
+                ControladorCadastroProdutos controladorCadastroProdutos = new ControladorCadastroProdutos();
+
+                // Obter os produtos da venda
+                List<ItemVenda> itensVenda = controladorItemVenda.ObterItensDaVenda(idVenda);
+
+                // Para cada produto, devolver ao estoque
+                foreach (ItemVenda itemVenda in itensVenda)
+                {
+                    int idProduto = itemVenda.id_produto;
+                    int quantidade = itemVenda.quantidade_item;
+
+                    controladorCadastroProdutos.AumentarEstoque(idProduto, quantidade);
+                }
+
+                // Atualizar a situação da venda
+                controladorVendas.AtualizarSituacaoVenda(idVenda, "Cancelada");
+
+                // Manter o valor total da venda
+                decimal totalVenda = controladorVendas.ObterTotalVenda(idVenda);
+
+                // Atualiza o label com o novo total (se necessário)
+                label2.Text = totalVenda.ToString();
+
+                // Atualiza a tabela (se necessário)
+                AtualizarTabela();
+                LimparCamposCaixaPrincipal();
+                LimparTabelaProdutos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cancelar venda: " + ex.Message);
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+                MessageBox.Show("Venda Cancelada!");
+            }
+        }
+
+
         private void DeletarItemVenda(int idProduto, int quantidade)
         {
             try
@@ -399,25 +460,45 @@ namespace PontoDeVenda_PAV.Interface
                 ControladorVendas controladorVendas = new ControladorVendas();
                 int idVenda = controladorVendas.vendaAtual();
 
-                controladorItemVenda.Deletar(idProduto, idVenda);
+                // Primeiro, obtemos o ID do item_venda a partir do idProduto e idVenda
+                int idItemVenda = controladorItemVenda.ObterIdItemVenda(idProduto, idVenda);
 
-                // Calcula o novo total da venda
-                decimal valorUnitario = controladorCadastroProdutos.ObterValorProdutoPorId(idProduto);
-                decimal novoTotal = ObterTotalVendaAtual() - (valorUnitario * quantidade);
+                if (idItemVenda > 0)
+                {
+                    controladorItemVenda.Deletar(idProduto, idVenda); // Deletar agora requer dois argumentos
 
-                // Atualiza o banco de dados com o novo total
-                controladorVendas.AtualizarTotalVenda(idVenda, novoTotal);
+                    // Calcula o novo total da venda
+                    decimal valorUnitario = controladorCadastroProdutos.ObterValorProdutoPorId(idProduto);
+                    decimal totalExcluido = valorUnitario * quantidade;
+                    decimal novoTotal = ObterTotalVendaAtual() - totalExcluido;
 
-                // Retornar a quantidade para o estoque
-                controladorCadastroProdutos.AumentarEstoque(idProduto, quantidade);
+                    // Atualiza o banco de dados com o novo total
+                    controladorVendas.AtualizarTotalVenda(idVenda, novoTotal);
 
-                AtualizarTabela();
+                    // Retorna a quantidade para o estoque
+                    controladorCadastroProdutos.AumentarEstoque(idProduto, quantidade);
+
+                    // Atualiza o label com o novo total
+                    label2.Text = novoTotal.ToString();
+
+                    int rowIndex = dataGridView1.CurrentCell.RowIndex;
+                    if (rowIndex >= 0)
+                    {
+                        DataGridViewRow selectedRow = dataGridView1.Rows[rowIndex];
+                        dataGridView1.Rows.Remove(selectedRow);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("O item não foi encontrado na venda atual.");
+                }
 
                 BancodeDados.obterInstancia().confirmarTransacao();
             }
             catch (Exception ex)
             {
                 BancodeDados.obterInstancia().cancelarTransacao();
+                MessageBox.Show("Erro ao deletar item: " + ex.Message);
             }
             finally
             {
@@ -425,36 +506,13 @@ namespace PontoDeVenda_PAV.Interface
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void cancelarVendaF8ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ControladorVendas controladorVendas = new ControladorVendas();
+            int idVenda = controladorVendas.vendaAtual();
+            CancelarVenda(idVenda);
 
-                try
-                {
-                    BancodeDados.obterInstancia().conectar();
-                    ControladorVendas controladorVendas = new ControladorVendas();
-
-                    // Obtém o ID da venda atual
-                    int idVendaAtual = controladorVendas.vendaAtual();
-
-                // Atualiza o total da venda para 0
-
-                    decimal valor = controladorVendas.ObterTotalVenda(idVendaAtual);
-                controladorVendas.AtualizarTotalVenda(idVendaAtual, valor);
-                    // Atualiza o rótulo na interface com o novo total
-                    label2.Text = "0,00";
-                    
-            }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao zerar venda: " + ex.Message);
-                }
-                finally
-                {
-                    BancodeDados.obterInstancia().desconectar();
-                }
-            }
-
-  
+        }
     }
 }
 

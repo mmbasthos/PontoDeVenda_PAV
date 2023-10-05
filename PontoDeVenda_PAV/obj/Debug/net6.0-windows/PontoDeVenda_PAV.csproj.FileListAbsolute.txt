@@ -102,3 +102,5 @@ C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debu
 >>>>>>> 6d778ab70b061d4d581715c26619c267ab7af5ff
 C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.SideMenuBar.resources
 C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.FinalizarCompraPagamento.resources
+C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Properties.Resources.resources
+C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ImprimirRelatorioVendas.resources

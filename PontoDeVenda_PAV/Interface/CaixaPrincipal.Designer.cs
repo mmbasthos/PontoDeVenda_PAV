@@ -38,7 +38,6 @@
             estoqueF5ToolStripMenuItem = new ToolStripMenuItem();
             finalizarVendaF7ToolStripMenuItem = new ToolStripMenuItem();
             cancelarVendaF8ToolStripMenuItem = new ToolStripMenuItem();
-            inserirProdutoToolStripMenuItem = new ToolStripMenuItem();
             campoNomeCaixa = new TextBox();
             campoIdCaixa = new TextBox();
             campoNomeCliente = new TextBox();
@@ -54,14 +53,21 @@
             campoAddNum = new TextBox();
             button4 = new Button();
             button5 = new Button();
-            button6 = new Button();
+            label1 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(816, 35);
+            button1.Location = new Point(129, 82);
             button1.Name = "button1";
             button1.Size = new Size(31, 31);
             button1.TabIndex = 0;
@@ -72,7 +78,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { iniciarVendaToolStripMenuItem, iniciarCompraToolStripMenuItem, cadastrarClienteToolStripMenuItem, estoqueF5ToolStripMenuItem, finalizarVendaF7ToolStripMenuItem, cancelarVendaF8ToolStripMenuItem, inserirProdutoToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { iniciarVendaToolStripMenuItem, finalizarVendaF7ToolStripMenuItem, cancelarVendaF8ToolStripMenuItem, iniciarCompraToolStripMenuItem, cadastrarClienteToolStripMenuItem, estoqueF5ToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
@@ -140,20 +146,13 @@
             cancelarVendaF8ToolStripMenuItem.ShortcutKeys = Keys.F8;
             cancelarVendaF8ToolStripMenuItem.Size = new Size(154, 24);
             cancelarVendaF8ToolStripMenuItem.Text = "Cancelar Venda - F8";
-            // 
-            // inserirProdutoToolStripMenuItem
-            // 
-            inserirProdutoToolStripMenuItem.Name = "inserirProdutoToolStripMenuItem";
-            inserirProdutoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.U;
-            inserirProdutoToolStripMenuItem.Size = new Size(120, 24);
-            inserirProdutoToolStripMenuItem.Text = "Inserir Produto";
-            inserirProdutoToolStripMenuItem.Click += inserirProdutoToolStripMenuItem_Click;
+            cancelarVendaF8ToolStripMenuItem.Click += cancelarVendaF8ToolStripMenuItem_Click;
             // 
             // campoNomeCaixa
             // 
             campoNomeCaixa.Enabled = false;
             campoNomeCaixa.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
-            campoNomeCaixa.Location = new Point(14, 36);
+            campoNomeCaixa.Location = new Point(16, 69);
             campoNomeCaixa.Margin = new Padding(3, 4, 3, 4);
             campoNomeCaixa.Name = "campoNomeCaixa";
             campoNomeCaixa.Size = new Size(247, 63);
@@ -163,7 +162,7 @@
             // 
             campoIdCaixa.Enabled = false;
             campoIdCaixa.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
-            campoIdCaixa.Location = new Point(269, 36);
+            campoIdCaixa.Location = new Point(271, 69);
             campoIdCaixa.Margin = new Padding(3, 4, 3, 4);
             campoIdCaixa.Name = "campoIdCaixa";
             campoIdCaixa.Size = new Size(155, 63);
@@ -173,7 +172,7 @@
             // 
             campoNomeCliente.Enabled = false;
             campoNomeCliente.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
-            campoNomeCliente.Location = new Point(431, 36);
+            campoNomeCliente.Location = new Point(433, 69);
             campoNomeCliente.Margin = new Padding(3, 4, 3, 4);
             campoNomeCliente.Name = "campoNomeCliente";
             campoNomeCliente.Size = new Size(1095, 63);
@@ -183,13 +182,14 @@
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(431, 113);
+            dataGridView1.Location = new Point(433, 146);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1096, 632);
+            dataGridView1.Size = new Size(1096, 575);
             dataGridView1.TabIndex = 6;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // campoNomeProd
             // 
@@ -278,9 +278,10 @@
             // 
             // campoAddNum
             // 
-            campoAddNum.Location = new Point(15, 718);
+            campoAddNum.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            campoAddNum.Location = new Point(16, 678);
             campoAddNum.Name = "campoAddNum";
-            campoAddNum.Size = new Size(410, 27);
+            campoAddNum.Size = new Size(410, 43);
             campoAddNum.TabIndex = 17;
             campoAddNum.TextChanged += campoAddNum_TextChanged;
             // 
@@ -290,36 +291,113 @@
             button4.Name = "button4";
             button4.Size = new Size(70, 62);
             button4.TabIndex = 18;
-            button4.Text = "ok";
+            button4.Text = "Lançar";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
             // button5
             // 
-            button5.Location = new Point(330, 683);
+            button5.Location = new Point(327, 146);
             button5.Name = "button5";
-            button5.Size = new Size(94, 29);
+            button5.Size = new Size(100, 100);
             button5.TabIndex = 19;
             button5.Text = "Excluir";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
-            // button6
+            // label1
             // 
-            button6.Location = new Point(333, 423);
-            button6.Name = "button6";
-            button6.Size = new Size(94, 29);
-            button6.TabIndex = 20;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(16, 34);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 31);
+            label1.TabIndex = 20;
+            label1.Text = "Caixa";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(433, 34);
+            label3.Name = "label3";
+            label3.Size = new Size(85, 31);
+            label3.TabIndex = 21;
+            label3.Text = "Cliente";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(271, 34);
+            label4.Name = "label4";
+            label4.Size = new Size(40, 31);
+            label4.TabIndex = 22;
+            label4.Text = "N°";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(946, 725);
+            label5.Name = "label5";
+            label5.Size = new Size(151, 31);
+            label5.TabIndex = 23;
+            label5.Text = "Total Produto";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(797, 725);
+            label6.Name = "label6";
+            label6.Size = new Size(53, 31);
+            label6.TabIndex = 24;
+            label6.Text = "Qtd";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(639, 725);
+            label7.Name = "label7";
+            label7.Size = new Size(125, 31);
+            label7.TabIndex = 25;
+            label7.Text = "Valor Unid.";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(16, 725);
+            label8.Name = "label8";
+            label8.Size = new Size(96, 31);
+            label8.TabIndex = 26;
+            label8.Text = "Produto";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(16, 644);
+            label9.Name = "label9";
+            label9.Size = new Size(193, 31);
+            label9.TabIndex = 27;
+            label9.Text = "Inserir ID Produto";
             // 
             // CaixaPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1541, 845);
-            Controls.Add(button6);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label1);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(campoAddNum);
@@ -373,10 +451,16 @@
         private Label label2;
         private Button button3;
         public TextBox campoNomeCliente;
-        private ToolStripMenuItem inserirProdutoToolStripMenuItem;
         private TextBox campoAddNum;
         private Button button4;
         private Button button5;
-        private Button button6;
+        private Label label1;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
     }
 }

@@ -40,8 +40,9 @@
             // 
             campoDinRecebido.Location = new Point(12, 79);
             campoDinRecebido.Name = "campoDinRecebido";
+            campoDinRecebido.PlaceholderText = "Dinheiro Recebido";
             campoDinRecebido.Size = new Size(146, 27);
-            campoDinRecebido.TabIndex = 0;
+            campoDinRecebido.TabIndex = 2;
             campoDinRecebido.TextChanged += campoDinRecebido_TextChanged;
             // 
             // campoTotal
@@ -70,6 +71,7 @@
             button2.TabIndex = 3;
             button2.Text = "Continuar Compra";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // campoFormaPag
             // 
@@ -77,20 +79,21 @@
             campoFormaPag.Location = new Point(12, 12);
             campoFormaPag.Name = "campoFormaPag";
             campoFormaPag.Size = new Size(298, 28);
-            campoFormaPag.TabIndex = 4;
+            campoFormaPag.TabIndex = 0;
             // 
             // campoTroco
             // 
             campoTroco.Location = new Point(164, 79);
             campoTroco.Name = "campoTroco";
+            campoTroco.PlaceholderText = "Troco";
             campoTroco.Size = new Size(146, 27);
-            campoTroco.TabIndex = 5;
+            campoTroco.TabIndex = 4;
             // 
             // FinalizarCompraPagamento
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(322, 170);
+            ClientSize = new Size(322, 171);
             Controls.Add(campoTroco);
             Controls.Add(campoFormaPag);
             Controls.Add(button2);
@@ -113,5 +116,7 @@
         private Button button2;
         private ComboBox campoFormaPag;
         private TextBox campoTroco;
+        private Label label1;
+        private Label label2;
     }
 }

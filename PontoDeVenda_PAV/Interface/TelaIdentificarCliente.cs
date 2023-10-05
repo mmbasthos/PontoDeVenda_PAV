@@ -125,7 +125,7 @@ namespace PontoDeVenda_PAV.Interface
             }
             venda.data_venda = DateTime.Now.Date;
             venda.hora_venda = DateTime.Now.TimeOfDay;
-            venda.situacao_venda = "ok";
+            venda.situacao_venda = "Ativa";
 
 
 

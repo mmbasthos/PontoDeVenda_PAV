@@ -47,12 +47,15 @@
             CadastroCliente = new Button();
             Cadastro = new Button();
             DisplayFormsPanel = new Panel();
+            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SideMenuPanel.SuspendLayout();
             EstoquePanel.SuspendLayout();
             ConsultaPanel.SuspendLayout();
             CadastroPanel.SuspendLayout();
+            DisplayFormsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -62,16 +65,18 @@
             panel1.Controls.Add(BotaoDeSair);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(950, 29);
+            panel1.Size = new Size(1086, 39);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 3);
+            pictureBox1.Location = new Point(14, 4);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(29, 23);
+            pictureBox1.Size = new Size(33, 31);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -83,10 +88,11 @@
             BotaoDeSair.ForeColor = SystemColors.Desktop;
             BotaoDeSair.Image = (Image)resources.GetObject("BotaoDeSair.Image");
             BotaoDeSair.ImageAlign = ContentAlignment.MiddleLeft;
-            BotaoDeSair.Location = new Point(914, 0);
+            BotaoDeSair.Location = new Point(1045, 0);
+            BotaoDeSair.Margin = new Padding(3, 4, 3, 4);
             BotaoDeSair.Name = "BotaoDeSair";
-            BotaoDeSair.Padding = new Padding(5, 0, 0, 0);
-            BotaoDeSair.Size = new Size(36, 29);
+            BotaoDeSair.Padding = new Padding(6, 0, 0, 0);
+            BotaoDeSair.Size = new Size(41, 39);
             BotaoDeSair.TabIndex = 7;
             BotaoDeSair.TextAlign = ContentAlignment.MiddleLeft;
             BotaoDeSair.UseVisualStyleBackColor = true;
@@ -103,9 +109,10 @@
             SideMenuPanel.Controls.Add(CadastroPanel);
             SideMenuPanel.Controls.Add(Cadastro);
             SideMenuPanel.Dock = DockStyle.Left;
-            SideMenuPanel.Location = new Point(0, 29);
+            SideMenuPanel.Location = new Point(0, 39);
+            SideMenuPanel.Margin = new Padding(3, 4, 3, 4);
             SideMenuPanel.Name = "SideMenuPanel";
-            SideMenuPanel.Size = new Size(180, 571);
+            SideMenuPanel.Size = new Size(206, 761);
             SideMenuPanel.TabIndex = 1;
             SideMenuPanel.Paint += SideMenuPanel_Paint;
             // 
@@ -115,9 +122,10 @@
             EstoquePanel.Controls.Add(ConsultarTipoDeProduto);
             EstoquePanel.Controls.Add(CadastrarTipoProduto);
             EstoquePanel.Controls.Add(CadastrarProduto);
-            EstoquePanel.Location = new Point(0, 226);
+            EstoquePanel.Location = new Point(0, 301);
+            EstoquePanel.Margin = new Padding(3, 4, 3, 4);
             EstoquePanel.Name = "EstoquePanel";
-            EstoquePanel.Size = new Size(180, 90);
+            EstoquePanel.Size = new Size(206, 120);
             EstoquePanel.TabIndex = 6;
             // 
             // ConsultarTipoDeProduto
@@ -128,10 +136,11 @@
             ConsultarTipoDeProduto.ForeColor = SystemColors.Desktop;
             ConsultarTipoDeProduto.Image = (Image)resources.GetObject("ConsultarTipoDeProduto.Image");
             ConsultarTipoDeProduto.ImageAlign = ContentAlignment.MiddleLeft;
-            ConsultarTipoDeProduto.Location = new Point(0, 58);
+            ConsultarTipoDeProduto.Location = new Point(0, 77);
+            ConsultarTipoDeProduto.Margin = new Padding(3, 4, 3, 4);
             ConsultarTipoDeProduto.Name = "ConsultarTipoDeProduto";
-            ConsultarTipoDeProduto.Padding = new Padding(20, 0, 0, 0);
-            ConsultarTipoDeProduto.Size = new Size(180, 30);
+            ConsultarTipoDeProduto.Padding = new Padding(23, 0, 0, 0);
+            ConsultarTipoDeProduto.Size = new Size(206, 40);
             ConsultarTipoDeProduto.TabIndex = 2;
             ConsultarTipoDeProduto.Text = "     Consultar produto";
             ConsultarTipoDeProduto.TextAlign = ContentAlignment.MiddleLeft;
@@ -146,10 +155,11 @@
             CadastrarTipoProduto.ForeColor = SystemColors.Desktop;
             CadastrarTipoProduto.Image = (Image)resources.GetObject("CadastrarTipoProduto.Image");
             CadastrarTipoProduto.ImageAlign = ContentAlignment.MiddleLeft;
-            CadastrarTipoProduto.Location = new Point(0, 28);
+            CadastrarTipoProduto.Location = new Point(0, 37);
+            CadastrarTipoProduto.Margin = new Padding(3, 4, 3, 4);
             CadastrarTipoProduto.Name = "CadastrarTipoProduto";
-            CadastrarTipoProduto.Padding = new Padding(20, 0, 0, 0);
-            CadastrarTipoProduto.Size = new Size(180, 30);
+            CadastrarTipoProduto.Padding = new Padding(23, 0, 0, 0);
+            CadastrarTipoProduto.Size = new Size(206, 40);
             CadastrarTipoProduto.TabIndex = 1;
             CadastrarTipoProduto.Text = "     Cadastrar tipo";
             CadastrarTipoProduto.TextAlign = ContentAlignment.MiddleLeft;
@@ -165,9 +175,10 @@
             CadastrarProduto.Image = (Image)resources.GetObject("CadastrarProduto.Image");
             CadastrarProduto.ImageAlign = ContentAlignment.MiddleLeft;
             CadastrarProduto.Location = new Point(-1, -1);
+            CadastrarProduto.Margin = new Padding(3, 4, 3, 4);
             CadastrarProduto.Name = "CadastrarProduto";
-            CadastrarProduto.Padding = new Padding(20, 0, 0, 0);
-            CadastrarProduto.Size = new Size(181, 30);
+            CadastrarProduto.Padding = new Padding(23, 0, 0, 0);
+            CadastrarProduto.Size = new Size(207, 40);
             CadastrarProduto.TabIndex = 0;
             CadastrarProduto.Text = "     Cadastrar produto";
             CadastrarProduto.TextAlign = ContentAlignment.MiddleLeft;
@@ -182,10 +193,11 @@
             BtEstoque.ForeColor = SystemColors.Desktop;
             BtEstoque.Image = (Image)resources.GetObject("BtEstoque.Image");
             BtEstoque.ImageAlign = ContentAlignment.MiddleLeft;
-            BtEstoque.Location = new Point(0, 192);
+            BtEstoque.Location = new Point(0, 256);
+            BtEstoque.Margin = new Padding(3, 4, 3, 4);
             BtEstoque.Name = "BtEstoque";
-            BtEstoque.Padding = new Padding(5, 0, 0, 0);
-            BtEstoque.Size = new Size(180, 35);
+            BtEstoque.Padding = new Padding(6, 0, 0, 0);
+            BtEstoque.Size = new Size(206, 47);
             BtEstoque.TabIndex = 5;
             BtEstoque.Text = "     Estoque";
             BtEstoque.TextAlign = ContentAlignment.MiddleLeft;
@@ -197,9 +209,10 @@
             ConsultaPanel.BackColor = Color.FromArgb(239, 239, 239);
             ConsultaPanel.Controls.Add(ConsultaFornecedor);
             ConsultaPanel.Controls.Add(ConsultaCliente);
-            ConsultaPanel.Location = new Point(0, 130);
+            ConsultaPanel.Location = new Point(0, 173);
+            ConsultaPanel.Margin = new Padding(3, 4, 3, 4);
             ConsultaPanel.Name = "ConsultaPanel";
-            ConsultaPanel.Size = new Size(180, 61);
+            ConsultaPanel.Size = new Size(206, 81);
             ConsultaPanel.TabIndex = 4;
             // 
             // ConsultaFornecedor
@@ -210,10 +223,11 @@
             ConsultaFornecedor.ForeColor = SystemColors.Desktop;
             ConsultaFornecedor.Image = (Image)resources.GetObject("ConsultaFornecedor.Image");
             ConsultaFornecedor.ImageAlign = ContentAlignment.MiddleLeft;
-            ConsultaFornecedor.Location = new Point(0, 29);
+            ConsultaFornecedor.Location = new Point(0, 39);
+            ConsultaFornecedor.Margin = new Padding(3, 4, 3, 4);
             ConsultaFornecedor.Name = "ConsultaFornecedor";
-            ConsultaFornecedor.Padding = new Padding(20, 0, 0, 0);
-            ConsultaFornecedor.Size = new Size(180, 30);
+            ConsultaFornecedor.Padding = new Padding(23, 0, 0, 0);
+            ConsultaFornecedor.Size = new Size(206, 40);
             ConsultaFornecedor.TabIndex = 1;
             ConsultaFornecedor.Text = "     Fornecedor";
             ConsultaFornecedor.TextAlign = ContentAlignment.MiddleLeft;
@@ -229,9 +243,10 @@
             ConsultaCliente.Image = (Image)resources.GetObject("ConsultaCliente.Image");
             ConsultaCliente.ImageAlign = ContentAlignment.MiddleLeft;
             ConsultaCliente.Location = new Point(-1, 0);
+            ConsultaCliente.Margin = new Padding(3, 4, 3, 4);
             ConsultaCliente.Name = "ConsultaCliente";
-            ConsultaCliente.Padding = new Padding(20, 0, 0, 0);
-            ConsultaCliente.Size = new Size(181, 30);
+            ConsultaCliente.Padding = new Padding(23, 0, 0, 0);
+            ConsultaCliente.Size = new Size(207, 40);
             ConsultaCliente.TabIndex = 0;
             ConsultaCliente.Text = "     Cliente";
             ConsultaCliente.TextAlign = ContentAlignment.MiddleLeft;
@@ -246,11 +261,12 @@
             BtConsulta.ForeColor = SystemColors.Desktop;
             BtConsulta.Image = (Image)resources.GetObject("BtConsulta.Image");
             BtConsulta.ImageAlign = ContentAlignment.TopLeft;
-            BtConsulta.Location = new Point(0, 96);
+            BtConsulta.Location = new Point(0, 128);
+            BtConsulta.Margin = new Padding(3, 4, 3, 4);
             BtConsulta.Name = "BtConsulta";
-            BtConsulta.Padding = new Padding(5, 0, 0, 0);
+            BtConsulta.Padding = new Padding(6, 0, 0, 0);
             BtConsulta.RightToLeft = RightToLeft.No;
-            BtConsulta.Size = new Size(180, 35);
+            BtConsulta.Size = new Size(206, 47);
             BtConsulta.TabIndex = 3;
             BtConsulta.Text = "     Consulta";
             BtConsulta.TextAlign = ContentAlignment.MiddleLeft;
@@ -262,9 +278,10 @@
             CadastroPanel.BackColor = Color.FromArgb(239, 239, 239);
             CadastroPanel.Controls.Add(CadastroFornecedor);
             CadastroPanel.Controls.Add(CadastroCliente);
-            CadastroPanel.Location = new Point(0, 34);
+            CadastroPanel.Location = new Point(0, 45);
+            CadastroPanel.Margin = new Padding(3, 4, 3, 4);
             CadastroPanel.Name = "CadastroPanel";
-            CadastroPanel.Size = new Size(180, 61);
+            CadastroPanel.Size = new Size(206, 81);
             CadastroPanel.TabIndex = 2;
             // 
             // CadastroFornecedor
@@ -275,10 +292,11 @@
             CadastroFornecedor.ForeColor = SystemColors.Desktop;
             CadastroFornecedor.Image = (Image)resources.GetObject("CadastroFornecedor.Image");
             CadastroFornecedor.ImageAlign = ContentAlignment.MiddleLeft;
-            CadastroFornecedor.Location = new Point(0, 30);
+            CadastroFornecedor.Location = new Point(0, 40);
+            CadastroFornecedor.Margin = new Padding(3, 4, 3, 4);
             CadastroFornecedor.Name = "CadastroFornecedor";
-            CadastroFornecedor.Padding = new Padding(20, 0, 0, 0);
-            CadastroFornecedor.Size = new Size(180, 30);
+            CadastroFornecedor.Padding = new Padding(23, 0, 0, 0);
+            CadastroFornecedor.Size = new Size(206, 40);
             CadastroFornecedor.TabIndex = 1;
             CadastroFornecedor.Text = "     Fornecedor";
             CadastroFornecedor.TextAlign = ContentAlignment.MiddleLeft;
@@ -294,9 +312,10 @@
             CadastroCliente.Image = (Image)resources.GetObject("CadastroCliente.Image");
             CadastroCliente.ImageAlign = ContentAlignment.MiddleLeft;
             CadastroCliente.Location = new Point(-1, -1);
+            CadastroCliente.Margin = new Padding(3, 4, 3, 4);
             CadastroCliente.Name = "CadastroCliente";
-            CadastroCliente.Padding = new Padding(20, 0, 0, 0);
-            CadastroCliente.Size = new Size(181, 30);
+            CadastroCliente.Padding = new Padding(23, 0, 0, 0);
+            CadastroCliente.Size = new Size(207, 40);
             CadastroCliente.TabIndex = 0;
             CadastroCliente.Text = "     Cliente";
             CadastroCliente.TextAlign = ContentAlignment.MiddleLeft;
@@ -312,9 +331,10 @@
             Cadastro.Image = (Image)resources.GetObject("Cadastro.Image");
             Cadastro.ImageAlign = ContentAlignment.MiddleLeft;
             Cadastro.Location = new Point(0, 0);
+            Cadastro.Margin = new Padding(3, 4, 3, 4);
             Cadastro.Name = "Cadastro";
-            Cadastro.Padding = new Padding(5, 0, 0, 0);
-            Cadastro.Size = new Size(180, 35);
+            Cadastro.Padding = new Padding(6, 0, 0, 0);
+            Cadastro.Size = new Size(206, 47);
             Cadastro.TabIndex = 0;
             Cadastro.Text = "     Cadastro";
             Cadastro.TextAlign = ContentAlignment.MiddleLeft;
@@ -323,23 +343,35 @@
             // 
             // DisplayFormsPanel
             // 
+            DisplayFormsPanel.Controls.Add(pictureBox2);
             DisplayFormsPanel.Dock = DockStyle.Fill;
-            DisplayFormsPanel.Location = new Point(180, 29);
+            DisplayFormsPanel.Location = new Point(206, 39);
+            DisplayFormsPanel.Margin = new Padding(3, 4, 3, 4);
             DisplayFormsPanel.Name = "DisplayFormsPanel";
-            DisplayFormsPanel.Size = new Size(770, 571);
+            DisplayFormsPanel.Size = new Size(880, 761);
             DisplayFormsPanel.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(-5, -21);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(39, 814);
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // SideMenuBar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
-            ClientSize = new Size(950, 600);
+            ClientSize = new Size(1086, 800);
             Controls.Add(DisplayFormsPanel);
             Controls.Add(SideMenuPanel);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            MinimumSize = new Size(950, 600);
+            Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(1086, 800);
             Name = "SideMenuBar";
             Text = "SideMenuBar";
             Load += SideMenuBar_Load;
@@ -349,6 +381,8 @@
             EstoquePanel.ResumeLayout(false);
             ConsultaPanel.ResumeLayout(false);
             CadastroPanel.ResumeLayout(false);
+            DisplayFormsPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -372,5 +406,6 @@
         private PictureBox pictureBox1;
         private Panel DisplayFormsPanel;
         private Button BotaoDeSair;
+        private PictureBox pictureBox2;
     }
 }

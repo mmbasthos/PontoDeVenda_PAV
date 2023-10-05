@@ -31,6 +31,49 @@ namespace PontoDeVenda_PAV.Controladores
             return "DELETE FORM item_venda WHERE id_item_venda = @id_item_venda";
         }
 
+        public List<ItemVenda> ObterItensDaVenda(int idVenda)
+        {
+            List<ItemVenda> itens = new List<ItemVenda>();
+
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+
+                string comandoSql = "SELECT * FROM item_venda WHERE id_venda = @id_venda";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@id_venda", idVenda);
+
+                    using (MySqlDataReader reader = comando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ItemVenda item = new ItemVenda();
+                            item.id_produto = Convert.ToInt32(reader["Produto_id_produto"]);
+                            item.id_venda = Convert.ToInt32(reader["id_venda"]);
+                            item.quantidade_item = Convert.ToInt32(reader["quantidade_item"]);
+                            item.valor_unitario_item = Convert.ToDecimal(reader["valor_unitario_item"]);
+                            item.total_item = Convert.ToDecimal(reader["total_item"]);
+
+                            itens.Add(item);
+                        }
+                    }
+                }
+
+                return itens;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao obter itens da venda: " + ex.Message);
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+            }
+        }
+
+
         public decimal ObterTotalItemVenda(int idProduto, int idVenda)
         {
             try
@@ -68,7 +111,10 @@ namespace PontoDeVenda_PAV.Controladores
             {
                 BancodeDados.obterInstancia().desconectar();
             }
+
         }
+
+
 
 
         public void Deletar(int idProduto, int idVenda)
@@ -87,6 +133,41 @@ namespace PontoDeVenda_PAV.Controladores
 
             BancodeDados.obterInstancia().desconectar();
         }
+
+        public int ObterIdItemVenda(int idProduto, int idVenda)
+        {
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+
+                string comandoSql = "SELECT id_item_venda FROM item_venda WHERE Produto_id_produto = @idProduto AND id_venda = @idVenda";
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@idProduto", idProduto);
+                    comando.Parameters.AddWithValue("@idVenda", idVenda);
+                    object result = comando.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                    else
+                    {
+                        return -1; // Retorna -1 se o item de venda não for encontrado
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter ID do item de venda: " + ex.Message);
+                return -1;
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+            }
+        }
+
 
         protected override void criarParametros(MySqlCommand comando)
         {
