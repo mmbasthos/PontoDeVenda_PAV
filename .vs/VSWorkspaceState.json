@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\PontoDeVenda_PAV",
-    "\\PontoDeVenda_PAV\\Entidades",
-    "\\PontoDeVenda_PAV\\Interface"
+    "\\PontoDeVenda_PAV"
   ],
-  "SelectedNode": "\\PontoDeVenda_PAV\\Entidades\\Entidades.cs",
   "PreviewInSolutionExplorer": false
 }
