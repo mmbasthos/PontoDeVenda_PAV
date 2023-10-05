@@ -54,7 +54,7 @@ namespace PontoDeVenda_PAV.Entidades
         public override void lerDados(MySqlDataReader leitorDados)
         {
             id_conta_receber = int.Parse(leitorDados[ATRIBUTO_ID_CONTA_RECEBER].ToString());
-            descricao_receber = leitorDados[ATRIBUTO_ID_CONTA_RECEBER].ToString();
+            descricao_receber = leitorDados[ATRIBUTO_DESCRICAO_RECEBER].ToString();
 
             data_lancamento = DateTime.Parse(leitorDados[ATRIBUTO_DATA_LANCAMENTO].ToString());
             data_vencimento = DateTime.Parse(leitorDados[ATRIBUTO_DATA_VENCIMENTO].ToString());
