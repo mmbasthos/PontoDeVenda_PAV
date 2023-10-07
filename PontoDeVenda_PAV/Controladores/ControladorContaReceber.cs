@@ -53,7 +53,7 @@ public class Class1
 
             comando.Parameters.Add(conta_receber.ATRIBUTO_ID_CLIENTE_CLIENTE, MySqlDbType.Int32);
             comando.Parameters.Add(conta_receber.ATRIBUTO_ID_FORMA_PAGAMENTO, MySqlDbType.Int32);
-            
+
 
         }
         protected override void criarParametrosChavePrimaria(MySqlCommand comando)
@@ -61,3 +61,4 @@ public class Class1
             comando.Parameters.Add(Fornecedor.ATRIBUTO_ID_CONTA_RECEBER, MySqlDbType.Int32);
         }
     }
+}

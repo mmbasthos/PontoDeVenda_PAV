@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuEstoque));
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -38,13 +39,16 @@
             campoPesqNome = new TextBox();
             campoPesqID = new TextBox();
             dataGridView1 = new DataGridView();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(10, 9);
+            button1.Location = new Point(11, 84);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(212, 37);
@@ -55,7 +59,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(228, 9);
+            button2.Location = new Point(229, 84);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(212, 37);
@@ -66,7 +70,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(444, 9);
+            button3.Location = new Point(445, 84);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(212, 37);
@@ -85,10 +89,10 @@
             panel1.Controls.Add(campoPesqNome);
             panel1.Controls.Add(campoPesqID);
             panel1.Controls.Add(dataGridView1);
-            panel1.Location = new Point(10, 58);
+            panel1.Location = new Point(10, 180);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1084, 438);
+            panel1.Size = new Size(1091, 487);
             panel1.TabIndex = 4;
             // 
             // comboBoxFiltroTipo
@@ -105,10 +109,10 @@
             // 
             // button5
             // 
-            button5.Location = new Point(964, 2);
+            button5.Location = new Point(960, 3);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
-            button5.Size = new Size(27, 22);
+            button5.Size = new Size(31, 33);
             button5.TabIndex = 4;
             button5.Text = "O";
             button5.UseVisualStyleBackColor = true;
@@ -119,7 +123,7 @@
             button4.Location = new Point(997, 2);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(82, 22);
+            button4.Size = new Size(82, 34);
             button4.TabIndex = 3;
             button4.Text = "Excluir";
             button4.UseVisualStyleBackColor = true;
@@ -149,8 +153,9 @@
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.FromArgb(157, 165, 174);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(-1, 27);
+            dataGridView1.Location = new Point(3, 65);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -159,11 +164,35 @@
             dataGridView1.TabIndex = 0;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(14, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(36, 34);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(157, 165, 174);
+            label1.Location = new Point(51, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(83, 25);
+            label1.TabIndex = 6;
+            label1.Text = "Estoque";
+            label1.Click += label1_Click;
+            // 
             // MenuEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1104, 505);
+            BackColor = Color.FromArgb(239, 239, 239);
+            ClientSize = new Size(1112, 678);
+            Controls.Add(label1);
+            Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -176,7 +205,9 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -191,5 +222,7 @@
         private TextBox campoPesqID;
         private Button button5;
         private ComboBox comboBoxFiltroTipo;
+        private PictureBox pictureBox1;
+        private Label label1;
     }
 }

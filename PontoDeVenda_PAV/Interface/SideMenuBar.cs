@@ -207,5 +207,19 @@ namespace PontoDeVenda_PAV.Interface
         {
             this.Close();
         }
+
+        private void pictureBox1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            //aqui ele vai abrir o menu principal que estava antes configurado para ser a primeira tela do aplicativo
+            MenuPrincipal telaMenuPrincipal = new MenuPrincipal();
+            telaMenuPrincipal.ShowDialog();
+
+            EsconderSubMenu();
+        }
     }
 }

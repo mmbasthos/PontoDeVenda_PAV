@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\PontoDeVenda_PAV"
+    "\\PontoDeVenda_PAV",
+    "\\PontoDeVenda_PAV\\bin"
   ],
+  "SelectedNode": "\\PontoDeVenda_PAV\\bin",
   "PreviewInSolutionExplorer": false
 }

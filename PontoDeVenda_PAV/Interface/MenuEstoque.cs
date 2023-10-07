@@ -321,5 +321,10 @@ namespace PontoDeVenda_PAV.Interface
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
