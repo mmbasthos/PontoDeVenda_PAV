@@ -33,15 +33,11 @@
             MainMenuButton = new Button();
             BotaoDeSair = new Button();
             SideMenuPanel = new Panel();
-            EstoquePanel = new Panel();
-            ConsultarTipoDeProduto = new Button();
-            CadastrarTipoProduto = new Button();
-            CadastrarProduto = new Button();
-            BtEstoque = new Button();
             ConsultaPanel = new Panel();
             ConsultaFornecedor = new Button();
             ConsultaCliente = new Button();
             BtConsulta = new Button();
+            BtEstoque = new Button();
             CadastroPanel = new Panel();
             CadastroFornecedor = new Button();
             CadastroCliente = new Button();
@@ -50,7 +46,6 @@
             pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             SideMenuPanel.SuspendLayout();
-            EstoquePanel.SuspendLayout();
             ConsultaPanel.SuspendLayout();
             CadastroPanel.SuspendLayout();
             DisplayFormsPanel.SuspendLayout();
@@ -106,10 +101,9 @@
             // 
             SideMenuPanel.AutoScroll = true;
             SideMenuPanel.BackColor = Color.WhiteSmoke;
-            SideMenuPanel.Controls.Add(EstoquePanel);
-            SideMenuPanel.Controls.Add(BtEstoque);
             SideMenuPanel.Controls.Add(ConsultaPanel);
             SideMenuPanel.Controls.Add(BtConsulta);
+            SideMenuPanel.Controls.Add(BtEstoque);
             SideMenuPanel.Controls.Add(CadastroPanel);
             SideMenuPanel.Controls.Add(Cadastro);
             SideMenuPanel.Dock = DockStyle.Left;
@@ -118,89 +112,6 @@
             SideMenuPanel.Size = new Size(180, 703);
             SideMenuPanel.TabIndex = 1;
             SideMenuPanel.Paint += SideMenuPanel_Paint;
-            // 
-            // EstoquePanel
-            // 
-            EstoquePanel.BackColor = Color.FromArgb(239, 239, 239);
-            EstoquePanel.Controls.Add(ConsultarTipoDeProduto);
-            EstoquePanel.Controls.Add(CadastrarTipoProduto);
-            EstoquePanel.Controls.Add(CadastrarProduto);
-            EstoquePanel.Location = new Point(0, 226);
-            EstoquePanel.Name = "EstoquePanel";
-            EstoquePanel.Size = new Size(180, 90);
-            EstoquePanel.TabIndex = 6;
-            // 
-            // ConsultarTipoDeProduto
-            // 
-            ConsultarTipoDeProduto.FlatAppearance.BorderSize = 0;
-            ConsultarTipoDeProduto.FlatStyle = FlatStyle.Flat;
-            ConsultarTipoDeProduto.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            ConsultarTipoDeProduto.ForeColor = SystemColors.Desktop;
-            ConsultarTipoDeProduto.Image = (Image)resources.GetObject("ConsultarTipoDeProduto.Image");
-            ConsultarTipoDeProduto.ImageAlign = ContentAlignment.MiddleLeft;
-            ConsultarTipoDeProduto.Location = new Point(0, 58);
-            ConsultarTipoDeProduto.Name = "ConsultarTipoDeProduto";
-            ConsultarTipoDeProduto.Padding = new Padding(20, 0, 0, 0);
-            ConsultarTipoDeProduto.Size = new Size(180, 30);
-            ConsultarTipoDeProduto.TabIndex = 2;
-            ConsultarTipoDeProduto.Text = "     Consultar produto";
-            ConsultarTipoDeProduto.TextAlign = ContentAlignment.MiddleLeft;
-            ConsultarTipoDeProduto.UseVisualStyleBackColor = true;
-            ConsultarTipoDeProduto.Click += ConsultarTipoDeProduto_Click;
-            // 
-            // CadastrarTipoProduto
-            // 
-            CadastrarTipoProduto.FlatAppearance.BorderSize = 0;
-            CadastrarTipoProduto.FlatStyle = FlatStyle.Flat;
-            CadastrarTipoProduto.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            CadastrarTipoProduto.ForeColor = SystemColors.Desktop;
-            CadastrarTipoProduto.Image = (Image)resources.GetObject("CadastrarTipoProduto.Image");
-            CadastrarTipoProduto.ImageAlign = ContentAlignment.MiddleLeft;
-            CadastrarTipoProduto.Location = new Point(0, 28);
-            CadastrarTipoProduto.Name = "CadastrarTipoProduto";
-            CadastrarTipoProduto.Padding = new Padding(20, 0, 0, 0);
-            CadastrarTipoProduto.Size = new Size(180, 30);
-            CadastrarTipoProduto.TabIndex = 1;
-            CadastrarTipoProduto.Text = "     Cadastrar tipo";
-            CadastrarTipoProduto.TextAlign = ContentAlignment.MiddleLeft;
-            CadastrarTipoProduto.UseVisualStyleBackColor = true;
-            CadastrarTipoProduto.Click += CadastrarTipoProduto_Click;
-            // 
-            // CadastrarProduto
-            // 
-            CadastrarProduto.FlatAppearance.BorderSize = 0;
-            CadastrarProduto.FlatStyle = FlatStyle.Flat;
-            CadastrarProduto.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            CadastrarProduto.ForeColor = SystemColors.Desktop;
-            CadastrarProduto.Image = (Image)resources.GetObject("CadastrarProduto.Image");
-            CadastrarProduto.ImageAlign = ContentAlignment.MiddleLeft;
-            CadastrarProduto.Location = new Point(-1, -1);
-            CadastrarProduto.Name = "CadastrarProduto";
-            CadastrarProduto.Padding = new Padding(20, 0, 0, 0);
-            CadastrarProduto.Size = new Size(181, 30);
-            CadastrarProduto.TabIndex = 0;
-            CadastrarProduto.Text = "     Cadastrar produto";
-            CadastrarProduto.TextAlign = ContentAlignment.MiddleLeft;
-            CadastrarProduto.UseVisualStyleBackColor = true;
-            CadastrarProduto.Click += CadastrarProduto_Click;
-            // 
-            // BtEstoque
-            // 
-            BtEstoque.FlatAppearance.BorderSize = 0;
-            BtEstoque.FlatStyle = FlatStyle.Flat;
-            BtEstoque.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            BtEstoque.ForeColor = SystemColors.Desktop;
-            BtEstoque.Image = (Image)resources.GetObject("BtEstoque.Image");
-            BtEstoque.ImageAlign = ContentAlignment.MiddleLeft;
-            BtEstoque.Location = new Point(0, 192);
-            BtEstoque.Name = "BtEstoque";
-            BtEstoque.Padding = new Padding(5, 0, 0, 0);
-            BtEstoque.Size = new Size(180, 35);
-            BtEstoque.TabIndex = 5;
-            BtEstoque.Text = "     Estoque";
-            BtEstoque.TextAlign = ContentAlignment.MiddleLeft;
-            BtEstoque.UseVisualStyleBackColor = true;
-            BtEstoque.Click += BtEstoque_Click;
             // 
             // ConsultaPanel
             // 
@@ -266,6 +177,24 @@
             BtConsulta.TextAlign = ContentAlignment.MiddleLeft;
             BtConsulta.UseVisualStyleBackColor = true;
             BtConsulta.Click += BtConsulta_Click;
+            // 
+            // BtEstoque
+            // 
+            BtEstoque.FlatAppearance.BorderSize = 0;
+            BtEstoque.FlatStyle = FlatStyle.Flat;
+            BtEstoque.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            BtEstoque.ForeColor = SystemColors.Desktop;
+            BtEstoque.Image = (Image)resources.GetObject("BtEstoque.Image");
+            BtEstoque.ImageAlign = ContentAlignment.MiddleLeft;
+            BtEstoque.Location = new Point(0, 192);
+            BtEstoque.Name = "BtEstoque";
+            BtEstoque.Padding = new Padding(5, 0, 0, 0);
+            BtEstoque.Size = new Size(180, 35);
+            BtEstoque.TabIndex = 5;
+            BtEstoque.Text = "     Estoque";
+            BtEstoque.TextAlign = ContentAlignment.MiddleLeft;
+            BtEstoque.UseVisualStyleBackColor = true;
+            BtEstoque.Click += BtEstoque_Click;
             // 
             // CadastroPanel
             // 
@@ -366,7 +295,6 @@
             Load += SideMenuBar_Load;
             panel1.ResumeLayout(false);
             SideMenuPanel.ResumeLayout(false);
-            EstoquePanel.ResumeLayout(false);
             ConsultaPanel.ResumeLayout(false);
             CadastroPanel.ResumeLayout(false);
             DisplayFormsPanel.ResumeLayout(false);
@@ -390,10 +318,6 @@
         private Panel DisplayFormsPanel;
         private Button BotaoDeSair;
         private PictureBox pictureBox2;
-        private Panel EstoquePanel;
-        private Button ConsultarTipoDeProduto;
-        private Button CadastrarTipoProduto;
-        private Button CadastrarProduto;
         private Button MainMenuButton;
     }
 }

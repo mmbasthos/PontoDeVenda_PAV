@@ -78,7 +78,7 @@
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = Color.FromArgb(157, 165, 174);
+            dataGridView1.BackgroundColor = Color.FromArgb(229, 230, 234);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(-1, -1);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
@@ -140,17 +140,18 @@
             // 
             // button4
             // 
+            button4.BackColor = SystemColors.Window;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(254, 138);
+            button4.Location = new Point(254, 139);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(97, 23);
+            button4.Size = new Size(109, 23);
             button4.TabIndex = 3;
             button4.Text = "Excluir";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
             // button2
@@ -182,7 +183,7 @@
             // 
             pictureBox2.BackgroundImageLayout = ImageLayout.None;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(3, 4);
+            pictureBox2.Location = new Point(3, 5);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(18, 21);
             pictureBox2.TabIndex = 7;
@@ -229,7 +230,7 @@
             // 
             pictureBox3.BackgroundImageLayout = ImageLayout.None;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(3, 4);
+            pictureBox3.Location = new Point(3, 5);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(18, 21);
             pictureBox3.TabIndex = 7;

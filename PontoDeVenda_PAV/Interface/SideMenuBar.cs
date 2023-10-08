@@ -19,7 +19,7 @@ namespace PontoDeVenda_PAV.Interface
         public SideMenuBar()
         {
             InitializeComponent();
-            CustomizarDesing();
+            CustomizarDesing(); //isso é chamado aqui porque precisa abrir assim que o programa é iniciado
 
         }
 
@@ -29,7 +29,6 @@ namespace PontoDeVenda_PAV.Interface
 
             ConsultaPanel.Visible = false;
             CadastroPanel.Visible = false;
-            EstoquePanel.Visible = false;
 
         }
 
@@ -39,7 +38,6 @@ namespace PontoDeVenda_PAV.Interface
 
             if (CadastroPanel.Visible == true) CadastroPanel.Visible = false;
 
-            if (EstoquePanel.Visible == true) EstoquePanel.Visible = false;
 
             if (ConsultaPanel.Visible == true) ConsultaPanel.Visible = false;
         }
@@ -125,9 +123,8 @@ namespace PontoDeVenda_PAV.Interface
 
         private void CadastroCliente_Click(object sender, EventArgs e)
         {
-            //chamar uma nova forma
-            TelaCadastroCliente telaCadastroCliente = new TelaCadastroCliente();
-            telaCadastroCliente.ShowDialog();
+            //chama a interface de cadastro do cliente
+            openChildForm(new TelaCadastroCliente());
 
             EsconderSubMenu();
         }
@@ -135,9 +132,7 @@ namespace PontoDeVenda_PAV.Interface
         //Aqui é o botao de Fornecedor dentro de Cadastro
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //abre uma nova janela 
-            TelaCadastroFornecedor telaCadastroFornecedor = new TelaCadastroFornecedor();
-            telaCadastroFornecedor.ShowDialog();
+            openChildForm(new TelaCadastroFornecedor());
 
             EsconderSubMenu();
         }
@@ -155,15 +150,17 @@ namespace PontoDeVenda_PAV.Interface
         private void ConsultaCliente_Click(object sender, EventArgs e)
         {
             //Codificar para mostrar as outras formas
-            ConsultaClientes consultaClientes = new ConsultaClientes();
-            consultaClientes.ShowDialog();
+
+            openChildForm(new ConsultaClientes());
+
             EsconderSubMenu();
         }
         private void ConsultaFornecedor_Click(object sender, EventArgs e)
         {
             //Codificar algo aqui 
-            ConsultaFornecedor consultaFornecedor = new ConsultaFornecedor();
-            consultaFornecedor.ShowDialog();
+
+            openChildForm(new ConsultaFornecedor());
+
             EsconderSubMenu();
         }
 
@@ -176,25 +173,10 @@ namespace PontoDeVenda_PAV.Interface
 
         private void BtEstoque_Click(object sender, EventArgs e)
         {
-            MostrarSubMenu(EstoquePanel);
-            MenuEstoque menuEstoque = new MenuEstoque();
-            menuEstoque.Show();
-        }
-        private void CadastrarProduto_Click(object sender, EventArgs e)
-        {
-            //Cadastrar produto entra aqui 
-            EsconderSubMenu();
-        }
-        private void CadastrarTipoProduto_Click(object sender, EventArgs e)
-        {
-            //Cadastrar tipo de produto entra aqui 
-            EsconderSubMenu();
-        }
-        private void ConsultarTipoDeProduto_Click(object sender, EventArgs e)
-        {
-            //Consultar tipo de produto entra aqui 
-            EsconderSubMenu();
+            openChildForm(new MenuEstoque());
 
+            /*MenuEstoque menuEstoque = new MenuEstoque();
+            menuEstoque.Show();*/
         }
 
         //Fim dos Botoes de Estoque
@@ -222,5 +204,22 @@ namespace PontoDeVenda_PAV.Interface
             //nao tem necessidade de esconder o submenu aqui. O codigo deve fazer isso apenas quando há necessidade
 
         }
+
+        private Form formAtiva = null;
+        private void openChildForm(Form childForm)
+        {
+            if (formAtiva != null)
+                formAtiva.Close();
+                formAtiva = childForm;
+                childForm.TopLevel = false; 
+                childForm.FormBorderStyle = FormBorderStyle.None; 
+                childForm.Dock = DockStyle.Fill;
+                DisplayFormsPanel.Controls.Add(childForm);
+                DisplayFormsPanel.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
+
+        }
+
     }
 }
