@@ -213,13 +213,14 @@ namespace PontoDeVenda_PAV.Interface
 
         }
 
-        private void MenuButton_Click(object sender, EventArgs e)
+        private void MainMenuButton_Click(object sender, EventArgs e)
         {
             //aqui ele vai abrir o menu principal que estava antes configurado para ser a primeira tela do aplicativo
             MenuPrincipal telaMenuPrincipal = new MenuPrincipal();
             telaMenuPrincipal.ShowDialog();
 
-            EsconderSubMenu();
+            //nao tem necessidade de esconder o submenu aqui. O codigo deve fazer isso apenas quando há necessidade
+
         }
     }
 }

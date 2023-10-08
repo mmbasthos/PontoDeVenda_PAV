@@ -1,112 +1,3 @@
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.AssemblyReference.cache
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.GenerateResource.cache
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.AssemblyInfoInputs.cache
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.AssemblyInfo.cs
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.CoreCompileInputs.cache
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.exe
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.deps.json
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.runtimeconfig.json
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.dll
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.pdb
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\MySql.Data.dll
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.CopyComplete
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.dll
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\refint\PontoDeVenda_PAV.dll
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.pdb
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.genruntimeconfig.cache
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\ref\PontoDeVenda_PAV.dll
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.MenuPrincipal.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.MenuClientes.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.MenuEstoque.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.MenuFornecedores.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaCadastroClassificacaoProduto.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ConsultaTipoProduto.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAtualizacaoClassificacaoProduto.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaCadastroFornecedor.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaCadastroProduto.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ConsultaFornecedor.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaCadastroCliente.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ConsultaClientes.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAtualizacaoCliente.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAtualizacaoFornecedor.resources
-C:\Users\lexvi\OneDrive\Área de Trabalho\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAtualizacaoProduto.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.AssemblyReference.cache
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.CaixaPrincipal.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ConsultaClientes.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ConsultaFornecedor.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ConsultaTipoProduto.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.MenuClientes.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.MenuEstoque.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.MenuFornecedores.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.MenuPrincipal.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAberturaCaixa.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAtualizacaoClassificacaoProduto.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAtualizacaoCliente.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAtualizacaoFornecedor.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAtualizacaoProduto.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaCadastroClassificacaoProduto.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaCadastroCliente.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaCadastroFornecedor.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaCadastroProduto.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.GenerateResource.cache
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.AssemblyInfoInputs.cache
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.AssemblyInfo.cs
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.CoreCompileInputs.cache
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.dll
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\refint\PontoDeVenda_PAV.dll
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.pdb
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.exe
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.deps.json
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.runtimeconfig.json
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.dll
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.pdb
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\MySql.Data.dll
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.CopyComplete
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.genruntimeconfig.cache
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\ref\PontoDeVenda_PAV.dll
-<<<<<<< HEAD
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaIdentificarCliente.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaInserirCodigoProduto.resources
-=======
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.AssemblyReference.cache
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.CaixaPrincipal.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ConsultaClientes.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ConsultaFornecedor.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ConsultaTipoProduto.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.MenuClientes.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.MenuEstoque.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.MenuFornecedores.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.MenuPrincipal.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.SideMenuBar.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAberturaCaixa.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAtualizacaoClassificacaoProduto.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAtualizacaoCliente.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAtualizacaoFornecedor.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaAtualizacaoProduto.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaCadastroClassificacaoProduto.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaCadastroCliente.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaCadastroFornecedor.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaCadastroProduto.resources
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.GenerateResource.cache
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.AssemblyInfoInputs.cache
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.AssemblyInfo.cs
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.CoreCompileInputs.cache
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.dll
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\refint\PontoDeVenda_PAV.dll
-C:\Users\matheus\Desktop\visualStudio\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.pdb
->>>>>>> 6d778ab70b061d4d581715c26619c267ab7af5ff
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.SideMenuBar.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.FinalizarCompraPagamento.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Properties.Resources.resources
-C:\Users\lexvi\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ImprimirRelatorioVendas.resources
-C:\Users\matheus\Source\Repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.dll
-C:\Users\matheus\Source\Repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\refint\PontoDeVenda_PAV.dll
-C:\Users\matheus\Source\Repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.pdb
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.AssemblyReference.cache
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.CaixaPrincipal.resources
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ConsultaClientes.resources
@@ -136,3 +27,16 @@ C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\De
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.AssemblyInfoInputs.cache
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.AssemblyInfo.cs
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.CoreCompileInputs.cache
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.exe
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.deps.json
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.runtimeconfig.json
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.dll
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.pdb
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\MySql.Data.dll
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.CopyComplete
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.dll
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\refint\PontoDeVenda_PAV.dll
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.pdb
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.genruntimeconfig.cache
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\ref\PontoDeVenda_PAV.dll

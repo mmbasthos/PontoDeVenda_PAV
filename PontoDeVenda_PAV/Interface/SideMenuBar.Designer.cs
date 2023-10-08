@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SideMenuBar));
             panel1 = new Panel();
+            MainMenuButton = new Button();
             BotaoDeSair = new Button();
             SideMenuPanel = new Panel();
             EstoquePanel = new Panel();
@@ -47,7 +48,6 @@
             Cadastro = new Button();
             DisplayFormsPanel = new Panel();
             pictureBox2 = new PictureBox();
-            MenuButton = new Button();
             panel1.SuspendLayout();
             SideMenuPanel.SuspendLayout();
             EstoquePanel.SuspendLayout();
@@ -60,13 +60,30 @@
             // panel1
             // 
             panel1.BackColor = Color.WhiteSmoke;
-            panel1.Controls.Add(MenuButton);
+            panel1.Controls.Add(MainMenuButton);
             panel1.Controls.Add(BotaoDeSair);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1293, 29);
             panel1.TabIndex = 0;
+            // 
+            // MainMenuButton
+            // 
+            MainMenuButton.FlatAppearance.BorderSize = 0;
+            MainMenuButton.FlatStyle = FlatStyle.Flat;
+            MainMenuButton.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            MainMenuButton.ForeColor = SystemColors.Desktop;
+            MainMenuButton.Image = (Image)resources.GetObject("MainMenuButton.Image");
+            MainMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
+            MainMenuButton.Location = new Point(0, 0);
+            MainMenuButton.Name = "MainMenuButton";
+            MainMenuButton.Padding = new Padding(5, 0, 0, 0);
+            MainMenuButton.Size = new Size(36, 29);
+            MainMenuButton.TabIndex = 8;
+            MainMenuButton.TextAlign = ContentAlignment.MiddleLeft;
+            MainMenuButton.UseVisualStyleBackColor = true;
+            MainMenuButton.Click += MainMenuButton_Click;
             // 
             // BotaoDeSair
             // 
@@ -326,23 +343,12 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(-10, -18);
+            pictureBox2.Location = new Point(-14, -18);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(24, 732);
+            pictureBox2.Size = new Size(92, 732);
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
-            // 
-            // MenuButton
-            // 
-            MenuButton.FlatStyle = FlatStyle.Flat;
-            MenuButton.Image = (Image)resources.GetObject("MenuButton.Image");
-            MenuButton.Location = new Point(3, 3);
-            MenuButton.Name = "MenuButton";
-            MenuButton.Size = new Size(37, 23);
-            MenuButton.TabIndex = 8;
-            MenuButton.UseVisualStyleBackColor = true;
-            MenuButton.Click += MenuButton_Click;
             // 
             // SideMenuBar
             // 
@@ -388,6 +394,6 @@
         private Button ConsultarTipoDeProduto;
         private Button CadastrarTipoProduto;
         private Button CadastrarProduto;
-        private Button MenuButton;
+        private Button MainMenuButton;
     }
 }

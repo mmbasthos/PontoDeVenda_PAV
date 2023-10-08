@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace PontoDeVenda_PAV.Entidades
 {
@@ -38,7 +39,7 @@ namespace PontoDeVenda_PAV.Entidades
             comando.Parameters[ATRIBUTO_DATA_VENCIMENTO].Value = data_vencimento;
             comando.Parameters[ATRIBUTO_VALOR_TOTAL].Value = valor_total;
             comando.Parameters[ATRIBUTO_VALOR_RECEBIDO].Value = valor_recebido;
-            comando.Parameters[ARTIBUTO_DATA_RECEBIDO].Value = data_recebimento; 
+            comando.Parameters[ATRIBUTO_DATA_RECEBIDO].Value = data_recebimento; 
             comando.Parameters[ATRIBUTO_VALOR_RECEBIMENTO].Value = valor_recebimento;
             comando.Parameters[ATRIBUTO_ID_CLIENTE_CLIENTE].Value = Cliente_id_cliente;
             comando.Parameters[ATRIBUTO_ID_FORMA_PAGAMENTO].Value = id_forma_pagamento;

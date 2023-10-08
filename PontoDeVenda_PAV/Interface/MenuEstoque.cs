@@ -326,5 +326,10 @@ namespace PontoDeVenda_PAV.Interface
         {
 
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
