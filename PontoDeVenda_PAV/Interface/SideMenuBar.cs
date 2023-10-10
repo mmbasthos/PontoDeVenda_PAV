@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 //Aqui temos o painel de menu principal do programa
 //Temos que adicionar novos botoes caso seja necessario abrir outro Form direto da func principal
@@ -16,12 +17,26 @@ namespace PontoDeVenda_PAV.Interface
 {
     public partial class SideMenuBar : Form
     {
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+           (
+               int nLeftRect,
+               int nTopRect,
+               int nRightRect,
+               int nBottomRect,
+               int nWidthEllipse,
+               int nHeightEllipse
+           );
+
         public SideMenuBar()
         {
             InitializeComponent();
             CustomizarDesing(); //isso é chamado aqui porque precisa abrir assim que o programa é iniciado
-
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
         }
+
 
         private void CustomizarDesing()
         {
@@ -210,16 +225,20 @@ namespace PontoDeVenda_PAV.Interface
         {
             if (formAtiva != null)
                 formAtiva.Close();
-                formAtiva = childForm;
-                childForm.TopLevel = false; 
-                childForm.FormBorderStyle = FormBorderStyle.None; 
-                childForm.Dock = DockStyle.Fill;
-                DisplayFormsPanel.Controls.Add(childForm);
-                DisplayFormsPanel.Tag = childForm;
-                childForm.BringToFront();
-                childForm.Show();
+            formAtiva = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            DisplayFormsPanel.Controls.Add(childForm);
+            DisplayFormsPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
 
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

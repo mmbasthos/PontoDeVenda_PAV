@@ -39,6 +39,7 @@ namespace PontoDeVenda_PAV.Interface
         {
             TelaCadastroProduto telaCadastroProduto = new TelaCadastroProduto();
             telaCadastroProduto.ShowDialog();
+
         }
 
         private void MenuEstoque_Load(object sender, EventArgs e)
