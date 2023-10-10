@@ -60,7 +60,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1293, 29);
+            panel1.Size = new Size(1293, 52);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -108,9 +108,9 @@
             SideMenuPanel.Controls.Add(CadastroPanel);
             SideMenuPanel.Controls.Add(Cadastro);
             SideMenuPanel.Dock = DockStyle.Left;
-            SideMenuPanel.Location = new Point(0, 29);
+            SideMenuPanel.Location = new Point(0, 52);
             SideMenuPanel.Name = "SideMenuPanel";
-            SideMenuPanel.Size = new Size(139, 703);
+            SideMenuPanel.Size = new Size(139, 680);
             SideMenuPanel.TabIndex = 1;
             SideMenuPanel.Paint += SideMenuPanel_Paint;
             // 
@@ -126,6 +126,7 @@
             // 
             // ConsultaFornecedor
             // 
+            ConsultaFornecedor.BackColor = Color.FromArgb(246, 248, 250);
             ConsultaFornecedor.FlatAppearance.BorderSize = 0;
             ConsultaFornecedor.FlatStyle = FlatStyle.Flat;
             ConsultaFornecedor.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -139,11 +140,12 @@
             ConsultaFornecedor.TabIndex = 1;
             ConsultaFornecedor.Text = "     Fornecedor";
             ConsultaFornecedor.TextAlign = ContentAlignment.MiddleLeft;
-            ConsultaFornecedor.UseVisualStyleBackColor = true;
+            ConsultaFornecedor.UseVisualStyleBackColor = false;
             ConsultaFornecedor.Click += ConsultaFornecedor_Click;
             // 
             // ConsultaCliente
             // 
+            ConsultaCliente.BackColor = Color.FromArgb(246, 248, 250);
             ConsultaCliente.FlatAppearance.BorderSize = 0;
             ConsultaCliente.FlatStyle = FlatStyle.Flat;
             ConsultaCliente.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -157,7 +159,7 @@
             ConsultaCliente.TabIndex = 0;
             ConsultaCliente.Text = "     Cliente";
             ConsultaCliente.TextAlign = ContentAlignment.MiddleLeft;
-            ConsultaCliente.UseVisualStyleBackColor = true;
+            ConsultaCliente.UseVisualStyleBackColor = false;
             ConsultaCliente.Click += ConsultaCliente_Click;
             // 
             // BtConsulta
@@ -209,6 +211,7 @@
             // 
             // CadastroFornecedor
             // 
+            CadastroFornecedor.BackColor = Color.FromArgb(246, 248, 250);
             CadastroFornecedor.FlatAppearance.BorderSize = 0;
             CadastroFornecedor.FlatStyle = FlatStyle.Flat;
             CadastroFornecedor.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -222,25 +225,26 @@
             CadastroFornecedor.TabIndex = 1;
             CadastroFornecedor.Text = "     Fornecedor";
             CadastroFornecedor.TextAlign = ContentAlignment.MiddleLeft;
-            CadastroFornecedor.UseVisualStyleBackColor = true;
+            CadastroFornecedor.UseVisualStyleBackColor = false;
             CadastroFornecedor.Click += button1_Click_1;
             // 
             // CadastroCliente
             // 
+            CadastroCliente.BackColor = Color.FromArgb(246, 248, 250);
             CadastroCliente.FlatAppearance.BorderSize = 0;
             CadastroCliente.FlatStyle = FlatStyle.Flat;
             CadastroCliente.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             CadastroCliente.ForeColor = SystemColors.Desktop;
             CadastroCliente.Image = (Image)resources.GetObject("CadastroCliente.Image");
             CadastroCliente.ImageAlign = ContentAlignment.MiddleLeft;
-            CadastroCliente.Location = new Point(-1, -1);
+            CadastroCliente.Location = new Point(-1, 0);
             CadastroCliente.Name = "CadastroCliente";
             CadastroCliente.Padding = new Padding(27, 0, 0, 0);
             CadastroCliente.Size = new Size(181, 30);
             CadastroCliente.TabIndex = 0;
             CadastroCliente.Text = "     Cliente";
             CadastroCliente.TextAlign = ContentAlignment.MiddleLeft;
-            CadastroCliente.UseVisualStyleBackColor = true;
+            CadastroCliente.UseVisualStyleBackColor = false;
             CadastroCliente.Click += CadastroCliente_Click;
             // 
             // Cadastro
@@ -266,9 +270,9 @@
             DisplayFormsPanel.BackColor = Color.FromArgb(246, 248, 250);
             DisplayFormsPanel.Controls.Add(pictureBox2);
             DisplayFormsPanel.Dock = DockStyle.Fill;
-            DisplayFormsPanel.Location = new Point(139, 29);
+            DisplayFormsPanel.Location = new Point(139, 52);
             DisplayFormsPanel.Name = "DisplayFormsPanel";
-            DisplayFormsPanel.Size = new Size(1154, 703);
+            DisplayFormsPanel.Size = new Size(1154, 680);
             DisplayFormsPanel.TabIndex = 2;
             // 
             // pictureBox2
@@ -277,7 +281,7 @@
             pictureBox2.Location = new Point(-14, -18);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(92, 732);
+            pictureBox2.Size = new Size(48, 732);
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 

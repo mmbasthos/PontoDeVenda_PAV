@@ -66,11 +66,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(51, 16);
+            label1.Location = new Point(45, 16);
             label1.Name = "label1";
-            label1.Size = new Size(83, 25);
+            label1.Size = new Size(80, 25);
             label1.TabIndex = 6;
             label1.Text = "Estoque";
             label1.Click += label1_Click;
@@ -129,6 +129,7 @@
             button3.BackColor = SystemColors.Window;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button3.Location = new Point(931, 105);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
@@ -140,15 +141,17 @@
             // 
             // button4
             // 
-            button4.BackColor = SystemColors.Window;
+            button4.BackColor = Color.FromArgb(238, 170, 170);
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleLeft;
             button4.Location = new Point(254, 139);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(109, 23);
+            button4.Padding = new Padding(10, 0, 0, 0);
+            button4.Size = new Size(92, 23);
             button4.TabIndex = 3;
             button4.Text = "Excluir";
             button4.UseVisualStyleBackColor = false;
@@ -156,10 +159,11 @@
             // 
             // button2
             // 
-            button2.BackColor = SystemColors.Window;
+            button2.BackColor = Color.FromArgb(108, 181, 223);
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.Window;
             button2.Location = new Point(755, 105);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
@@ -192,6 +196,7 @@
             // campoPesqID
             // 
             campoPesqID.BorderStyle = BorderStyle.None;
+            campoPesqID.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             campoPesqID.ForeColor = Color.WhiteSmoke;
             campoPesqID.Location = new Point(23, 5);
             campoPesqID.Margin = new Padding(3, 2, 3, 2);
@@ -207,6 +212,7 @@
             button1.BackColor = SystemColors.Window;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.Location = new Point(579, 105);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
@@ -239,6 +245,7 @@
             // campoPesqNome
             // 
             campoPesqNome.BorderStyle = BorderStyle.None;
+            campoPesqNome.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             campoPesqNome.ForeColor = Color.WhiteSmoke;
             campoPesqNome.Location = new Point(27, 5);
             campoPesqNome.Margin = new Padding(3, 2, 3, 2);
@@ -252,7 +259,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(239, 239, 239);
+            BackColor = Color.FromArgb(246, 248, 250);
             ClientSize = new Size(1122, 662);
             Controls.Add(panel3);
             Controls.Add(label1);
