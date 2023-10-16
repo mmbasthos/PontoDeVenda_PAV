@@ -25,7 +25,7 @@
 
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\MySql.Data\v4.0_8.0.33.0__c5687fc88969c44d\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\ListadeComandos\ListadeComandos\bin\MySql.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
 
