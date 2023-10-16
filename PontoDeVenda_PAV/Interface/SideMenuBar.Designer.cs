@@ -33,6 +33,7 @@
             MainMenuButton = new Button();
             BotaoDeSair = new Button();
             SideMenuPanel = new Panel();
+            button2 = new Button();
             ConsultaPanel = new Panel();
             ConsultaFornecedor = new Button();
             ConsultaCliente = new Button();
@@ -102,6 +103,7 @@
             // 
             SideMenuPanel.AutoScroll = true;
             SideMenuPanel.BackColor = Color.White;
+            SideMenuPanel.Controls.Add(button2);
             SideMenuPanel.Controls.Add(ConsultaPanel);
             SideMenuPanel.Controls.Add(BtConsulta);
             SideMenuPanel.Controls.Add(BtEstoque);
@@ -113,6 +115,22 @@
             SideMenuPanel.Size = new Size(139, 680);
             SideMenuPanel.TabIndex = 1;
             SideMenuPanel.Paint += SideMenuPanel_Paint;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(108, 181, 223);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.Window;
+            button2.Location = new Point(15, 598);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(107, 23);
+            button2.TabIndex = 3;
+            button2.Text = "Abrir caixa";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_1;
             // 
             // ConsultaPanel
             // 
@@ -274,6 +292,7 @@
             DisplayFormsPanel.Name = "DisplayFormsPanel";
             DisplayFormsPanel.Size = new Size(1154, 680);
             DisplayFormsPanel.TabIndex = 2;
+            DisplayFormsPanel.Paint += DisplayFormsPanel_Paint;
             // 
             // pictureBox2
             // 
@@ -325,5 +344,6 @@
         private Button BotaoDeSair;
         private PictureBox pictureBox2;
         private Button MainMenuButton;
+        private Button button2;
     }
 }

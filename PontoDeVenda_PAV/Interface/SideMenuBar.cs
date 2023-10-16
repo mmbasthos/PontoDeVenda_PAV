@@ -240,5 +240,15 @@ namespace PontoDeVenda_PAV.Interface
         {
 
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new TelaAberturaCaixa());
+        }
+
+        private void DisplayFormsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
