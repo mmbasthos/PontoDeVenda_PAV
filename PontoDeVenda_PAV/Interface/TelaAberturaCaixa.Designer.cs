@@ -35,6 +35,8 @@
             button1 = new Button();
             panel1 = new Panel();
             panel2 = new Panel();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // campoSaldoCaixa
@@ -106,15 +108,25 @@
             panel2.Size = new Size(218, 2);
             panel2.TabIndex = 11;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(22, 19);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(190, 107);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            // 
             // TelaAberturaCaixa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(261, 395);
+            Controls.Add(button1);
+            Controls.Add(pictureBox1);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(button1);
             Controls.Add(campoNomeCaixa);
             Controls.Add(abrirCaixa);
             Controls.Add(campoSaldoCaixa);
@@ -124,6 +136,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Abrir Caixa";
             Load += TelaAberturaCaixa_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -139,5 +152,6 @@
         private TextBox campoNomeCaixa;
         private Panel panel1;
         private Panel panel2;
+        private PictureBox pictureBox1;
     }
 }
