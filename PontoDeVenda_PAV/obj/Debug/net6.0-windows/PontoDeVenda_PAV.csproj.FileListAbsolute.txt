@@ -1,3 +1,10 @@
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.exe
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.deps.json
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.runtimeconfig.json
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.dll
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.pdb
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\MySql.Data.dll
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.AssemblyReference.cache
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.CaixaPrincipal.resources
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ConsultaClientes.resources
@@ -27,13 +34,6 @@ C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\De
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.AssemblyInfoInputs.cache
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.AssemblyInfo.cs
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.CoreCompileInputs.cache
-C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.exe
-C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.deps.json
-C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.runtimeconfig.json
-C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.dll
-C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\PontoDeVenda_PAV.pdb
-C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
-C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\bin\Debug\net6.0-windows\MySql.Data.dll
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.csproj.CopyComplete
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.dll
 C:\Users\matheus\source\repos\mmbasthos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\refint\PontoDeVenda_PAV.dll

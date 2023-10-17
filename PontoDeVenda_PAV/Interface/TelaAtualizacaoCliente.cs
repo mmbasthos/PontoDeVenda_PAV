@@ -100,5 +100,10 @@ namespace PontoDeVenda_PAV.Interface
             campoTelefoneCliente.Enabled = habilitarEdicao;
             campoEmailCliente.Enabled = habilitarEdicao;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
