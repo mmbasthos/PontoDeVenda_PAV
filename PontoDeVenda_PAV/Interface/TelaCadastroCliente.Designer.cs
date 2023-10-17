@@ -248,10 +248,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(10, 7);
             label2.Name = "label2";
-            label2.Size = new Size(176, 21);
+            label2.Size = new Size(184, 21);
             label2.TabIndex = 26;
             label2.Text = "Dados Gerais do Cliente";
             // 
@@ -291,6 +291,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(246, 248, 250);
             ClientSize = new Size(700, 302);
             Controls.Add(button2);
             Controls.Add(button1);

@@ -268,5 +268,10 @@ namespace PontoDeVenda_PAV.Interface
         {
             Close();
         }
+
+        private void campoFormaPag_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

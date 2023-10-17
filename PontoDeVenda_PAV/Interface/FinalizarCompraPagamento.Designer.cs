@@ -38,26 +38,29 @@
             // 
             // campoDinRecebido
             // 
-            campoDinRecebido.Location = new Point(12, 79);
+            campoDinRecebido.Location = new Point(10, 59);
+            campoDinRecebido.Margin = new Padding(3, 2, 3, 2);
             campoDinRecebido.Name = "campoDinRecebido";
             campoDinRecebido.PlaceholderText = "Dinheiro Recebido";
-            campoDinRecebido.Size = new Size(146, 27);
+            campoDinRecebido.Size = new Size(128, 23);
             campoDinRecebido.TabIndex = 2;
             campoDinRecebido.TextChanged += campoDinRecebido_TextChanged;
             // 
             // campoTotal
             // 
-            campoTotal.Location = new Point(12, 46);
+            campoTotal.Location = new Point(10, 34);
+            campoTotal.Margin = new Padding(3, 2, 3, 2);
             campoTotal.Name = "campoTotal";
-            campoTotal.Size = new Size(298, 27);
+            campoTotal.Size = new Size(261, 23);
             campoTotal.TabIndex = 1;
             campoTotal.TextChanged += campoTotal_TextChanged;
             // 
             // Finalizar
             // 
-            Finalizar.Location = new Point(164, 126);
+            Finalizar.Location = new Point(144, 94);
+            Finalizar.Margin = new Padding(3, 2, 3, 2);
             Finalizar.Name = "Finalizar";
-            Finalizar.Size = new Size(146, 29);
+            Finalizar.Size = new Size(128, 22);
             Finalizar.TabIndex = 2;
             Finalizar.Text = "Finalizar";
             Finalizar.UseVisualStyleBackColor = true;
@@ -65,9 +68,10 @@
             // 
             // button2
             // 
-            button2.Location = new Point(12, 126);
+            button2.Location = new Point(10, 94);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(146, 29);
+            button2.Size = new Size(128, 22);
             button2.TabIndex = 3;
             button2.Text = "Continuar Compra";
             button2.UseVisualStyleBackColor = true;
@@ -76,30 +80,34 @@
             // campoFormaPag
             // 
             campoFormaPag.FormattingEnabled = true;
-            campoFormaPag.Location = new Point(12, 12);
+            campoFormaPag.Location = new Point(10, 9);
+            campoFormaPag.Margin = new Padding(3, 2, 3, 2);
             campoFormaPag.Name = "campoFormaPag";
-            campoFormaPag.Size = new Size(298, 28);
+            campoFormaPag.Size = new Size(261, 23);
             campoFormaPag.TabIndex = 0;
+            campoFormaPag.SelectedIndexChanged += campoFormaPag_SelectedIndexChanged;
             // 
             // campoTroco
             // 
-            campoTroco.Location = new Point(164, 79);
+            campoTroco.Location = new Point(144, 59);
+            campoTroco.Margin = new Padding(3, 2, 3, 2);
             campoTroco.Name = "campoTroco";
             campoTroco.PlaceholderText = "Troco";
-            campoTroco.Size = new Size(146, 27);
+            campoTroco.Size = new Size(128, 23);
             campoTroco.TabIndex = 4;
             // 
             // FinalizarCompraPagamento
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(322, 171);
+            ClientSize = new Size(282, 128);
             Controls.Add(campoTroco);
             Controls.Add(campoFormaPag);
             Controls.Add(button2);
             Controls.Add(Finalizar);
             Controls.Add(campoTotal);
             Controls.Add(campoDinRecebido);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FinalizarCompraPagamento";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FinalizarCompraPagamento";

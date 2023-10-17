@@ -60,5 +60,15 @@ namespace PontoDeVenda_PAV.Interface
             Close();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TelaAberturaCaixa_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

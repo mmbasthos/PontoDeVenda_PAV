@@ -38,9 +38,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(1156, 10);
+            button1.Location = new Point(1012, 8);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(82, 22);
             button1.TabIndex = 0;
             button1.Text = "Excluir";
             button1.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // button2
             // 
-            button2.Location = new Point(1110, 11);
+            button2.Location = new Point(971, 8);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(40, 29);
+            button2.Size = new Size(35, 22);
             button2.TabIndex = 1;
             button2.Text = "O";
             button2.UseVisualStyleBackColor = true;
@@ -58,19 +60,21 @@
             // 
             // campoPesqID
             // 
-            campoPesqID.Location = new Point(12, 12);
+            campoPesqID.Location = new Point(10, 9);
+            campoPesqID.Margin = new Padding(3, 2, 3, 2);
             campoPesqID.Name = "campoPesqID";
             campoPesqID.PlaceholderText = "Procurar por ID";
-            campoPesqID.Size = new Size(138, 27);
+            campoPesqID.Size = new Size(121, 23);
             campoPesqID.TabIndex = 2;
             campoPesqID.KeyDown += textBox1_KeyDown;
             // 
             // campoPesqNome
             // 
-            campoPesqNome.Location = new Point(156, 12);
+            campoPesqNome.Location = new Point(136, 9);
+            campoPesqNome.Margin = new Padding(3, 2, 3, 2);
             campoPesqNome.Name = "campoPesqNome";
             campoPesqNome.PlaceholderText = "Procurar por Nome ";
-            campoPesqNome.Size = new Size(280, 27);
+            campoPesqNome.Size = new Size(246, 23);
             campoPesqNome.TabIndex = 3;
             campoPesqNome.TextChanged += campoPesqNome_TextChanged;
             // 
@@ -78,24 +82,27 @@
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 45);
+            dataGridView1.Location = new Point(10, 34);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1238, 616);
+            dataGridView1.Size = new Size(1083, 462);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
             // ConsultaClientes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1262, 673);
+            BackColor = Color.FromArgb(246, 248, 250);
+            ClientSize = new Size(1104, 505);
             Controls.Add(dataGridView1);
             Controls.Add(campoPesqNome);
             Controls.Add(campoPesqID);
             Controls.Add(button2);
             Controls.Add(button1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ConsultaClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ConsultaClientes";

@@ -48,11 +48,11 @@ namespace PontoDeVenda_PAV.Interface
 
                 controladorCadastroFornecedor.incluir(fornecedor);
 
-                
+
 
                 MessageBox.Show("Fornecedor Inserido com Sucesso!");
                 // BancodeDados.obterInstancia().confirmarTransacao();
-                
+
             }
             catch (Exception ex)
             {

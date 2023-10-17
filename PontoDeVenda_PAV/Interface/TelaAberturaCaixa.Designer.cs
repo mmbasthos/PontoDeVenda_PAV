@@ -28,82 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaAberturaCaixa));
             campoSaldoCaixa = new TextBox();
             abrirCaixa = new Button();
-            cancelarAbertura = new Button();
             campoNomeCaixa = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
+            button1 = new Button();
+            panel1 = new Panel();
+            panel2 = new Panel();
             SuspendLayout();
             // 
             // campoSaldoCaixa
             // 
-            campoSaldoCaixa.Location = new Point(12, 85);
+            campoSaldoCaixa.BorderStyle = BorderStyle.None;
+            campoSaldoCaixa.Location = new Point(22, 206);
+            campoSaldoCaixa.Margin = new Padding(3, 2, 3, 2);
             campoSaldoCaixa.Multiline = true;
             campoSaldoCaixa.Name = "campoSaldoCaixa";
-            campoSaldoCaixa.PlaceholderText = "Insira o Saldo Inicial";
-            campoSaldoCaixa.Size = new Size(277, 27);
+            campoSaldoCaixa.PlaceholderText = "Insira o saldo Inicial";
+            campoSaldoCaixa.Size = new Size(218, 19);
             campoSaldoCaixa.TabIndex = 0;
             // 
             // abrirCaixa
             // 
-            abrirCaixa.Location = new Point(161, 135);
+            abrirCaixa.BackColor = Color.FromArgb(108, 181, 223);
+            abrirCaixa.FlatAppearance.BorderSize = 0;
+            abrirCaixa.FlatStyle = FlatStyle.Flat;
+            abrirCaixa.ForeColor = SystemColors.Window;
+            abrirCaixa.Location = new Point(73, 348);
+            abrirCaixa.Margin = new Padding(3, 2, 3, 2);
             abrirCaixa.Name = "abrirCaixa";
-            abrirCaixa.Size = new Size(128, 29);
+            abrirCaixa.Size = new Size(112, 22);
             abrirCaixa.TabIndex = 2;
             abrirCaixa.Text = "Abrir Caixa";
-            abrirCaixa.UseVisualStyleBackColor = true;
+            abrirCaixa.UseVisualStyleBackColor = false;
             abrirCaixa.Click += abrirCaixa_Click;
-            // 
-            // cancelarAbertura
-            // 
-            cancelarAbertura.Location = new Point(12, 135);
-            cancelarAbertura.Name = "cancelarAbertura";
-            cancelarAbertura.Size = new Size(128, 29);
-            cancelarAbertura.TabIndex = 3;
-            cancelarAbertura.Text = "Cancelar";
-            cancelarAbertura.UseVisualStyleBackColor = true;
             // 
             // campoNomeCaixa
             // 
-            campoNomeCaixa.Location = new Point(12, 32);
+            campoNomeCaixa.BorderStyle = BorderStyle.None;
+            campoNomeCaixa.Location = new Point(22, 143);
+            campoNomeCaixa.Margin = new Padding(3, 2, 3, 2);
             campoNomeCaixa.Name = "campoNomeCaixa";
-            campoNomeCaixa.PlaceholderText = "Insira o Nome do Caixa";
-            campoNomeCaixa.Size = new Size(277, 27);
+            campoNomeCaixa.PlaceholderText = "Insira o nome do Caixa";
+            campoNomeCaixa.Size = new Size(218, 16);
             campoNomeCaixa.TabIndex = 4;
             // 
-            // label1
+            // button1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(112, 20);
-            label1.TabIndex = 5;
-            label1.Text = "Nome do Caixa";
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.Desktop;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(1, 2);
+            button1.Name = "button1";
+            button1.Padding = new Padding(5, 0, 0, 0);
+            button1.Size = new Size(36, 29);
+            button1.TabIndex = 9;
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // label2
+            // panel1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 62);
-            label2.Name = "label2";
-            label2.Size = new Size(90, 20);
-            label2.TabIndex = 6;
-            label2.Text = "Saldo Inicial";
+            panel1.BackColor = Color.FromArgb(108, 181, 223);
+            panel1.Location = new Point(22, 164);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(218, 2);
+            panel1.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(108, 181, 223);
+            panel2.Location = new Point(22, 230);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(218, 2);
+            panel2.TabIndex = 11;
             // 
             // TelaAberturaCaixa
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(305, 176);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            BackColor = Color.White;
+            ClientSize = new Size(261, 395);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(button1);
             Controls.Add(campoNomeCaixa);
-            Controls.Add(cancelarAbertura);
             Controls.Add(abrirCaixa);
             Controls.Add(campoSaldoCaixa);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "TelaAberturaCaixa";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Abrir Caixa";
+            Load += TelaAberturaCaixa_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -114,11 +134,10 @@
         private Button button1;
         private Button button2;
         private TextBox textBox2;
-        private Label label1;
-        private Label label2;
         private TextBox campoSaldoCaixa;
         private Button abrirCaixa;
-        private Button cancelarAbertura;
         private TextBox campoNomeCaixa;
+        private Panel panel1;
+        private Panel panel2;
     }
 }
