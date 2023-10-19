@@ -53,3 +53,13 @@ namespace PontoDeVenda_PAV.Entidades
 
     }
 }
+
+
+/*
+id_compra int AI PK 
+data_compra date 
+hora_compra time 
+total_compra decimal(10,2) 
+situacao_compra varchar(60)
+Fornecedor_id_fornecedor int
+ */ 

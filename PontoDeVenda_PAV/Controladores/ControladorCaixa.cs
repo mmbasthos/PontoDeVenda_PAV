@@ -58,6 +58,7 @@ namespace PontoDeVenda_PAV.Controladores
                 BancodeDados.obterInstancia().desconectar();
             }
         }
+
         /*
         public void aumentarSaldoCaixa(int idCaixa, decimal valor)
         {
@@ -79,6 +80,7 @@ namespace PontoDeVenda_PAV.Controladores
                 throw new Exception("Erro ao aumentar saldo do caixa: " + ex.Message);
             }
         }*/
+
         public string ObterNomeCaixa(int idCaixa)
         {
             BancodeDados.obterInstancia().conectar();

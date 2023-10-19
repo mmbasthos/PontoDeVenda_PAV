@@ -31,13 +31,13 @@
             button1 = new Button();
             menuStrip1 = new MenuStrip();
             iniciarVendaToolStripMenuItem = new ToolStripMenuItem();
+            finalizarVendaF7ToolStripMenuItem = new ToolStripMenuItem();
+            cancelarVendaF8ToolStripMenuItem = new ToolStripMenuItem();
             iniciarCompraToolStripMenuItem = new ToolStripMenuItem();
             cadastrarClienteToolStripMenuItem = new ToolStripMenuItem();
             cadastrarClienteToolStripMenuItem1 = new ToolStripMenuItem();
             consultarClientesToolStripMenuItem = new ToolStripMenuItem();
             estoqueF5ToolStripMenuItem = new ToolStripMenuItem();
-            finalizarVendaF7ToolStripMenuItem = new ToolStripMenuItem();
-            cancelarVendaF8ToolStripMenuItem = new ToolStripMenuItem();
             campoNomeCaixa = new TextBox();
             campoIdCaixa = new TextBox();
             campoNomeCliente = new TextBox();
@@ -61,6 +61,9 @@
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
+            button6 = new Button();
+            cancelarCompraToolStripMenuItem = new ToolStripMenuItem();
+            finalizarCompraToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -78,7 +81,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { iniciarVendaToolStripMenuItem, finalizarVendaF7ToolStripMenuItem, cancelarVendaF8ToolStripMenuItem, iniciarCompraToolStripMenuItem, cadastrarClienteToolStripMenuItem, estoqueF5ToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { iniciarVendaToolStripMenuItem, finalizarVendaF7ToolStripMenuItem, cancelarVendaF8ToolStripMenuItem, iniciarCompraToolStripMenuItem, finalizarCompraToolStripMenuItem, cancelarCompraToolStripMenuItem, cadastrarClienteToolStripMenuItem, estoqueF5ToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
@@ -94,12 +97,29 @@
             iniciarVendaToolStripMenuItem.Text = "Iniciar Venda - F1";
             iniciarVendaToolStripMenuItem.Click += iniciarVendaToolStripMenuItem_Click;
             // 
+            // finalizarVendaF7ToolStripMenuItem
+            // 
+            finalizarVendaF7ToolStripMenuItem.Name = "finalizarVendaF7ToolStripMenuItem";
+            finalizarVendaF7ToolStripMenuItem.ShortcutKeys = Keys.F7;
+            finalizarVendaF7ToolStripMenuItem.Size = new Size(152, 24);
+            finalizarVendaF7ToolStripMenuItem.Text = "Finalizar Venda - F7";
+            finalizarVendaF7ToolStripMenuItem.Click += finalizarVendaF7ToolStripMenuItem_Click;
+            // 
+            // cancelarVendaF8ToolStripMenuItem
+            // 
+            cancelarVendaF8ToolStripMenuItem.Name = "cancelarVendaF8ToolStripMenuItem";
+            cancelarVendaF8ToolStripMenuItem.ShortcutKeys = Keys.F8;
+            cancelarVendaF8ToolStripMenuItem.Size = new Size(154, 24);
+            cancelarVendaF8ToolStripMenuItem.Text = "Cancelar Venda - F8";
+            cancelarVendaF8ToolStripMenuItem.Click += cancelarVendaF8ToolStripMenuItem_Click;
+            // 
             // iniciarCompraToolStripMenuItem
             // 
             iniciarCompraToolStripMenuItem.Name = "iniciarCompraToolStripMenuItem";
             iniciarCompraToolStripMenuItem.ShortcutKeys = Keys.F2;
             iniciarCompraToolStripMenuItem.Size = new Size(149, 24);
             iniciarCompraToolStripMenuItem.Text = "Iniciar Compra - F2";
+            iniciarCompraToolStripMenuItem.Click += iniciarCompraToolStripMenuItem_Click;
             // 
             // cadastrarClienteToolStripMenuItem
             // 
@@ -131,22 +151,6 @@
             estoqueF5ToolStripMenuItem.Size = new Size(105, 24);
             estoqueF5ToolStripMenuItem.Text = "Estoque - F5";
             estoqueF5ToolStripMenuItem.Click += estoqueF5ToolStripMenuItem_Click;
-            // 
-            // finalizarVendaF7ToolStripMenuItem
-            // 
-            finalizarVendaF7ToolStripMenuItem.Name = "finalizarVendaF7ToolStripMenuItem";
-            finalizarVendaF7ToolStripMenuItem.ShortcutKeys = Keys.F7;
-            finalizarVendaF7ToolStripMenuItem.Size = new Size(152, 24);
-            finalizarVendaF7ToolStripMenuItem.Text = "Finalizar Venda - F7";
-            finalizarVendaF7ToolStripMenuItem.Click += finalizarVendaF7ToolStripMenuItem_Click;
-            // 
-            // cancelarVendaF8ToolStripMenuItem
-            // 
-            cancelarVendaF8ToolStripMenuItem.Name = "cancelarVendaF8ToolStripMenuItem";
-            cancelarVendaF8ToolStripMenuItem.ShortcutKeys = Keys.F8;
-            cancelarVendaF8ToolStripMenuItem.Size = new Size(154, 24);
-            cancelarVendaF8ToolStripMenuItem.Text = "Cancelar Venda - F8";
-            cancelarVendaF8ToolStripMenuItem.Click += cancelarVendaF8ToolStripMenuItem_Click;
             // 
             // campoNomeCaixa
             // 
@@ -200,6 +204,7 @@
             campoNomeProd.Name = "campoNomeProd";
             campoNomeProd.Size = new Size(618, 63);
             campoNomeProd.TabIndex = 7;
+            campoNomeProd.TextChanged += campoNomeProd_TextChanged;
             // 
             // campoPrecoProd
             // 
@@ -385,11 +390,34 @@
             label9.TabIndex = 27;
             label9.Text = "Inserir ID Produto";
             // 
+            // button6
+            // 
+            button6.Location = new Point(333, 252);
+            button6.Name = "button6";
+            button6.Size = new Size(94, 29);
+            button6.TabIndex = 28;
+            button6.Text = "button6";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // cancelarCompraToolStripMenuItem
+            // 
+            cancelarCompraToolStripMenuItem.Name = "cancelarCompraToolStripMenuItem";
+            cancelarCompraToolStripMenuItem.Size = new Size(141, 24);
+            cancelarCompraToolStripMenuItem.Text = "Cancelar Compra ";
+            // 
+            // finalizarCompraToolStripMenuItem
+            // 
+            finalizarCompraToolStripMenuItem.Name = "finalizarCompraToolStripMenuItem";
+            finalizarCompraToolStripMenuItem.Size = new Size(135, 24);
+            finalizarCompraToolStripMenuItem.Text = "Finalizar Compra";
+            // 
             // CaixaPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1541, 845);
+            Controls.Add(button6);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -440,10 +468,6 @@
         private TextBox campoNomeCaixa;
         private TextBox campoIdCaixa;
         private DataGridView dataGridView1;
-        private TextBox campoNomeProd;
-        private TextBox campoPrecoProd;
-        private TextBox campoQTDProd;
-        private TextBox campoTotalProd;
         private Button button2;
         private Label campoTotalVenda;
         private ToolStripMenuItem finalizarVendaF7ToolStripMenuItem;
@@ -451,7 +475,6 @@
         private Label label2;
         private Button button3;
         public TextBox campoNomeCliente;
-        private TextBox campoAddNum;
         private Button button4;
         private Button button5;
         private Label label1;
@@ -462,5 +485,13 @@
         private Label label7;
         private Label label8;
         private Label label9;
+        public TextBox campoNomeProd;
+        public TextBox campoPrecoProd;
+        public TextBox campoQTDProd;
+        public TextBox campoTotalProd;
+        public TextBox campoAddNum;
+        private Button button6;
+        private ToolStripMenuItem finalizarCompraToolStripMenuItem;
+        private ToolStripMenuItem cancelarCompraToolStripMenuItem;
     }
 }

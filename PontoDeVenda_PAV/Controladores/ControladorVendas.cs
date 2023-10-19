@@ -62,8 +62,6 @@ namespace PontoDeVenda_PAV.Controladores
 
         }
 
-
-
         public void AtualizarTotalVenda(int idVenda, decimal novoTotal)
         {
             BancodeDados.obterInstancia().conectar();
@@ -145,13 +143,6 @@ namespace PontoDeVenda_PAV.Controladores
 
             BancodeDados.obterInstancia().desconectar();
         }
-
-
-
-
-
-
-
 
         protected override void criarParametros(MySqlCommand comando)
         {

@@ -114,7 +114,7 @@ namespace PontoDeVenda_PAV.Interface
             }
             Vendas venda = new Vendas();
 
-            venda.total_venda = 10.00m;
+            venda.total_venda = 0m;
             if (string.IsNullOrEmpty(cpf))
             {
                 venda.id_cliente_venda = 1;
@@ -133,6 +133,7 @@ namespace PontoDeVenda_PAV.Interface
             caixaPrincipal.novoTotal = 0m;
             BancodeDados.obterInstancia().desconectar();
             Close();
+            caixaPrincipal.modoVenda = true;
         }
 
         private void TelaIdentificarCliente_Load(object sender, EventArgs e)

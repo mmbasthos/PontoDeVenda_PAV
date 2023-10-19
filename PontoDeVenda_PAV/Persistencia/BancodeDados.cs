@@ -14,7 +14,7 @@ namespace PontoDeVenda_PAV.Persistencia
 
         private int porta = 3306;
         private string servidor = "localhost";
-        private string nomeBancoDados = "sys";
+        private string nomeBancoDados = "bancopdv_icg";
         private MySqlConnection conexao;
         private MySqlTransaction transacao;
         private static BancodeDados instancia = null;
@@ -48,7 +48,7 @@ namespace PontoDeVenda_PAV.Persistencia
         public void conectar()
         {
             //usbw é a senha usada no USBWebServer
-            conectar("root", "18042001Go@5");
+            conectar("root", "11212716a");
         }
 
         public void desconectar()

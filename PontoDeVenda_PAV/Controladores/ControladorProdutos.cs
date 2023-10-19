@@ -36,6 +36,7 @@ using PontoDeVenda_PAV.Persistencia;
             }
         public decimal ObterValorProdutoPorId(int id)
         {
+            BancodeDados.obterInstancia().conectar();
             decimal valorProduto = -1; // Inicializamos com -1 para indicar que não foi encontrado
 
             try
@@ -66,10 +67,12 @@ using PontoDeVenda_PAV.Persistencia;
                 // throw new Exception("Erro ao obter valor do produto: " + ex.Message);
             }
             return valorProduto;
+            BancodeDados.obterInstancia().desconectar();
         }
 
         public void AtualizarEstoque(int idProduto, int quantidade)
         {
+            BancodeDados.obterInstancia().conectar();
             try
             {
                 string comandoSql = "UPDATE produto SET quantidade_produto = quantidade_produto - @quantidade WHERE id_produto = @id_produto";
@@ -86,6 +89,7 @@ using PontoDeVenda_PAV.Persistencia;
             {
                 throw new Exception("Erro ao atualizar estoque do produto: " + ex.Message);
             }
+            BancodeDados.obterInstancia().desconectar();
         }
 
         public void AumentarEstoque(int idProduto, int quantidade)
