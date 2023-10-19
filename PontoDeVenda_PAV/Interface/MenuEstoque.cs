@@ -23,10 +23,8 @@ namespace PontoDeVenda_PAV.Interface
             InitializeComponent();
 
             //apenas para deixar o botao com as bordas circulares
-            button4.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, button4.Width, button4.Height, 7, 7));
             panel3.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panel3.Width, panel3.Height, 8, 8));
             panel2.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 8, 8));
-            button2.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, button2.Width, button2.Height, 8, 8));
         }
 
         //A seguinte dll permite que os botoes fiquem circulares

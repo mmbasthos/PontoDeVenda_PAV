@@ -42,7 +42,7 @@
             // campoSaldoCaixa
             // 
             campoSaldoCaixa.BorderStyle = BorderStyle.None;
-            campoSaldoCaixa.Location = new Point(22, 206);
+            campoSaldoCaixa.Location = new Point(22, 219);
             campoSaldoCaixa.Margin = new Padding(3, 2, 3, 2);
             campoSaldoCaixa.Multiline = true;
             campoSaldoCaixa.Name = "campoSaldoCaixa";
@@ -68,7 +68,7 @@
             // campoNomeCaixa
             // 
             campoNomeCaixa.BorderStyle = BorderStyle.None;
-            campoNomeCaixa.Location = new Point(22, 143);
+            campoNomeCaixa.Location = new Point(22, 156);
             campoNomeCaixa.Margin = new Padding(3, 2, 3, 2);
             campoNomeCaixa.Name = "campoNomeCaixa";
             campoNomeCaixa.PlaceholderText = "Insira o nome do Caixa";
@@ -95,7 +95,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(108, 181, 223);
-            panel1.Location = new Point(22, 164);
+            panel1.Location = new Point(22, 177);
             panel1.Name = "panel1";
             panel1.Size = new Size(218, 2);
             panel1.TabIndex = 10;
@@ -103,7 +103,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(108, 181, 223);
-            panel2.Location = new Point(22, 230);
+            panel2.Location = new Point(22, 243);
             panel2.Name = "panel2";
             panel2.Size = new Size(218, 2);
             panel2.TabIndex = 11;
@@ -111,9 +111,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(22, 19);
+            pictureBox1.Location = new Point(12, 37);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(190, 107);
+            pictureBox1.Size = new Size(237, 109);
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
             // 
