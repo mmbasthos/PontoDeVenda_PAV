@@ -74,5 +74,10 @@ namespace PontoDeVenda_PAV.Interface
         {
             Close();
         }
+
+        private void campoNumeroLogCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

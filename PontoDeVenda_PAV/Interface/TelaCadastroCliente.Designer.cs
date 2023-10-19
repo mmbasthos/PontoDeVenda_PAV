@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastroCliente));
-            label13 = new Label();
-            label12 = new Label();
-            label11 = new Label();
-            label10 = new Label();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
             campoLogradouroCliente = new TextBox();
             campoNumeroLogCliente = new TextBox();
             campoComplementoCliente = new TextBox();
@@ -55,124 +48,87 @@
             panel2 = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            panel7 = new Panel();
+            panel8 = new Panel();
+            panel9 = new Panel();
+            panel10 = new Panel();
             SuspendLayout();
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(546, 359);
-            label13.Name = "label13";
-            label13.Size = new Size(28, 15);
-            label13.TabIndex = 48;
-            label13.Text = "CEP";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(460, 359);
-            label12.Name = "label12";
-            label12.Size = new Size(21, 15);
-            label12.TabIndex = 47;
-            label12.Text = "UF";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(460, 301);
-            label11.Name = "label11";
-            label11.Size = new Size(84, 15);
-            label11.TabIndex = 46;
-            label11.Text = "Complemento";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(243, 359);
-            label10.Name = "label10";
-            label10.Size = new Size(44, 15);
-            label10.TabIndex = 45;
-            label10.Text = "Cidade";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(24, 359);
-            label9.Name = "label9";
-            label9.Size = new Size(38, 15);
-            label9.TabIndex = 44;
-            label9.Text = "Bairro";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(24, 301);
-            label8.Name = "label8";
-            label8.Size = new Size(69, 15);
-            label8.TabIndex = 43;
-            label8.Text = "Logradouro";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(375, 301);
-            label7.Name = "label7";
-            label7.Size = new Size(21, 15);
-            label7.TabIndex = 42;
-            label7.Text = "Nº";
             // 
             // campoLogradouroCliente
             // 
+            campoLogradouroCliente.BackColor = Color.FromArgb(246, 248, 250);
+            campoLogradouroCliente.BorderStyle = BorderStyle.None;
             campoLogradouroCliente.Location = new Point(24, 318);
             campoLogradouroCliente.Margin = new Padding(3, 2, 3, 2);
             campoLogradouroCliente.Name = "campoLogradouroCliente";
-            campoLogradouroCliente.Size = new Size(329, 23);
+            campoLogradouroCliente.PlaceholderText = "Detalhes sobre o logradouro";
+            campoLogradouroCliente.Size = new Size(329, 16);
             campoLogradouroCliente.TabIndex = 41;
             // 
             // campoNumeroLogCliente
             // 
-            campoNumeroLogCliente.Location = new Point(375, 318);
+            campoNumeroLogCliente.BackColor = Color.FromArgb(246, 248, 250);
+            campoNumeroLogCliente.BorderStyle = BorderStyle.None;
+            campoNumeroLogCliente.Location = new Point(373, 318);
             campoNumeroLogCliente.Margin = new Padding(3, 2, 3, 2);
             campoNumeroLogCliente.Name = "campoNumeroLogCliente";
-            campoNumeroLogCliente.Size = new Size(67, 23);
+            campoNumeroLogCliente.PlaceholderText = "Nº do local";
+            campoNumeroLogCliente.Size = new Size(67, 16);
             campoNumeroLogCliente.TabIndex = 40;
+            campoNumeroLogCliente.TextChanged += campoNumeroLogCliente_TextChanged;
             // 
             // campoComplementoCliente
             // 
-            campoComplementoCliente.Location = new Point(460, 318);
+            campoComplementoCliente.BackColor = Color.FromArgb(246, 248, 250);
+            campoComplementoCliente.BorderStyle = BorderStyle.None;
+            campoComplementoCliente.Location = new Point(460, 315);
             campoComplementoCliente.Margin = new Padding(3, 2, 3, 2);
             campoComplementoCliente.Name = "campoComplementoCliente";
-            campoComplementoCliente.Size = new Size(244, 23);
+            campoComplementoCliente.PlaceholderText = "Complemento";
+            campoComplementoCliente.Size = new Size(244, 16);
             campoComplementoCliente.TabIndex = 39;
             // 
             // campoCidadeCliente
             // 
+            campoCidadeCliente.BackColor = Color.FromArgb(246, 248, 250);
+            campoCidadeCliente.BorderStyle = BorderStyle.None;
             campoCidadeCliente.Location = new Point(243, 378);
             campoCidadeCliente.Margin = new Padding(3, 2, 3, 2);
             campoCidadeCliente.Name = "campoCidadeCliente";
-            campoCidadeCliente.Size = new Size(199, 23);
+            campoCidadeCliente.PlaceholderText = "Cidade";
+            campoCidadeCliente.Size = new Size(188, 16);
             campoCidadeCliente.TabIndex = 38;
             // 
             // campoBairroCliente
             // 
+            campoBairroCliente.BackColor = Color.FromArgb(246, 248, 250);
+            campoBairroCliente.BorderStyle = BorderStyle.None;
             campoBairroCliente.Location = new Point(24, 378);
             campoBairroCliente.Margin = new Padding(3, 2, 3, 2);
             campoBairroCliente.Name = "campoBairroCliente";
-            campoBairroCliente.Size = new Size(199, 23);
+            campoBairroCliente.PlaceholderText = "Bairro";
+            campoBairroCliente.Size = new Size(199, 16);
             campoBairroCliente.TabIndex = 37;
             // 
             // campoCepCliente
             // 
-            campoCepCliente.Location = new Point(546, 378);
+            campoCepCliente.BackColor = Color.FromArgb(246, 248, 250);
+            campoCepCliente.BorderStyle = BorderStyle.None;
+            campoCepCliente.Location = new Point(437, 378);
             campoCepCliente.Margin = new Padding(3, 2, 3, 2);
             campoCepCliente.Name = "campoCepCliente";
-            campoCepCliente.Size = new Size(158, 23);
+            campoCepCliente.PlaceholderText = "CEP";
+            campoCepCliente.Size = new Size(77, 16);
             campoCepCliente.TabIndex = 36;
             // 
             // comboBoxEstadoCliente
             // 
+            comboBoxEstadoCliente.AccessibleName = "";
             comboBoxEstadoCliente.FormattingEnabled = true;
             comboBoxEstadoCliente.Items.AddRange(new object[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
-            comboBoxEstadoCliente.Location = new Point(460, 377);
+            comboBoxEstadoCliente.Location = new Point(553, 378);
             comboBoxEstadoCliente.Margin = new Padding(3, 2, 3, 2);
             comboBoxEstadoCliente.Name = "comboBoxEstadoCliente";
             comboBoxEstadoCliente.Size = new Size(67, 23);
@@ -226,7 +182,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(25, 72);
+            label2.Location = new Point(24, 72);
             label2.Name = "label2";
             label2.Size = new Size(181, 21);
             label2.TabIndex = 26;
@@ -236,7 +192,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(24, 264);
+            label1.Location = new Point(24, 251);
             label1.Name = "label1";
             label1.Size = new Size(156, 21);
             label1.TabIndex = 25;
@@ -244,13 +200,17 @@
             // 
             // button1
             // 
-            button1.Location = new Point(621, 412);
+            button1.BackColor = Color.FromArgb(108, 181, 223);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = SystemColors.Window;
+            button1.Location = new Point(622, 453);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(82, 22);
             button1.TabIndex = 49;
             button1.Text = "Incluir";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button3
@@ -302,25 +262,72 @@
             panel4.Size = new Size(223, 2);
             panel4.TabIndex = 54;
             // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(108, 181, 223);
+            panel5.Location = new Point(24, 339);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(329, 2);
+            panel5.TabIndex = 53;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(108, 181, 223);
+            panel6.Location = new Point(373, 339);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(72, 2);
+            panel6.TabIndex = 54;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(108, 181, 223);
+            panel7.Location = new Point(461, 339);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(243, 2);
+            panel7.TabIndex = 54;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(108, 181, 223);
+            panel8.Location = new Point(25, 399);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(198, 2);
+            panel8.TabIndex = 54;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(108, 181, 223);
+            panel9.Location = new Point(243, 399);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(169, 2);
+            panel9.TabIndex = 55;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(108, 181, 223);
+            panel10.Location = new Point(438, 399);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(76, 2);
+            panel10.TabIndex = 56;
+            // 
             // TelaCadastroCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 248, 250);
             ClientSize = new Size(1138, 641);
+            Controls.Add(panel10);
+            Controls.Add(panel9);
+            Controls.Add(panel8);
+            Controls.Add(panel7);
+            Controls.Add(panel6);
+            Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(button3);
             Controls.Add(button1);
-            Controls.Add(label13);
-            Controls.Add(label12);
-            Controls.Add(label11);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
             Controls.Add(campoLogradouroCliente);
             Controls.Add(campoNumeroLogCliente);
             Controls.Add(campoComplementoCliente);
@@ -343,14 +350,6 @@
         }
 
         #endregion
-
-        private Label label13;
-        private Label label12;
-        private Label label11;
-        private Label label10;
-        private Label label9;
-        private Label label8;
-        private Label label7;
         private TextBox campoLogradouroCliente;
         private TextBox campoNumeroLogCliente;
         private TextBox campoComplementoCliente;
@@ -370,5 +369,11 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
+        private Panel panel5;
+        private Panel panel6;
+        private Panel panel7;
+        private Panel panel8;
+        private Panel panel9;
+        private Panel panel10;
     }
 }
