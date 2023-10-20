@@ -122,6 +122,28 @@ namespace PontoDeVenda_PAV.Controladores
             BancodeDados.obterInstancia().desconectar();
         }
 
+        public void AtualizarSaldoCaixaCompra(int idCaixa, decimal valor)
+        {
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+                string comandoSql = "UPDATE caixa SET saldo_caixa = saldo_caixa - @valor WHERE id_caixa = @idCaixa";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@valor", valor);
+                    comando.Parameters.AddWithValue("@idCaixa", idCaixa);
+
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao atualizar o saldo do caixa: " + ex.Message);
+            }
+            BancodeDados.obterInstancia().desconectar();
+        }
+
 
 
 

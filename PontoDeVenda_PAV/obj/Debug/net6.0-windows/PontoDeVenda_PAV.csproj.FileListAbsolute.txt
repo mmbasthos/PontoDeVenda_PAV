@@ -83,3 +83,5 @@ C:\Users\lexvi\Source\Repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-w
 C:\Users\lexvi\Source\Repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.genruntimeconfig.cache
 C:\Users\lexvi\Source\Repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\ref\PontoDeVenda_PAV.dll
 C:\Users\lexvi\Source\Repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.TelaIdentificarFornecedor.resources
+C:\Users\lexvi\source\repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.FinalizareVendaPagamento.resources
+C:\Users\lexvi\source\repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ImprimirRelatorioCompras.resources

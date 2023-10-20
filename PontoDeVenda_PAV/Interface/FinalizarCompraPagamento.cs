@@ -21,185 +21,6 @@ namespace PontoDeVenda_PAV.Interface
             InitializeComponent();
         }
 
-        private string ObterNomeCliente(int idVenda)
-        {
-            BancodeDados.obterInstancia().conectar();
-            try
-            {
-                string comandoSql = "SELECT c.nome_cliente " +
-                                    "FROM venda v " +
-                                    "JOIN cliente c ON v.Cliente_id_cliente = c.id_cliente " +
-                                    "WHERE v.id_venda = @id_venda";
-
-                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
-                {
-                    comando.Parameters.AddWithValue("@id_venda", idVenda);
-
-                    object resultado = comando.ExecuteScalar();
-
-                    if (resultado != null)
-                    {
-                        return resultado.ToString();
-                        BancodeDados.obterInstancia().desconectar();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao obter nome do cliente: " + ex.Message);
-            }
-
-            return string.Empty; // Retorna uma string vazia se não encontrar o cliente
-        }
-
-        public List<ItemVenda> ObterItensVenda(int idVenda)
-        {
-            List<ItemVenda> itens = new List<ItemVenda>();
-
-            try
-            {
-                BancodeDados.obterInstancia().conectar();
-
-                string comandoSql = "SELECT * FROM item_venda WHERE id_venda = @id_venda";
-
-                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
-                {
-                    comando.Parameters.AddWithValue("@id_venda", idVenda);
-
-                    using (MySqlDataReader leitor = comando.ExecuteReader())
-                    {
-                        while (leitor.Read())
-                        {
-                            ItemVenda item = new ItemVenda();
-                            item.lerDados(leitor);
-                            itens.Add(item);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao obter itens de venda: " + ex.Message);
-            }
-            finally
-            {
-                BancodeDados.obterInstancia().desconectar();
-            }
-
-            return itens;
-        }
-
-
-        public string GerarRelatorio(int idVenda)
-        {
-            try
-            {
-                BancodeDados.obterInstancia().conectar();
-                StringBuilder relatorio = new StringBuilder();
-
-                // Obter nome do cliente
-                string nomeCliente = ObterNomeCliente(idVenda);
-
-                // Obter lista de itens da venda
-                List<ItemVenda> itens = ObterItensVenda(idVenda);
-
-                relatorio.AppendLine($"-----------------------------");
-                relatorio.AppendLine($"        Relatório de Venda       ");
-                relatorio.AppendLine($"-----------------------------");
-                relatorio.AppendLine($"Venda: {idVenda:D3}");
-                relatorio.AppendLine($"Data: {DateTime.Now.ToShortDateString()}");
-                relatorio.AppendLine($"Hora: {DateTime.Now.ToShortTimeString()}");
-                relatorio.AppendLine($"-----------------------------");
-
-                if (!string.IsNullOrEmpty(nomeCliente))
-                {
-                    relatorio.AppendLine($"Cliente: {nomeCliente}");
-                    relatorio.AppendLine($"-----------------------------");
-                }
-
-                relatorio.AppendLine($"Item   Descrição           Qtd   Preço   Total");
-                relatorio.AppendLine($"-----------------------------");
-
-                foreach (var item in itens)
-                {
-                    ControladorCadastroProdutos controladorCadastroProdutos = new ControladorCadastroProdutos();
-                    string nomeProduto = controladorCadastroProdutos.ObterNomeProdutoPorId(item.id_produto);
-                    relatorio.AppendLine($"{item.id_produto:D4}   {nomeProduto}     {item.quantidade_item}   {item.valor_unitario_item:C}   {item.total_item:C}");
-                }
-
-                relatorio.AppendLine($"-----------------------------");
-
-                // Calcular total
-                decimal total = itens.Sum(item => item.total_item);
-                relatorio.AppendLine($"Total: {total:C}");
-
-                return relatorio.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao gerar relatório: " + ex.Message);
-                return "";
-            }
-            finally
-            {
-                BancodeDados.obterInstancia().desconectar();
-            }
-        }
-
-
-
-
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                BancodeDados.obterInstancia().conectar();
-
-                // Obter os valores selecionados
-                int idFormaPagamento = (int)campoFormaPag.SelectedValue;
-                // Obter o ID da venda atual
-                ControladorVendas controladorVendas = new ControladorVendas();
-                int idVenda = controladorVendas.vendaAtual();
-                decimal valorFormaPagamento = controladorVendas.ObterTotalVenda(idVenda);
-
-
-                // Inserir a forma de pagamento
-                ControladorFormaPagamentoVenda controladorFormaPagamentoVenda = new ControladorFormaPagamentoVenda();
-                FormaPagamentoVenda formaPagamentoVenda = new FormaPagamentoVenda();
-
-                formaPagamentoVenda.Venda_id_venda = idVenda;
-                formaPagamentoVenda.Forma_Pagamento_id_forma_pagamento = idFormaPagamento;
-                formaPagamentoVenda.valor_forma_pagamento = valorFormaPagamento;
-
-                controladorFormaPagamentoVenda.incluir(formaPagamentoVenda);
-
-                ControladorCaixa controladorCaixa = new ControladorCaixa();
-                int idCaixa = controladorCaixa.caixaAtual();
-                controladorCaixa.AtualizarSaldoCaixa(idCaixa, valorFormaPagamento);
-
-
-                string relatorio = GerarRelatorio(idVenda);
-
-
-                // Exibe o relatório em uma MessageBox
-                MessageBox.Show(relatorio, "Relatório da Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro na Venda: " + ex.Message);
-            }
-            finally
-            {
-                BancodeDados.obterInstancia().desconectar();
-            }
-            Close();
-
-        }
-
-
         private void FinalizarCompraPagamento_Load(object sender, EventArgs e)
         {
             try
@@ -218,9 +39,9 @@ namespace PontoDeVenda_PAV.Interface
                     campoFormaPag.ValueMember = "id_forma_pagamento";
                 }
 
-                ControladorVendas controladorVendas = new ControladorVendas();
-                int idVenda = controladorVendas.vendaAtual();
-                decimal totalCompra = controladorVendas.ObterTotalVenda(idVenda);
+                ControladorCompras controladorCompras = new ControladorCompras();
+                int idVenda = controladorCompras.compraAtual();
+                decimal totalCompra = controladorCompras.ObterTotalCompra(idVenda);
                 campoTotal.Text = "Total da Compra: " + totalCompra.ToString("C");
 
 
@@ -235,42 +56,58 @@ namespace PontoDeVenda_PAV.Interface
             }
         }
 
-        private void campoTotal_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void campoDinRecebido_TextChanged(object sender, EventArgs e)
-        {
-            BancodeDados.obterInstancia().conectar();
-            ControladorVendas controladorVendas = new ControladorVendas();
-            int idVenda = controladorVendas.vendaAtual();
-            decimal totalCompra = controladorVendas.ObterTotalVenda(idVenda);
-
-
-            if (decimal.TryParse(campoDinRecebido.Text, out decimal valorDado))
+            try
             {
-                if (valorDado >= totalCompra)
-                {
-                    decimal troco = valorDado - totalCompra;
+                BancodeDados.obterInstancia().conectar();
 
-                    campoTroco.Text = "Troco: " + troco.ToString("C");
-                }
-                else
+                // Obter os valores selecionados
+                int idFormaPagamento = (int)campoFormaPag.SelectedValue;
+                // Obter o ID da venda atual
+                ControladorCompras controladorCompras = new ControladorCompras();
+                int idCompra = controladorCompras.compraAtual();
+                decimal valorFormaPagamento = controladorCompras.ObterTotalCompra(idCompra);
+
+
+                // Inserir a forma de pagamento
+                ControladorFormaPagamentoCompra controladorFormaPagamentoCompra= new ControladorFormaPagamentoCompra();
+                FormaPagamentoCompra formaPagamentoCompra = new FormaPagamentoCompra();
+                ControladorCadastroProdutos controladorCadastroProdutos = new ControladorCadastroProdutos();
+                ControladorItemCompra controladorItemCompra = new ControladorItemCompra();
+
+                formaPagamentoCompra.Compra_id_compra = idCompra;
+                formaPagamentoCompra.Forma_Pagamento_id_forma_pagamento = idFormaPagamento;
+                formaPagamentoCompra.valor_forma_pagamento = valorFormaPagamento;
+
+                controladorFormaPagamentoCompra.incluir(formaPagamentoCompra);
+
+                ControladorCaixa controladorCaixa = new ControladorCaixa();
+                int idCaixa = controladorCaixa.caixaAtual();
+                controladorCaixa.AtualizarSaldoCaixaCompra(idCaixa, valorFormaPagamento);
+                MessageBox.Show("Compra Concluída com Sucesso");
+
+                List<ItemCompra> itensCompra = controladorItemCompra.ObterItensDaCompra(idCompra);
+
+                // Para cada produto, devolver ao estoque
+                foreach (ItemCompra itemCompra in itensCompra)
                 {
-                    campoTroco.Text = "Pag. Insuficiente";
+                    int idProduto = itemCompra.Produto_id_produto;
+                    int quantidade = itemCompra.quantidade_compra;
+
+                    controladorCadastroProdutos.AumentarEstoque(idProduto, quantidade);
                 }
+
             }
-            BancodeDados.obterInstancia().desconectar();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro na Venda: " + ex.Message);
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+            }
             Close();
-        }
-
-        private void campoFormaPag_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
     }

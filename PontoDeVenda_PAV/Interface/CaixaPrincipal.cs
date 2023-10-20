@@ -150,8 +150,12 @@ namespace PontoDeVenda_PAV.Interface
                     controladorItemVenda.incluir(itemVenda);
 
                     // Atualizar o estoque
+
+                    /*
                     controladorCadastroProdutos.AtualizarEstoque(id, qtdprod);
+                    */
                     int idVendaAtual = controladorVendas.vendaAtual();
+
                     decimal totalVendaAtual = controladorVendas.ObterTotalVenda(idVendaAtual);
 
                     // Calcula o novo total da venda
@@ -215,7 +219,9 @@ namespace PontoDeVenda_PAV.Interface
                     controladorItemCompra.incluir(itemCompra);
 
                     // Atualizar o estoque
+                    /*
                     controladorCadastroProdutos.AtualizarEstoque(id, qtdprod);
+                    */
                     int idCompraAtual = controladorCompras.compraAtual();
                     decimal totalCompraAtual = controladorCompras.ObterTotalCompra(idCompraAtual);
 
@@ -354,27 +360,14 @@ namespace PontoDeVenda_PAV.Interface
 
         private void campoAddNum_TextChanged(object sender, EventArgs e)
         {
-            switch (modoVenda)
-            {
-                case true:
-                    ProcessarModoVenda();
-                    break;
-                case false:
-                    ProcessarModoCompra();
-                    break;
-                default:
-                    break;
-            }
+            MostraItens();
         }
 
-        private void ProcessarModoVenda()
+        private void MostraItens()
         {
             try
             {
                 BancodeDados.obterInstancia().conectar();
-
-                ControladorItemVenda controladorItemVenda = new ControladorItemVenda();
-                ControladorVendas controladorVendas = new ControladorVendas();
                 ControladorCadastroProdutos controladorCadastroProdutos = new ControladorCadastroProdutos();
 
                 string idString = campoAddNum.Text;
@@ -405,46 +398,6 @@ namespace PontoDeVenda_PAV.Interface
                 BancodeDados.obterInstancia().desconectar();
             }
         }
-
-        private void ProcessarModoCompra()
-        {
-            try
-            {
-                BancodeDados.obterInstancia().conectar();
-
-                ControladorItemCompra controladorItemCompra = new ControladorItemCompra(); // Use o controlador de compra
-                ControladorCadastroProdutos controladorCadastroProdutos = new ControladorCadastroProdutos();
-
-                string idString = campoAddNum.Text;
-
-                if (int.TryParse(idString, out int id))
-                {
-                    ItemCompra itemCompra = new ItemCompra(); // Use o ItemCompra ao invés de ItemVenda
-                    Produtos produto = new Produtos();
-                    produto.id_produto = id;
-
-                    decimal valorUnitario = controladorCadastroProdutos.ObterValorProdutoPorId(id);
-
-                    campoNomeProd.Text = controladorCadastroProdutos.ObterNomeProdutoPorId(id);
-                    campoPrecoProd.Text = valorUnitario.ToString();
-                    campoQTDProd.Text = qtdprod.ToString();
-                    decimal totalprod = qtdprod * valorUnitario;
-                    campoTotalProd.Text = totalprod.ToString();
-                }
-
-                BancodeDados.obterInstancia().confirmarTransacao();
-            }
-            catch (Exception ex)
-            {
-                BancodeDados.obterInstancia().cancelarTransacao();
-
-            }
-            finally
-            {
-                BancodeDados.obterInstancia().desconectar();
-            }
-        }
-
 
         private void AtualizarCampos()
         {
@@ -507,11 +460,74 @@ namespace PontoDeVenda_PAV.Interface
 
         private void finalizarVendaF7ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FinalizarCompraPagamento finalizarCompra = new FinalizarCompraPagamento();
+            FinalizareVendaPagamento finalizarCompra = new FinalizareVendaPagamento();
             finalizarCompra.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
+        {
+            if (modoVenda)
+            {
+                ExcluirItemVenda();
+            }
+            else
+            {
+                ExcluirItemCompra();
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void ExcluirItemCompra()
+        {
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+
+                ControladorItemCompra controladorItemCompra = new ControladorItemCompra();
+                ControladorCadastroProdutos controladorCadastroProdutos = new ControladorCadastroProdutos();
+                ControladorCompras controladorCompras = new ControladorCompras();
+                int idCompra = controladorCompras.compraAtual();
+
+                int rowIndex = dataGridView1.CurrentCell.RowIndex;
+                if (rowIndex >= 0)
+                {
+                    DataGridViewRow selectedRow = dataGridView1.Rows[rowIndex];
+
+                    int idProduto = Convert.ToInt32(selectedRow.Cells["id_produto"].Value);
+                    int quantidade = Convert.ToInt32(selectedRow.Cells["quantidade_compra"].Value);
+
+                    // Deleta o item da venda
+                    controladorItemCompra.Deletar(idProduto, idCompra);
+
+                    // Atualiza o label com o novo total
+                    decimal valorUnitario = Convert.ToDecimal(selectedRow.Cells["valor_unitario_compra"].Value);
+                    decimal totalDelete = valorUnitario * quantidade;
+                    novoTotal -= totalDelete; // Subtrai o total excluído
+                    label2.Text = novoTotal.ToString();
+
+                    // Atualiza o estoque
+                    /*
+                    controladorCadastroProdutos.AumentarEstoque(idProduto, quantidade);
+                    */
+
+                    controladorCompras.AtualizarTotalCompra(idCompra, novoTotal);
+
+                    AtualizarTabela();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao deletar item: " + ex.Message);
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+            }
+        }
+        private void ExcluirItemVenda()
         {
             try
             {
@@ -540,7 +556,9 @@ namespace PontoDeVenda_PAV.Interface
                     label2.Text = novoTotal.ToString();
 
                     // Atualiza o estoque
-                    controladorCadastroProdutos.AumentarEstoque(idProduto, quantidade);
+                    /*
+                     controladorCadastroProdutos.AumentarEstoque(idProduto, quantidade);
+                    */
 
                     controladorVendas.AtualizarTotalVenda(idVenda, novoTotal);
 
@@ -554,29 +572,6 @@ namespace PontoDeVenda_PAV.Interface
             finally
             {
                 BancodeDados.obterInstancia().desconectar();
-            }
-        }
-
-
-
-
-
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-
-                int idProduto = Convert.ToInt32(selectedRow.Cells["id_produto"].Value);
-                int quantidade = Convert.ToInt32(selectedRow.Cells["quantidade_item"].Value);
-
-                DeletarItemVenda(idProduto, quantidade);
             }
         }
 
@@ -594,6 +589,7 @@ namespace PontoDeVenda_PAV.Interface
                 List<ItemVenda> itensVenda = controladorItemVenda.ObterItensDaVenda(idVenda);
 
                 // Para cada produto, devolver ao estoque
+                /*
                 foreach (ItemVenda itemVenda in itensVenda)
                 {
                     int idProduto = itemVenda.id_produto;
@@ -601,6 +597,7 @@ namespace PontoDeVenda_PAV.Interface
 
                     controladorCadastroProdutos.AumentarEstoque(idProduto, quantidade);
                 }
+                */
 
                 // Atualizar a situação da venda
                 controladorVendas.AtualizarSituacaoVenda(idVenda, "Cancelada");
@@ -627,63 +624,55 @@ namespace PontoDeVenda_PAV.Interface
             }
         }
 
-
-        private void DeletarItemVenda(int idProduto, int quantidade)
+        private void CancelarCompra(int idVenda)
         {
             try
             {
                 BancodeDados.obterInstancia().conectar();
 
-                ControladorItemVenda controladorItemVenda = new ControladorItemVenda();
+                ControladorCompras controladorCompras = new ControladorCompras();
+                ControladorItemCompra controladorItemCompra = new ControladorItemCompra();
                 ControladorCadastroProdutos controladorCadastroProdutos = new ControladorCadastroProdutos();
-                ControladorVendas controladorVendas = new ControladorVendas();
-                int idVenda = controladorVendas.vendaAtual();
 
-                // Primeiro, obtemos o ID do item_venda a partir do idProduto e idVenda
-                int idItemVenda = controladorItemVenda.ObterIdItemVenda(idProduto, idVenda);
+                // Obter os produtos da venda
+                List<ItemCompra> itensCompra = controladorItemCompra.ObterItensDaCompra(idVenda);
 
-                if (idItemVenda > 0)
+                // Para cada produto, devolver ao estoque
+                /*
+                foreach (ItemCompra itemCompra in itensCompra)
                 {
-                    controladorItemVenda.Deletar(idProduto, idVenda); // Deletar agora requer dois argumentos
+                    int idProduto = itemCompra.id_produto;
+                    int quantidade = itemCompra.quantidade_compra;
 
-                    // Calcula o novo total da venda
-                    decimal valorUnitario = controladorCadastroProdutos.ObterValorProdutoPorId(idProduto);
-                    decimal totalExcluido = valorUnitario * quantidade;
-                    decimal novoTotal = ObterTotalVendaAtual() - totalExcluido;
-
-                    // Atualiza o banco de dados com o novo total
-                    controladorVendas.AtualizarTotalVenda(idVenda, novoTotal);
-
-                    // Retorna a quantidade para o estoque
                     controladorCadastroProdutos.AumentarEstoque(idProduto, quantidade);
-
-                    // Atualiza o label com o novo total
-                    label2.Text = novoTotal.ToString();
-
-                    int rowIndex = dataGridView1.CurrentCell.RowIndex;
-                    if (rowIndex >= 0)
-                    {
-                        DataGridViewRow selectedRow = dataGridView1.Rows[rowIndex];
-                        dataGridView1.Rows.Remove(selectedRow);
-                    }
                 }
-                else
-                {
-                    MessageBox.Show("O item não foi encontrado na venda atual.");
-                }
+                */
 
-                BancodeDados.obterInstancia().confirmarTransacao();
+                // Atualizar a situação da venda
+                controladorCompras.AtualizarSituacaoCompra(idVenda, "Cancelada");
+
+                // Manter o valor total da venda
+                decimal totalVenda = controladorCompras.ObterTotalCompra(idVenda);
+
+                // Atualiza o label com o novo total (se necessário)
+                label2.Text = totalVenda.ToString();
+
+                // Atualiza a tabela (se necessário)
+                AtualizarTabela();
+                LimparCamposCaixaPrincipal();
+                LimparTabelaProdutos();
             }
             catch (Exception ex)
             {
-                BancodeDados.obterInstancia().cancelarTransacao();
-                MessageBox.Show("Erro ao deletar item: " + ex.Message);
+                MessageBox.Show("Erro ao cancelar compra: " + ex.Message);
             }
             finally
             {
                 BancodeDados.obterInstancia().desconectar();
+                MessageBox.Show("Compra Cancelada!");
             }
         }
+
 
         private void cancelarVendaF8ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -710,6 +699,19 @@ namespace PontoDeVenda_PAV.Interface
         private void button6_Click(object sender, EventArgs e)
         {
             BancodeDados.obterInstancia().conectar();
+        }
+
+        private void finalizarCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FinalizarCompraPagamento finalizarCompraPagamento = new FinalizarCompraPagamento();
+            finalizarCompraPagamento.ShowDialog();
+        }
+
+        private void cancelarCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControladorCompras controladorCompras = new ControladorCompras();
+            int idCompra = controladorCompras.compraAtual();
+            CancelarCompra(idCompra);
         }
     }
 }

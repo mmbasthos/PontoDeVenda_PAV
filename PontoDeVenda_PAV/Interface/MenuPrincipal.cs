@@ -66,5 +66,11 @@ namespace PontoDeVenda_PAV.Interface
             ImprimirRelatorioVendas imprimirRelatorioVendas = new ImprimirRelatorioVendas();
             imprimirRelatorioVendas.Show();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ImprimirRelatorioCompras imprimirRelatorioCompras = new ImprimirRelatorioCompras();
+            imprimirRelatorioCompras.Show();
+        }
     }
 }

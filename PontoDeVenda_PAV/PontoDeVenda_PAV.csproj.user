@@ -16,6 +16,12 @@
     <Compile Update="Interface\FinalizarCompraPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Interface\FinalizareVendaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Interface\ImprimirRelatorioCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Interface\ImprimirRelatorioVendas.cs">
       <SubType>Form</SubType>
     </Compile>

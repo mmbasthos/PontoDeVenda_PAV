@@ -110,15 +110,16 @@ namespace PontoDeVenda_PAV.Controladores
 
         }
 
-        public void Deletar(int idItemCompra)
+        public void Deletar(int idProduto, int idCompra)
         {
             BancodeDados.obterInstancia().conectar();
 
-            string comandoSql = "DELETE FROM item_compra WHERE id_item_compra = @id_item_compra";
+            string comandoSql = "DELETE FROM item_compra WHERE Produto_id_produto = @id_produto AND Compra_id_compra = @Compra_id_compra";
 
             using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
             {
-                comando.Parameters.AddWithValue("@id_item_compra", idItemCompra);
+                comando.Parameters.AddWithValue("@id_produto", idProduto);
+                comando.Parameters.AddWithValue("@Compra_id_compra", idCompra);
 
                 comando.ExecuteNonQuery();
             }

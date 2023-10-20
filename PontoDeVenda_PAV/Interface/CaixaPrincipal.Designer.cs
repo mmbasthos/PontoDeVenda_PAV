@@ -34,6 +34,8 @@
             finalizarVendaF7ToolStripMenuItem = new ToolStripMenuItem();
             cancelarVendaF8ToolStripMenuItem = new ToolStripMenuItem();
             iniciarCompraToolStripMenuItem = new ToolStripMenuItem();
+            finalizarCompraToolStripMenuItem = new ToolStripMenuItem();
+            cancelarCompraToolStripMenuItem = new ToolStripMenuItem();
             cadastrarClienteToolStripMenuItem = new ToolStripMenuItem();
             cadastrarClienteToolStripMenuItem1 = new ToolStripMenuItem();
             consultarClientesToolStripMenuItem = new ToolStripMenuItem();
@@ -62,8 +64,6 @@
             label8 = new Label();
             label9 = new Label();
             button6 = new Button();
-            cancelarCompraToolStripMenuItem = new ToolStripMenuItem();
-            finalizarCompraToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -120,6 +120,20 @@
             iniciarCompraToolStripMenuItem.Size = new Size(149, 24);
             iniciarCompraToolStripMenuItem.Text = "Iniciar Compra - F2";
             iniciarCompraToolStripMenuItem.Click += iniciarCompraToolStripMenuItem_Click;
+            // 
+            // finalizarCompraToolStripMenuItem
+            // 
+            finalizarCompraToolStripMenuItem.Name = "finalizarCompraToolStripMenuItem";
+            finalizarCompraToolStripMenuItem.Size = new Size(135, 24);
+            finalizarCompraToolStripMenuItem.Text = "Finalizar Compra";
+            finalizarCompraToolStripMenuItem.Click += finalizarCompraToolStripMenuItem_Click;
+            // 
+            // cancelarCompraToolStripMenuItem
+            // 
+            cancelarCompraToolStripMenuItem.Name = "cancelarCompraToolStripMenuItem";
+            cancelarCompraToolStripMenuItem.Size = new Size(141, 24);
+            cancelarCompraToolStripMenuItem.Text = "Cancelar Compra ";
+            cancelarCompraToolStripMenuItem.Click += cancelarCompraToolStripMenuItem_Click;
             // 
             // cadastrarClienteToolStripMenuItem
             // 
@@ -399,18 +413,6 @@
             button6.Text = "button6";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
-            // 
-            // cancelarCompraToolStripMenuItem
-            // 
-            cancelarCompraToolStripMenuItem.Name = "cancelarCompraToolStripMenuItem";
-            cancelarCompraToolStripMenuItem.Size = new Size(141, 24);
-            cancelarCompraToolStripMenuItem.Text = "Cancelar Compra ";
-            // 
-            // finalizarCompraToolStripMenuItem
-            // 
-            finalizarCompraToolStripMenuItem.Name = "finalizarCompraToolStripMenuItem";
-            finalizarCompraToolStripMenuItem.Size = new Size(135, 24);
-            finalizarCompraToolStripMenuItem.Text = "Finalizar Compra";
             // 
             // CaixaPrincipal
             // 

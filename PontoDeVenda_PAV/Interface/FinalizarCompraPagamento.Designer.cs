@@ -28,88 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            campoDinRecebido = new TextBox();
-            campoTotal = new TextBox();
-            Finalizar = new Button();
+            button1 = new Button();
             button2 = new Button();
+            campoTotal = new TextBox();
             campoFormaPag = new ComboBox();
-            campoTroco = new TextBox();
             SuspendLayout();
             // 
-            // campoDinRecebido
+            // button1
             // 
-            campoDinRecebido.Location = new Point(10, 59);
-            campoDinRecebido.Margin = new Padding(3, 2, 3, 2);
-            campoDinRecebido.Name = "campoDinRecebido";
-            campoDinRecebido.PlaceholderText = "Dinheiro Recebido";
-            campoDinRecebido.Size = new Size(128, 23);
-            campoDinRecebido.TabIndex = 2;
-            campoDinRecebido.TextChanged += campoDinRecebido_TextChanged;
-            // 
-            // campoTotal
-            // 
-            campoTotal.Location = new Point(10, 34);
-            campoTotal.Margin = new Padding(3, 2, 3, 2);
-            campoTotal.Name = "campoTotal";
-            campoTotal.Size = new Size(261, 23);
-            campoTotal.TabIndex = 1;
-            campoTotal.TextChanged += campoTotal_TextChanged;
-            // 
-            // Finalizar
-            // 
-            Finalizar.Location = new Point(144, 94);
-            Finalizar.Margin = new Padding(3, 2, 3, 2);
-            Finalizar.Name = "Finalizar";
-            Finalizar.Size = new Size(128, 22);
-            Finalizar.TabIndex = 2;
-            Finalizar.Text = "Finalizar";
-            Finalizar.UseVisualStyleBackColor = true;
-            Finalizar.Click += button1_Click;
+            button1.Location = new Point(12, 114);
+            button1.Name = "button1";
+            button1.Size = new Size(202, 29);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(10, 94);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(12, 79);
             button2.Name = "button2";
-            button2.Size = new Size(128, 22);
-            button2.TabIndex = 3;
+            button2.Size = new Size(202, 29);
+            button2.TabIndex = 1;
             button2.Text = "Continuar Compra";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            // 
+            // campoTotal
+            // 
+            campoTotal.Location = new Point(12, 46);
+            campoTotal.Name = "campoTotal";
+            campoTotal.Size = new Size(202, 27);
+            campoTotal.TabIndex = 2;
             // 
             // campoFormaPag
             // 
             campoFormaPag.FormattingEnabled = true;
-            campoFormaPag.Location = new Point(10, 9);
-            campoFormaPag.Margin = new Padding(3, 2, 3, 2);
+            campoFormaPag.Location = new Point(12, 12);
             campoFormaPag.Name = "campoFormaPag";
-            campoFormaPag.Size = new Size(261, 23);
-            campoFormaPag.TabIndex = 0;
-            campoFormaPag.SelectedIndexChanged += campoFormaPag_SelectedIndexChanged;
-            // 
-            // campoTroco
-            // 
-            campoTroco.Location = new Point(144, 59);
-            campoTroco.Margin = new Padding(3, 2, 3, 2);
-            campoTroco.Name = "campoTroco";
-            campoTroco.PlaceholderText = "Troco";
-            campoTroco.Size = new Size(128, 23);
-            campoTroco.TabIndex = 4;
+            campoFormaPag.Size = new Size(202, 28);
+            campoFormaPag.TabIndex = 3;
             // 
             // FinalizarCompraPagamento
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(282, 128);
-            Controls.Add(campoTroco);
+            ClientSize = new Size(224, 153);
             Controls.Add(campoFormaPag);
-            Controls.Add(button2);
-            Controls.Add(Finalizar);
             Controls.Add(campoTotal);
-            Controls.Add(campoDinRecebido);
-            Margin = new Padding(3, 2, 3, 2);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Name = "FinalizarCompraPagamento";
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "FinalizarCompraPagamento";
             Load += FinalizarCompraPagamento_Load;
             ResumeLayout(false);
@@ -118,13 +86,9 @@
 
         #endregion
 
-        private TextBox campoDinRecebido;
-        private TextBox campoTotal;
-        private Button Finalizar;
+        private Button button1;
         private Button button2;
+        private TextBox campoTotal;
         private ComboBox campoFormaPag;
-        private TextBox campoTroco;
-        private Label label1;
-        private Label label2;
     }
 }
