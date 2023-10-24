@@ -817,7 +817,7 @@ namespace PontoDeVenda_PAV.Interface
         {
             ControladorCaixa controladorCaixa = new ControladorCaixa();
             int idCaixa = controladorCaixa.ObterCaixaAtual(); // Substitua 1 pelo valor real do ID do caixa
-
+            Close();
             string relatorio = GerarRelatorio(idCaixa);
 
             MessageBox.Show(relatorio, "Relatório de Fechamento do Caixa", MessageBoxButtons.OK, MessageBoxIcon.Information);

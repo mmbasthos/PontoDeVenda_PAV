@@ -113,7 +113,7 @@ namespace PontoDeVenda_PAV.Interface
 
 
                 // Inserir a forma de pagamento
-                ControladorFormaPagamentoCompra controladorFormaPagamentoCompra= new ControladorFormaPagamentoCompra();
+                ControladorFormaPagamentoCompra controladorFormaPagamentoCompra = new ControladorFormaPagamentoCompra();
                 FormaPagamentoCompra formaPagamentoCompra = new FormaPagamentoCompra();
                 ControladorCadastroProdutos controladorCadastroProdutos = new ControladorCadastroProdutos();
                 ControladorItemCompra controladorItemCompra = new ControladorItemCompra();
@@ -124,14 +124,14 @@ namespace PontoDeVenda_PAV.Interface
 
                 controladorFormaPagamentoCompra.incluir(formaPagamentoCompra);
 
-                
+
                 int idCaixa = controladorCaixa.caixaAtual();
                 controladorCaixa.AtualizarSaldoCaixaCompra(idCaixa, valorFormaPagamento);
                 MessageBox.Show("Compra Concluída com Sucesso");
 
                 List<ItemCompra> itensCompra = controladorItemCompra.ObterItensDaCompra(idCompra);
 
-                
+
                 foreach (ItemCompra itemCompra in itensCompra)
                 {
                     int idProduto = itemCompra.Produto_id_produto;
