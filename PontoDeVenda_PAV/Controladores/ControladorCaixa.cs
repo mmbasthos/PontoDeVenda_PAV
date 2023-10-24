@@ -25,6 +25,44 @@ namespace PontoDeVenda_PAV.Controladores
             return "0";
         }
 
+   
+
+
+        public int ObterCaixaAtual()
+        {
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+
+                string comandoSql = "SELECT id_caixa FROM caixa ORDER BY id_caixa DESC LIMIT 1";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    object resultado = comando.ExecuteScalar();
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        return Convert.ToInt32(resultado);
+                    }
+                    else
+                    {
+                        // Trate o caso em que a consulta não retorna nenhum valor.
+                        // Por exemplo, você pode retornar um valor padrão ou lançar uma exceção.
+                        throw new Exception("Nenhum caixa encontrado.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Trate a exceção conforme necessário (por exemplo, registre-a ou a lance novamente).
+                throw new Exception("Erro ao obter caixa atual: " + ex.Message);
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+            }
+        }
+
+
         public int caixaAtual()
         {
             try

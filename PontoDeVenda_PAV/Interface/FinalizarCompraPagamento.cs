@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace PontoDeVenda_PAV.Interface
 {
@@ -19,6 +20,43 @@ namespace PontoDeVenda_PAV.Interface
         public FinalizarCompraPagamento()
         {
             InitializeComponent();
+        }
+
+        public void MovimentoSaida(int caixaAtual)
+        {
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+
+                // Adicione um log para verificar se a conexão está aberta
+
+                ControladorCompras controladorCompras = new ControladorCompras();
+                ControladorCaixa controladorCaixa = new ControladorCaixa();
+                ControladorMovimentoCaixa controladorMovimentoCaixa = new ControladorMovimentoCaixa();
+                MovimentoCaixa movimentoCaixa = new MovimentoCaixa();
+                string nomeFormaPagamento = campoFormaPag.Text;
+                int idCompra = controladorCompras.compraAtual();
+                decimal valor = controladorCompras.ObterTotalCompra(idCompra);
+                movimentoCaixa.data_movimento = DateTime.Now.Date;
+                movimentoCaixa.hora_movimento = DateTime.Now.TimeOfDay;
+                movimentoCaixa.descricao_movimento = "Compra";
+                movimentoCaixa.tipo_movimento = "S";
+                movimentoCaixa.valor_movimento = valor;
+                movimentoCaixa.Caixa_id_caixa = caixaAtual;
+                movimentoCaixa.formapagamento = nomeFormaPagamento;
+
+
+                controladorMovimentoCaixa.incluir(movimentoCaixa);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir movimentação: " + ex.Message);
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+            }
+
         }
 
         private void FinalizarCompraPagamento_Load(object sender, EventArgs e)
@@ -66,8 +104,12 @@ namespace PontoDeVenda_PAV.Interface
                 int idFormaPagamento = (int)campoFormaPag.SelectedValue;
                 // Obter o ID da venda atual
                 ControladorCompras controladorCompras = new ControladorCompras();
+                ControladorCaixa controladorCaixa = new ControladorCaixa();
                 int idCompra = controladorCompras.compraAtual();
                 decimal valorFormaPagamento = controladorCompras.ObterTotalCompra(idCompra);
+
+
+
 
 
                 // Inserir a forma de pagamento
@@ -82,14 +124,14 @@ namespace PontoDeVenda_PAV.Interface
 
                 controladorFormaPagamentoCompra.incluir(formaPagamentoCompra);
 
-                ControladorCaixa controladorCaixa = new ControladorCaixa();
+                
                 int idCaixa = controladorCaixa.caixaAtual();
                 controladorCaixa.AtualizarSaldoCaixaCompra(idCaixa, valorFormaPagamento);
                 MessageBox.Show("Compra Concluída com Sucesso");
 
                 List<ItemCompra> itensCompra = controladorItemCompra.ObterItensDaCompra(idCompra);
 
-                // Para cada produto, devolver ao estoque
+                
                 foreach (ItemCompra itemCompra in itensCompra)
                 {
                     int idProduto = itemCompra.Produto_id_produto;
@@ -98,10 +140,14 @@ namespace PontoDeVenda_PAV.Interface
                     controladorCadastroProdutos.AumentarEstoque(idProduto, quantidade);
                 }
 
+                MovimentoSaida(idCaixa);
+
+
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro na Venda: " + ex.Message);
+                MessageBox.Show("Erro na Compra: " + ex.Message);
             }
             finally
             {

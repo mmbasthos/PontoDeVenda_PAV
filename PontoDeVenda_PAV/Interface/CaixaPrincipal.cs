@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 namespace PontoDeVenda_PAV.Interface
 {
     public partial class CaixaPrincipal : Form
@@ -460,7 +461,7 @@ namespace PontoDeVenda_PAV.Interface
 
         private void finalizarVendaF7ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FinalizareVendaPagamento finalizarCompra = new FinalizareVendaPagamento();
+            FinalizarVendaPagamento finalizarCompra = new FinalizarVendaPagamento();
             finalizarCompra.ShowDialog();
         }
 
@@ -712,6 +713,115 @@ namespace PontoDeVenda_PAV.Interface
             ControladorCompras controladorCompras = new ControladorCompras();
             int idCompra = controladorCompras.compraAtual();
             CancelarCompra(idCompra);
+        }
+
+        public string GerarRelatorio(int idCaixa)
+        {
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+                StringBuilder relatorio = new StringBuilder();
+
+                string query = "SELECT descricao_movimento, tipo_movimento, valor_movimento, formapagamento FROM movimento_caixa WHERE Caixa_id_caixa = @idCaixa";
+
+                MySqlCommand command = new MySqlCommand(query, BancodeDados.obterInstancia().obterConexao());
+                command.Parameters.AddWithValue("@idCaixa", idCaixa);
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+                relatorio.AppendLine($"Relatório de Fechamento do Caixa");
+                relatorio.AppendLine("Descrição\tE/S\tValor");
+
+                Dictionary<string, Dictionary<string, decimal>> valoresPorFormaPagamento = new Dictionary<string, Dictionary<string, decimal>>();
+
+                decimal totalEntradas = 0;
+                decimal totalSaidas = 0;
+
+                while (reader.Read())
+                {
+                    string descricaoMovimento = reader["descricao_movimento"].ToString();
+                    string tipoMovimento = reader["tipo_movimento"].ToString();
+                    decimal valorMovimento = Convert.ToDecimal(reader["valor_movimento"]);
+                    string formaPagamento = reader["formapagamento"].ToString();
+
+                    if (!valoresPorFormaPagamento.ContainsKey(formaPagamento))
+                    {
+                        valoresPorFormaPagamento[formaPagamento] = new Dictionary<string, decimal>
+                {
+                    { "Entrada", 0 },
+                    { "Saida", 0 }
+                };
+                    }
+
+                    if (tipoMovimento == "E")
+                    {
+                        valoresPorFormaPagamento[formaPagamento]["Entrada"] += valorMovimento;
+                        totalEntradas += valorMovimento;
+                    }
+                    else if (tipoMovimento == "S")
+                    {
+                        valoresPorFormaPagamento[formaPagamento]["Saida"] += valorMovimento;
+                        totalSaidas += valorMovimento;
+                    }
+
+                    relatorio.AppendLine($"{descricaoMovimento}\t{tipoMovimento}\t{valorMovimento:C}");
+                }
+
+                relatorio.AppendLine();
+                relatorio.AppendLine("Resumo");
+                relatorio.AppendLine("Forma de Pgto\tEntradas\tSaídas\tTotal");
+
+                foreach (var kvp in valoresPorFormaPagamento)
+                {
+                    string formaPagamento = kvp.Key;
+                    decimal totalFormaEntradas = kvp.Value["Entrada"];
+                    decimal totalFormaSaidas = kvp.Value["Saida"];
+                    decimal totalForma = totalFormaEntradas - totalFormaSaidas;
+
+                    relatorio.AppendLine($"{formaPagamento,-15}\t{totalFormaEntradas,10}\t{totalFormaSaidas,7}\t{totalForma,6}");
+                }
+
+                relatorio.AppendLine();
+                relatorio.AppendLine($"Total Geral\t{totalEntradas,10}\t{totalSaidas,7}\t{totalEntradas - totalSaidas,6}");
+
+                return relatorio.ToString();
+            }
+            catch (Exception ex)
+            {
+                return "Erro ao gerar relatório: " + ex.Message;
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ControladorCaixa controladorCaixa = new ControladorCaixa();
+            int idCaixa = controladorCaixa.ObterCaixaAtual(); // Substitua 1 pelo valor real do ID do caixa
+
+            string relatorio = GerarRelatorio(idCaixa);
+
+            MessageBox.Show(relatorio, "Relatório de Fechamento do Caixa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        
         }
     }
 }

@@ -40,6 +40,12 @@
             cadastrarClienteToolStripMenuItem1 = new ToolStripMenuItem();
             consultarClientesToolStripMenuItem = new ToolStripMenuItem();
             estoqueF5ToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripMenuItem();
+            toolStripMenuItem4 = new ToolStripMenuItem();
+            toolStripMenuItem5 = new ToolStripMenuItem();
+            toolStripMenuItem6 = new ToolStripMenuItem();
             campoNomeCaixa = new TextBox();
             campoIdCaixa = new TextBox();
             campoNomeCliente = new TextBox();
@@ -81,7 +87,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { iniciarVendaToolStripMenuItem, finalizarVendaF7ToolStripMenuItem, cancelarVendaF8ToolStripMenuItem, iniciarCompraToolStripMenuItem, finalizarCompraToolStripMenuItem, cancelarCompraToolStripMenuItem, cadastrarClienteToolStripMenuItem, estoqueF5ToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { iniciarVendaToolStripMenuItem, finalizarVendaF7ToolStripMenuItem, cancelarVendaF8ToolStripMenuItem, iniciarCompraToolStripMenuItem, finalizarCompraToolStripMenuItem, cancelarCompraToolStripMenuItem, cadastrarClienteToolStripMenuItem, estoqueF5ToolStripMenuItem, toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3, toolStripMenuItem4, toolStripMenuItem5, toolStripMenuItem6 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
@@ -165,6 +171,38 @@
             estoqueF5ToolStripMenuItem.Size = new Size(105, 24);
             estoqueF5ToolStripMenuItem.Text = "Estoque - F5";
             estoqueF5ToolStripMenuItem.Click += estoqueF5ToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(106, 24);
+            toolStripMenuItem1.Text = "Fechar Caixa";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(14, 24);
+            // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(14, 24);
+            // 
+            // toolStripMenuItem4
+            // 
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            toolStripMenuItem4.Size = new Size(14, 24);
+            // 
+            // toolStripMenuItem5
+            // 
+            toolStripMenuItem5.Name = "toolStripMenuItem5";
+            toolStripMenuItem5.Size = new Size(14, 24);
+            // 
+            // toolStripMenuItem6
+            // 
+            toolStripMenuItem6.Name = "toolStripMenuItem6";
+            toolStripMenuItem6.Size = new Size(14, 24);
             // 
             // campoNomeCaixa
             // 
@@ -495,5 +533,11 @@
         private Button button6;
         private ToolStripMenuItem finalizarCompraToolStripMenuItem;
         private ToolStripMenuItem cancelarCompraToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem toolStripMenuItem2;
+        private ToolStripMenuItem toolStripMenuItem3;
+        private ToolStripMenuItem toolStripMenuItem4;
+        private ToolStripMenuItem toolStripMenuItem5;
+        private ToolStripMenuItem toolStripMenuItem6;
     }
 }
