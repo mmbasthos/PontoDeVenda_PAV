@@ -144,6 +144,42 @@ namespace PontoDeVenda_PAV.Controladores
             BancodeDados.obterInstancia().desconectar();
         }
 
+        public int ObterIdClientePorIdVenda(int idVenda)
+        {
+            try
+            {
+            
+
+                string comandoSql = "SELECT Cliente_id_cliente FROM venda WHERE id_venda = @idVenda";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@idVenda", idVenda);
+
+                    object resultado = comando.ExecuteScalar();
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        return Convert.ToInt32(resultado);
+                    }
+                    else
+                    {
+                        // Retorne um valor indicando que o cliente não foi encontrado.
+                        return -1; // Por exemplo, -1 pode indicar que o cliente não foi encontrado.
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Trate a exceção conforme necessário (por exemplo, registre-a ou a lance novamente).
+                throw new Exception("Erro ao obter ID do cliente: " + ex.Message);
+            }
+            finally
+            {
+   
+            }
+        }
+
+
         protected override void criarParametros(MySqlCommand comando)
         {
             comando.Parameters.Add(new MySqlParameter(Vendas.ATRIBUTO_ID_VENDA, MySqlDbType.Int32));

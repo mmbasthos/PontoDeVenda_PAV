@@ -72,5 +72,11 @@ namespace PontoDeVenda_PAV.Interface
             ImprimirRelatorioCompras imprimirRelatorioCompras = new ImprimirRelatorioCompras();
             imprimirRelatorioCompras.Show();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ContasReceber contasReceber = new ContasReceber();  
+            contasReceber.Show();
+        }
     }
 }

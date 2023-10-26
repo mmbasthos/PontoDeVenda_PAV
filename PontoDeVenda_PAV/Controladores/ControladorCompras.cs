@@ -142,6 +142,39 @@ namespace PontoDeVenda_PAV.Controladores
 
         }
 
+        public int ObterIdFornecedorPorIdCompra(int idCompra)
+        {
+            try
+            {
+                string comandoSql = "SELECT Fornecedor_id_fornecedor FROM compra WHERE id_compra = @idCompra";
+
+                using (MySqlCommand comando = new MySqlCommand(comandoSql, BancodeDados.obterInstancia().obterConexao()))
+                {
+                    comando.Parameters.AddWithValue("@idCompra", idCompra);
+
+                    object resultado = comando.ExecuteScalar();
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        return Convert.ToInt32(resultado);
+                    }
+                    else
+                    {
+                        // Retorne um valor indicando que o cliente não foi encontrado.
+                        return -1; // Por exemplo, -1 pode indicar que o cliente não foi encontrado.
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Trate a exceção conforme necessário (por exemplo, registre-a ou a lance novamente).
+                throw new Exception("Erro ao obter ID do Forncedor: " + ex.Message);
+            }
+            finally
+            {
+
+            }
+        }
+
         protected override void criarParametros(MySqlCommand comando)
         {
             comando.Parameters.Add(new MySqlParameter(Compra.ATRIBUTO_ID_COMPRA, MySqlDbType.Int32));

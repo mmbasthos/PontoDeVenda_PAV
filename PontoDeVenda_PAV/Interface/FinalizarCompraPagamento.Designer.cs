@@ -32,6 +32,7 @@
             button2 = new Button();
             campoTotal = new TextBox();
             campoFormaPag = new ComboBox();
+            Parcelamento = new ComboBox();
             SuspendLayout();
             // 
             // button1
@@ -68,11 +69,21 @@
             campoFormaPag.Size = new Size(202, 28);
             campoFormaPag.TabIndex = 3;
             // 
+            // Parcelamento
+            // 
+            Parcelamento.FormattingEnabled = true;
+            Parcelamento.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
+            Parcelamento.Location = new Point(221, 12);
+            Parcelamento.Name = "Parcelamento";
+            Parcelamento.Size = new Size(58, 28);
+            Parcelamento.TabIndex = 6;
+            // 
             // FinalizarCompraPagamento
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(224, 153);
+            ClientSize = new Size(291, 153);
+            Controls.Add(Parcelamento);
             Controls.Add(campoFormaPag);
             Controls.Add(campoTotal);
             Controls.Add(button2);
@@ -90,5 +101,6 @@
         private Button button2;
         private TextBox campoTotal;
         private ComboBox campoFormaPag;
+        private ComboBox Parcelamento;
     }
 }

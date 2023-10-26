@@ -100,7 +100,7 @@ namespace PontoDeVenda_PAV.Interface
                 // Adicione um log para verificar se a conexão está aberta
                 int idFormaPagamento = (int)campoFormaPag.SelectedValue;
                 string nomeFormaPagamento = campoFormaPag.Text;
-                ControladorVendas controladorVenda = new ControladorVendas();   
+                ControladorVendas controladorVenda = new ControladorVendas();
                 ControladorCaixa controladorCaixa = new ControladorCaixa();
                 ControladorMovimentoCaixa controladorMovimentoCaixa = new ControladorMovimentoCaixa();
                 MovimentoCaixa movimentoCaixa = new MovimentoCaixa();
@@ -184,6 +184,51 @@ namespace PontoDeVenda_PAV.Interface
             }
         }
 
+        public void parcelamento(int idVenda)
+        {
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+                ControladorVendas controlador = new ControladorVendas();
+                ControladorContaReceber controladorContaReceber = new ControladorContaReceber();
+                int parcelas = Convert.ToInt32(Parcelamento.SelectedItem);
+                DateTime dataVencimento = DateTime.Now; // Data inicial
+                decimal valorTotal = controlador.ObterTotalVenda(idVenda); // Obtém o valor total da compra
+                int idcliente = controlador.ObterIdClientePorIdVenda(idVenda);
+
+                // Insere as parcelas no banco de dados
+                for (int i = 1; i <= parcelas; i++)
+                {
+                    ContaReceber novaParcela = new ContaReceber();
+
+                    novaParcela.descricao_receber = "Parcela" + i;
+                    novaParcela.data_lancamento = DateTime.Now.Date;
+                    novaParcela.data_vencimento = dataVencimento;
+                    novaParcela.valor_total = valorTotal ;// Divide o valor total pelo número de parcelas
+                    novaParcela.valor_recebido = 0;
+                    novaParcela.data_recebimento = DateTime.Now.Date;
+                    novaParcela.valor_recebimento = valorTotal/ parcelas;
+                    novaParcela.Cliente_id_cliente = idcliente; // Substitua pelo ID do fornecedor
+      
+
+                    // Insere a nova parcela no banco de dados
+                    controladorContaReceber.incluir(novaParcela);
+
+                    // Adiciona 30 dias para a próxima parcela
+                    dataVencimento = dataVencimento.AddDays(30);
+                }
+
+                MessageBox.Show("Parcelas criadas com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao criar parcelas: " + ex.Message);
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -227,7 +272,14 @@ namespace PontoDeVenda_PAV.Interface
                     controladorCadastroProdutos.AtualizarEstoque(idProduto, quantidade);
                 }
 
+                string formaPagamentoSelecionada = campoFormaPag.Text;
+                if (formaPagamentoSelecionada == "Crediário")
+                {
+                    parcelamento(idVenda);
+                }
+
                 MovimentoEntrada(idCaixa);
+                
 
                 // Exibe o relatório em uma MessageBox
                 MessageBox.Show(relatorio, "Relatório da Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -246,6 +298,9 @@ namespace PontoDeVenda_PAV.Interface
 
         }
 
+      
+
+
 
         private void FinalizarCompraPagamento_Load(object sender, EventArgs e)
         {
@@ -263,6 +318,20 @@ namespace PontoDeVenda_PAV.Interface
                     campoFormaPag.DataSource = dataTable;
                     campoFormaPag.DisplayMember = "nome_forma_pagamento";
                     campoFormaPag.ValueMember = "id_forma_pagamento";
+
+                    ControladorVendas controlador = new ControladorVendas();
+                    int idCliente = controlador.ObterIdClientePorIdVenda(controlador.vendaAtual());
+
+
+                    if (idCliente == 1)
+                    {
+                        // Remova a opção "Crediário" do ComboBox
+                        DataRow[] rows = dataTable.Select("nome_forma_pagamento = 'Crediário'");
+                        foreach (DataRow row in rows)
+                        {
+                            dataTable.Rows.Remove(row);
+                        }
+                    }
                 }
 
                 ControladorVendas controladorVendas = new ControladorVendas();
@@ -281,7 +350,10 @@ namespace PontoDeVenda_PAV.Interface
                 BancodeDados.obterInstancia().desconectar();
             }
         }
+        private void campoFormaPag_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
         private void campoTotal_TextChanged(object sender, EventArgs e)
         {
 
@@ -315,10 +387,15 @@ namespace PontoDeVenda_PAV.Interface
         {
             Close();
         }
-
-        private void campoFormaPag_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+
+
+
+
+
+
+
+
+
+

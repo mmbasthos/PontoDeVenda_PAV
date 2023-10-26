@@ -22,6 +22,52 @@ namespace PontoDeVenda_PAV.Interface
             InitializeComponent();
         }
 
+        public void parcelamento(int idCompra)
+        {
+            try
+            {
+                BancodeDados.obterInstancia().conectar();
+                ControladorCompras controlador = new ControladorCompras();
+                ControladorContaPagar controladorContaPagar = new ControladorContaPagar();
+                int parcelas = Convert.ToInt32(Parcelamento.SelectedItem);
+                DateTime dataVencimento = DateTime.Now; // Data inicial
+                decimal valorTotal = controlador.ObterTotalCompra(idCompra); // Obtém o valor total da compra
+                int idfornecedor = controlador.ObterIdFornecedorPorIdCompra(idCompra);
+
+                // Insere as parcelas no banco de dados
+                for (int i = 1; i <= parcelas; i++)
+                {
+                    ContaPagar novaParcela = new ContaPagar();
+
+                    novaParcela.descricao_pagar= "Parcela" + i;
+                    novaParcela.data_lancamento = DateTime.Now.Date;
+                    novaParcela.data_vencimento = dataVencimento;
+                    novaParcela.valor_total = valorTotal;// Divide o valor total pelo número de parcelas
+                    novaParcela.valor_pago = 0;
+                    novaParcela.data_pagamento = DateTime.Now.Date;
+                    novaParcela.valor_pagamento = valorTotal / parcelas;
+                    novaParcela.Fornecedor_id_fornecedor = idfornecedor; // Substitua pelo ID do fornecedor
+
+
+                    // Insere a nova parcela no banco de dados
+                    controladorContaPagar.incluir(novaParcela);
+
+                    // Adiciona 30 dias para a próxima parcela
+                    dataVencimento = dataVencimento.AddDays(30);
+                }
+
+                MessageBox.Show("Parcelas criadas com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao criar parcelas: " + ex.Message);
+            }
+            finally
+            {
+                BancodeDados.obterInstancia().desconectar();
+            }
+        }
+
         public void MovimentoSaida(int caixaAtual)
         {
             try
@@ -142,6 +188,12 @@ namespace PontoDeVenda_PAV.Interface
 
                 MovimentoSaida(idCaixa);
 
+                string formaPagamentoSelecionada = campoFormaPag.Text;
+                if (formaPagamentoSelecionada == "Crediário")
+                {
+                    parcelamento(idCompra);
+                }
+                
 
 
             }

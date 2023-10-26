@@ -50,15 +50,3 @@ namespace PontoDeVenda_PAV.Entidades
         }
     }
 }
-
-
-/*
-Table: item_venda
-Columns:
-id_item_venda int AI PK 
-Produto_id_produto int 
-quantidade_item int 
-total_item decimal(10,2) 
-valor_unitario_item decimal(10,2) 
-id_venda int PK
-*/
