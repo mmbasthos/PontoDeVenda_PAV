@@ -35,6 +35,8 @@
             comboBox1 = new ComboBox();
             campoIdCliente = new TextBox();
             button2 = new Button();
+            button4 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -60,6 +62,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1302, 501);
             dataGridView1.TabIndex = 2;
             // 
@@ -76,10 +79,12 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Abertas", "Pagas", "Vencidas" });
             comboBox1.Location = new Point(1201, 12);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(113, 28);
             comboBox1.TabIndex = 4;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // campoIdCliente
             // 
@@ -98,11 +103,33 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button4
+            // 
+            button4.Location = new Point(162, 556);
+            button4.Name = "button4";
+            button4.Size = new Size(170, 29);
+            button4.TabIndex = 17;
+            button4.Text = "Conta Vencida";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(12, 556);
+            button3.Name = "button3";
+            button3.Size = new Size(144, 29);
+            button3.TabIndex = 16;
+            button3.Text = "Receber Conta";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // ContasReceber
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1331, 597);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(campoIdCliente);
             Controls.Add(comboBox1);
@@ -126,5 +153,7 @@
         private ComboBox comboBox1;
         private TextBox campoIdCliente;
         private Button button2;
+        private Button button4;
+        private Button button3;
     }
 }

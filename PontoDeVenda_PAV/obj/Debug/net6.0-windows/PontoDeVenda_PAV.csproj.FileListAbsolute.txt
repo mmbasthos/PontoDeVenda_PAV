@@ -87,3 +87,6 @@ C:\Users\lexvi\source\repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-w
 C:\Users\lexvi\source\repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.FinalizarVendaPagamento.resources
 C:\Users\lexvi\source\repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.RelatorioFechamentoCaixa.resources
 C:\Users\lexvi\source\repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ContasReceber.resources
+C:\Users\lexvi\source\repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ContasPagar.resources
+C:\Users\lexvi\source\repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ContaPagarPagamento.resources
+C:\Users\lexvi\source\repos\PontoDeVenda_PAV\PontoDeVenda_PAV\obj\Debug\net6.0-windows\PontoDeVenda_PAV.Interface.ContaReceberPagamento.resources

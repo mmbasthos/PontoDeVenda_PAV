@@ -197,11 +197,11 @@ namespace PontoDeVenda_PAV.Interface
                 int idcliente = controlador.ObterIdClientePorIdVenda(idVenda);
 
                 // Insere as parcelas no banco de dados
-                for (int i = 1; i <= parcelas; i++)
+                for (int i = 0; i <= parcelas; i++)
                 {
                     ContaReceber novaParcela = new ContaReceber();
 
-                    novaParcela.descricao_receber = "Parcela" + i;
+                    novaParcela.descricao_receber = "Aberta";
                     novaParcela.data_lancamento = DateTime.Now.Date;
                     novaParcela.data_vencimento = dataVencimento;
                     novaParcela.valor_total = valorTotal ;// Divide o valor total pelo número de parcelas
@@ -256,8 +256,7 @@ namespace PontoDeVenda_PAV.Interface
                 controladorFormaPagamentoVenda.incluir(formaPagamentoVenda);
 
                 ControladorCaixa controladorCaixa = new ControladorCaixa();
-                int idCaixa = controladorCaixa.caixaAtual();
-                controladorCaixa.AtualizarSaldoCaixa(idCaixa, valorFormaPagamento);
+
 
 
                 string relatorio = GerarRelatorio(idVenda);
@@ -277,8 +276,14 @@ namespace PontoDeVenda_PAV.Interface
                 {
                     parcelamento(idVenda);
                 }
+                else
+                {
+                    int idCaixa = controladorCaixa.caixaAtual();
+                    controladorCaixa.AtualizarSaldoCaixa(idCaixa, valorFormaPagamento);
+                    MovimentoEntrada(idCaixa);
+                }
 
-                MovimentoEntrada(idCaixa);
+                
                 
 
                 // Exibe o relatório em uma MessageBox

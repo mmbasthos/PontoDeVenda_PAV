@@ -38,6 +38,7 @@
             button8 = new Button();
             button9 = new Button();
             button10 = new Button();
+            button11 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -135,15 +136,26 @@
             button10.Name = "button10";
             button10.Size = new Size(189, 71);
             button10.TabIndex = 9;
-            button10.Text = "Contas Rceber";
+            button10.Text = "Contas Receber";
             button10.UseVisualStyleBackColor = true;
             button10.Click += button10_Click;
+            // 
+            // button11
+            // 
+            button11.Location = new Point(12, 551);
+            button11.Name = "button11";
+            button11.Size = new Size(189, 71);
+            button11.TabIndex = 10;
+            button11.Text = "Contas Pagar";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1262, 673);
+            Controls.Add(button11);
             Controls.Add(button10);
             Controls.Add(button9);
             Controls.Add(button8);
@@ -173,5 +185,6 @@
         private Button button8;
         private Button button9;
         private Button button10;
+        private Button button11;
     }
 }

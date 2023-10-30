@@ -61,9 +61,10 @@ namespace PontoDeVenda_PAV.Interface
 
             try
             {
+                BancodeDados.obterInstancia().conectar();
                 int idFornecedorSelecionado = -1;
 
-                BancodeDados.obterInstancia().conectar();
+                
 
                 ControladorCadastroFornecedor controladorCadastroFornecedor = new ControladorCadastroFornecedor();
 

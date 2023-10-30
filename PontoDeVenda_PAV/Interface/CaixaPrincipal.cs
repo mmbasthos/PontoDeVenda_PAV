@@ -821,7 +821,19 @@ namespace PontoDeVenda_PAV.Interface
             string relatorio = GerarRelatorio(idCaixa);
 
             MessageBox.Show(relatorio, "Relatório de Fechamento do Caixa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        
+
+        }
+
+        private void contasPagarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ContasPagar contasPagar = new ContasPagar();
+            contasPagar.Show();
+        }
+
+        private void contasReceberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ContasReceber contasReceber = new ContasReceber();
+            contasReceber.Show();
         }
     }
 }

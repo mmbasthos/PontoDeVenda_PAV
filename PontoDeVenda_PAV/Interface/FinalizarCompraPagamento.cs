@@ -35,15 +35,15 @@ namespace PontoDeVenda_PAV.Interface
                 int idfornecedor = controlador.ObterIdFornecedorPorIdCompra(idCompra);
 
                 // Insere as parcelas no banco de dados
-                for (int i = 1; i <= parcelas; i++)
+                for (int i = 0; i <= parcelas; i++)
                 {
                     ContaPagar novaParcela = new ContaPagar();
 
-                    novaParcela.descricao_pagar= "Parcela" + i;
+                    novaParcela.descricao_pagar= "Aberta";
                     novaParcela.data_lancamento = DateTime.Now.Date;
                     novaParcela.data_vencimento = dataVencimento;
                     novaParcela.valor_total = valorTotal;// Divide o valor total pelo número de parcelas
-                    novaParcela.valor_pago = 0;
+                    novaParcela.valor_pago = valorTotal / parcelas;
                     novaParcela.data_pagamento = DateTime.Now.Date;
                     novaParcela.valor_pagamento = valorTotal / parcelas;
                     novaParcela.Fornecedor_id_fornecedor = idfornecedor; // Substitua pelo ID do fornecedor
@@ -171,8 +171,7 @@ namespace PontoDeVenda_PAV.Interface
                 controladorFormaPagamentoCompra.incluir(formaPagamentoCompra);
 
 
-                int idCaixa = controladorCaixa.caixaAtual();
-                controladorCaixa.AtualizarSaldoCaixaCompra(idCaixa, valorFormaPagamento);
+
                 MessageBox.Show("Compra Concluída com Sucesso");
 
                 List<ItemCompra> itensCompra = controladorItemCompra.ObterItensDaCompra(idCompra);
@@ -186,12 +185,17 @@ namespace PontoDeVenda_PAV.Interface
                     controladorCadastroProdutos.AumentarEstoque(idProduto, quantidade);
                 }
 
-                MovimentoSaida(idCaixa);
-
+                
                 string formaPagamentoSelecionada = campoFormaPag.Text;
                 if (formaPagamentoSelecionada == "Crediário")
                 {
                     parcelamento(idCompra);
+                }
+                else
+                {
+                    int idCaixa = controladorCaixa.caixaAtual();
+                    controladorCaixa.AtualizarSaldoCaixaCompra(idCaixa, valorFormaPagamento);
+                    MovimentoSaida(idCaixa);
                 }
                 
 

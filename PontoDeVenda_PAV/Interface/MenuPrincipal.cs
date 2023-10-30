@@ -75,8 +75,14 @@ namespace PontoDeVenda_PAV.Interface
 
         private void button10_Click(object sender, EventArgs e)
         {
-            ContasReceber contasReceber = new ContasReceber();  
+            ContasReceber contasReceber = new ContasReceber();
             contasReceber.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            ContasPagar contasPagar = new ContasPagar();
+            contasPagar.Show();
         }
     }
 }
